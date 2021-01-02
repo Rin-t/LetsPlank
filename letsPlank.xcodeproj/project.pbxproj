@@ -21,6 +21,9 @@
 		24A66E81259F739B00AC4E7B /* UiColourExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E7F259F739B00AC4E7B /* UiColourExtention.swift */; };
 		24A66E8A259F73DD00AC4E7B /* SettingTimer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A66E88259F73DD00AC4E7B /* SettingTimer.storyboard */; };
 		24A66E8B259F73DD00AC4E7B /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A66E89259F73DD00AC4E7B /* SignUp.storyboard */; };
+		5EB9BAB82B7956E234CCB04D /* Pods_letsPlank_letsPlankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A003F2FA902960B9099738E2 /* Pods_letsPlank_letsPlankUITests.framework */; };
+		610F11D6174F97AC3FADCBEB /* Pods_letsPlank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BF44625257F90B6E5DE0E8 /* Pods_letsPlank.framework */; };
+		666F67255F9C5C6CABDABEC7 /* Pods_letsPlankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82106531CBA6181E98879D37 /* Pods_letsPlankTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03BF44625257F90B6E5DE0E8 /* Pods_letsPlank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_letsPlank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A66E32259F732700AC4E7B /* letsPlank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = letsPlank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A66E35259F732700AC4E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24A66E37259F732700AC4E7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,14 @@
 		24A66E7F259F739B00AC4E7B /* UiColourExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiColourExtention.swift; sourceTree = "<group>"; };
 		24A66E88259F73DD00AC4E7B /* SettingTimer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingTimer.storyboard; sourceTree = "<group>"; };
 		24A66E89259F73DD00AC4E7B /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		35EF5BE16066B629E8EA9E17 /* Pods-letsPlankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letsPlankTests.release.xcconfig"; path = "Target Support Files/Pods-letsPlankTests/Pods-letsPlankTests.release.xcconfig"; sourceTree = "<group>"; };
+		503F548A590C48217297945D /* Pods-letsPlank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letsPlank.debug.xcconfig"; path = "Target Support Files/Pods-letsPlank/Pods-letsPlank.debug.xcconfig"; sourceTree = "<group>"; };
+		668094FA5F6D9590113DE158 /* Pods-letsPlank-letsPlankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letsPlank-letsPlankUITests.release.xcconfig"; path = "Target Support Files/Pods-letsPlank-letsPlankUITests/Pods-letsPlank-letsPlankUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7234DB9461567DAD4F1CD0D6 /* Pods-letsPlankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letsPlankTests.debug.xcconfig"; path = "Target Support Files/Pods-letsPlankTests/Pods-letsPlankTests.debug.xcconfig"; sourceTree = "<group>"; };
+		82106531CBA6181E98879D37 /* Pods_letsPlankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_letsPlankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB319DEABD1CD4F3E7CF4AF /* Pods-letsPlank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letsPlank.release.xcconfig"; path = "Target Support Files/Pods-letsPlank/Pods-letsPlank.release.xcconfig"; sourceTree = "<group>"; };
+		A003F2FA902960B9099738E2 /* Pods_letsPlank_letsPlankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_letsPlank_letsPlankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE873D99F89962BA6254E0BD /* Pods-letsPlank-letsPlankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letsPlank-letsPlankUITests.debug.xcconfig"; path = "Target Support Files/Pods-letsPlank-letsPlankUITests/Pods-letsPlank-letsPlankUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				610F11D6174F97AC3FADCBEB /* Pods_letsPlank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				666F67255F9C5C6CABDABEC7 /* Pods_letsPlankTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EB9BAB82B7956E234CCB04D /* Pods_letsPlank_letsPlankUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +110,8 @@
 				24A66E4B259F732900AC4E7B /* letsPlankTests */,
 				24A66E56259F732900AC4E7B /* letsPlankUITests */,
 				24A66E33259F732700AC4E7B /* Products */,
+				74DE0FF9B24975E172870F77 /* Pods */,
+				4CF50675CF6B8DB728DE54D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +179,30 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4CF50675CF6B8DB728DE54D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03BF44625257F90B6E5DE0E8 /* Pods_letsPlank.framework */,
+				A003F2FA902960B9099738E2 /* Pods_letsPlank_letsPlankUITests.framework */,
+				82106531CBA6181E98879D37 /* Pods_letsPlankTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		74DE0FF9B24975E172870F77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				503F548A590C48217297945D /* Pods-letsPlank.debug.xcconfig */,
+				8CB319DEABD1CD4F3E7CF4AF /* Pods-letsPlank.release.xcconfig */,
+				BE873D99F89962BA6254E0BD /* Pods-letsPlank-letsPlankUITests.debug.xcconfig */,
+				668094FA5F6D9590113DE158 /* Pods-letsPlank-letsPlankUITests.release.xcconfig */,
+				7234DB9461567DAD4F1CD0D6 /* Pods-letsPlankTests.debug.xcconfig */,
+				35EF5BE16066B629E8EA9E17 /* Pods-letsPlankTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,9 +210,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24A66E5C259F732900AC4E7B /* Build configuration list for PBXNativeTarget "letsPlank" */;
 			buildPhases = (
+				1A5BD0316F6A2F5F82BC8323 /* [CP] Check Pods Manifest.lock */,
 				24A66E2E259F732700AC4E7B /* Sources */,
 				24A66E2F259F732700AC4E7B /* Frameworks */,
 				24A66E30259F732700AC4E7B /* Resources */,
+				9F124702BFF23947648BD755 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,6 +229,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24A66E5F259F732900AC4E7B /* Build configuration list for PBXNativeTarget "letsPlankTests" */;
 			buildPhases = (
+				B76FC3B67434F27D791AAC9F /* [CP] Check Pods Manifest.lock */,
 				24A66E44259F732900AC4E7B /* Sources */,
 				24A66E45259F732900AC4E7B /* Frameworks */,
 				24A66E46259F732900AC4E7B /* Resources */,
@@ -204,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24A66E62259F732900AC4E7B /* Build configuration list for PBXNativeTarget "letsPlankUITests" */;
 			buildPhases = (
+				94A960E2BDC92DCBCF0E266E /* [CP] Check Pods Manifest.lock */,
 				24A66E4F259F732900AC4E7B /* Sources */,
 				24A66E50259F732900AC4E7B /* Frameworks */,
 				24A66E51259F732900AC4E7B /* Resources */,
+				3D54114C10D5C0B76D02D9E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,6 +334,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A5BD0316F6A2F5F82BC8323 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-letsPlank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D54114C10D5C0B76D02D9E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-letsPlank-letsPlankUITests/Pods-letsPlank-letsPlankUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-letsPlank-letsPlankUITests/Pods-letsPlank-letsPlankUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-letsPlank-letsPlankUITests/Pods-letsPlank-letsPlankUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94A960E2BDC92DCBCF0E266E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-letsPlank-letsPlankUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F124702BFF23947648BD755 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-letsPlank/Pods-letsPlank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-letsPlank/Pods-letsPlank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-letsPlank/Pods-letsPlank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B76FC3B67434F27D791AAC9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-letsPlankTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		24A66E2E259F732700AC4E7B /* Sources */ = {
@@ -465,6 +614,7 @@
 		};
 		24A66E5D259F732900AC4E7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 503F548A590C48217297945D /* Pods-letsPlank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -485,6 +635,7 @@
 		};
 		24A66E5E259F732900AC4E7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CB319DEABD1CD4F3E7CF4AF /* Pods-letsPlank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -505,6 +656,7 @@
 		};
 		24A66E60259F732900AC4E7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7234DB9461567DAD4F1CD0D6 /* Pods-letsPlankTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -527,6 +679,7 @@
 		};
 		24A66E61259F732900AC4E7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35EF5BE16066B629E8EA9E17 /* Pods-letsPlankTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -549,6 +702,7 @@
 		};
 		24A66E63259F732900AC4E7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE873D99F89962BA6254E0BD /* Pods-letsPlank-letsPlankUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -569,6 +723,7 @@
 		};
 		24A66E64259F732900AC4E7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 668094FA5F6D9590113DE158 /* Pods-letsPlank-letsPlankUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

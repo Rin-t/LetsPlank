@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1083253422759-d8uhgolbmui7cs9p1pqkqudt80pr7t0v.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1083253422759-d8uhgolbmui7cs9p1pqkqudt80pr7t0v</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBu5TVFTfnUsF-ChDTqS9qvdT2SOs5rYkw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1083253422759</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.r.t.astronomy.letsPlank</string>
+	<key>PROJECT_ID</key>
+	<string>letsplank-a94cf</string>
+	<key>STORAGE_BUCKET</key>
+	<string>letsplank-a94cf.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1083253422759:ios:d899c8103e7ac9cd6c3982</string>
+</dict>
+</plist>
