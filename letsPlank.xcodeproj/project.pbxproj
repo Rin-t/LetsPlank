@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		244B594A25A03851007A497A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 244B594925A03851007A497A /* GoogleService-Info.plist */; };
 		24A66E36259F732700AC4E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E35259F732700AC4E7B /* AppDelegate.swift */; };
 		24A66E38259F732700AC4E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E37259F732700AC4E7B /* SceneDelegate.swift */; };
 		24A66E3F259F732900AC4E7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24A66E3E259F732900AC4E7B /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		03BF44625257F90B6E5DE0E8 /* Pods_letsPlank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_letsPlank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		244B594925A03851007A497A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		24A66E32259F732700AC4E7B /* letsPlank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = letsPlank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A66E35259F732700AC4E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24A66E37259F732700AC4E7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				24A66E3E259F732900AC4E7B /* Assets.xcassets */,
 				24A66E40259F732900AC4E7B /* LaunchScreen.storyboard */,
 				24A66E43259F732900AC4E7B /* Info.plist */,
+				244B594925A03851007A497A /* GoogleService-Info.plist */,
 			);
 			path = letsPlank;
 			sourceTree = "<group>";
@@ -199,7 +202,6 @@
 				7234DB9461567DAD4F1CD0D6 /* Pods-letsPlankTests.debug.xcconfig */,
 				35EF5BE16066B629E8EA9E17 /* Pods-letsPlankTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -314,6 +316,7 @@
 				24A66E6C259F735B00AC4E7B /* Main.storyboard in Resources */,
 				24A66E8A259F73DD00AC4E7B /* SettingTimer.storyboard in Resources */,
 				24A66E42259F732900AC4E7B /* LaunchScreen.storyboard in Resources */,
+				244B594A25A03851007A497A /* GoogleService-Info.plist in Resources */,
 				24A66E3F259F732900AC4E7B /* Assets.xcassets in Resources */,
 				24A66E8B259F73DD00AC4E7B /* SignUp.storyboard in Resources */,
 			);
