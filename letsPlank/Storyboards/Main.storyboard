@@ -35,7 +35,7 @@
         <!--Item-->
         <scene sceneID="yXg-tE-aZd">
             <objects>
-                <viewController id="zQf-E3-lDM" sceneMemberID="viewController">
+                <viewController id="zQf-E3-lDM" customClass="MenuViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BDK-tA-8xm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

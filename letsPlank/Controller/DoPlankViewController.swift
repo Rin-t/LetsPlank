@@ -42,6 +42,10 @@ class DoPlankViewController: UIViewController {
         if UserDefaults.standard.object(forKey: "PlankSec") == nil {
             UserDefaults.standard.set(60, forKey: "PlankSec")
         }
+        
+        let storyborad = UIStoryboard(name: "SignUp", bundle: nil)
+        let sinUpViewController = storyborad.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        self.present(sinUpViewController, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
