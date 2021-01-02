@@ -8,6 +8,11 @@ target 'letsPlank' do
   # Pods for letsPlank
 pod 'FSCalendar'
 pod 'Firebase/Analytics'
+pod 'Firebase/Auth'
+pod 'Firebase/Firestore'
+pod 'Firebase/Storage'
+pod 'Nuke'
+pod 'PKHUD'
 
   target 'letsPlankTests' do
     inherit! :search_paths
