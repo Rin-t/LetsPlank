@@ -24,24 +24,53 @@
             </objects>
             <point key="canvasLocation" x="-614" y="206"/>
         </scene>
-        <!--View Controller-->
+        <!--Introduce View Controller-->
         <scene sceneID="U85-VP-qs1">
             <objects>
-                <viewController id="qOt-V1-3s3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroduceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qOt-V1-3s3" customClass="IntroduceViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XpR-Fm-cvy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="先生" translatesAutoresizingMaskIntoConstraints="NO" id="WUH-ue-udB">
+                                <rect key="frame" x="157" y="168" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="QRE-c8-OBC"/>
+                                    <constraint firstAttribute="width" constant="100" id="vXo-PK-Rdl"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSK-Oi-7bk">
+                                <rect key="frame" x="20" y="358" width="374" height="160"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="RMU-rE-Xa7"/>
+                                </constraints>
+                                <string key="text">あっ。このページを見てしまいましたか？開発者の自己紹介です。僕は日本という国のどこかで中学校の教員ってやつをやってます。「変わってるね」と言われるのが大好きなちょっと変わったやつです。留学したり、自転車で日本を旅したり、結構自由に生きてます。まぁそんなやつです。ではみなさん、毎日プランクして、刃牙もびっくりなバッキバキ腹筋を手に入れましょう。僕も頑張ります。</string>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rLi-hl-oi5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SSK-Oi-7bk" firstAttribute="centerX" secondItem="XpR-Fm-cvy" secondAttribute="centerX" id="3Zh-ME-h8X"/>
+                            <constraint firstItem="WUH-ue-udB" firstAttribute="top" secondItem="rLi-hl-oi5" secondAttribute="top" constant="80" id="6bI-t5-0uk"/>
+                            <constraint firstItem="SSK-Oi-7bk" firstAttribute="leading" secondItem="rLi-hl-oi5" secondAttribute="leading" constant="20" id="Rar-DN-x7V"/>
+                            <constraint firstItem="SSK-Oi-7bk" firstAttribute="top" secondItem="WUH-ue-udB" secondAttribute="bottom" constant="90" id="bGV-VC-goC"/>
+                            <constraint firstItem="WUH-ue-udB" firstAttribute="centerX" secondItem="XpR-Fm-cvy" secondAttribute="centerX" id="bYm-Lj-6OO"/>
+                            <constraint firstItem="rLi-hl-oi5" firstAttribute="trailing" secondItem="SSK-Oi-7bk" secondAttribute="trailing" constant="20" id="cvC-Ae-EhE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bk4-vv-nW8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVq-xQ-Pur" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="346" y="206"/>
+            <point key="canvasLocation" x="343.47826086956525" y="205.58035714285714"/>
         </scene>
     </scenes>
     <resources>
+        <image name="先生" width="58" height="64.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

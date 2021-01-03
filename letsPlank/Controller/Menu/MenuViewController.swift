@@ -12,22 +12,42 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var menuTableView: UITableView!
     
+    private let cellId = "cellId"
+    let label = "bbb"
+    private let menuLabelArray = ["開発者","評価する"]
+    private let imageArray = ["person.fill","square.and.pencil"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         menuTableView.delegate = self
         menuTableView.dataSource = self
+        navigationItem.title = "Menu"
     }
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return menuLabelArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = menuTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MenuTableViewCell
+        cell.menuLabel.text = menuLabelArray[indexPath.row]
+        cell.menuImage.image = UIImage(systemName: imageArray[indexPath.row])
+        cell.menuImage.tintColor = .baseColour
         
-        return UITableViewCell()
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
     

@@ -81,7 +81,7 @@ class DoPlankViewController: UIViewController {
         isEnableButtonsStatus()
         moveImageView()
         startAndStopButton.alpha = 1.0
-        print(UserDefaults.standard.object(forKey: "PlankSec"))
+        
     }
     //他のところでも使うからModelで持たせる？
     @objc func changeButtonColour() {
