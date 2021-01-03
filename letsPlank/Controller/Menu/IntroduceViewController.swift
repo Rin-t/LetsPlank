@@ -10,6 +10,6 @@ import UIKit
 class IntroduceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "自己紹介"
     }
 }

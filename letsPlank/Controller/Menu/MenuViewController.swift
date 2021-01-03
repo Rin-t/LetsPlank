@@ -13,7 +13,6 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var menuTableView: UITableView!
     
     private let cellId = "cellId"
-    let label = "bbb"
     private let menuLabelArray = ["開発者","評価する"]
     private let imageArray = ["person.fill","square.and.pencil"]
     
@@ -47,7 +46,9 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let storyborad = UIStoryboard.init(name: "Introduce", bundle: nil)
+        let introduceView = storyborad.instantiateViewController(withIdentifier: "IntroduceView")
+        self.show(introduceView, sender: nil)
     }
     
     

@@ -27,7 +27,7 @@
         <!--Introduce View Controller-->
         <scene sceneID="U85-VP-qs1">
             <objects>
-                <viewController storyboardIdentifier="IntroduceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qOt-V1-3s3" customClass="IntroduceViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroduceView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qOt-V1-3s3" customClass="IntroduceViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XpR-Fm-cvy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,9 +45,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="RMU-rE-Xa7"/>
                                 </constraints>
-                                <string key="text">あっ。このページを見てしまいましたか？開発者の自己紹介です。僕は日本という国のどこかで中学校の教員ってやつをやってます。「変わってるね」と言われるのが大好きなちょっと変わったやつです。留学したり、自転車で日本を旅したり、結構自由に生きてます。まぁそんなやつです。ではみなさん、毎日プランクして、刃牙もびっくりなバッキバキ腹筋を手に入れましょう。僕も頑張ります。</string>
+                                <string key="text">あっ。このページを見てしまいましたか？開発者の自己紹介です。僕は日本という国のどこかで中学校の教員ってやつをやってます。「変わってるね」と言われるのが好きなちょっと変わったやつです。留学したり、自転車で日本を旅したり、結構自由に生きてます。まぁそんなやつです。ではみなさん、毎日プランクして、刃牙もびっくりなバッキバキ腹筋を手に入れましょう。僕も頑張ります。</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
