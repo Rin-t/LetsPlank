@@ -8,8 +8,11 @@
 import UIKit
 
 class IntroduceViewController: UIViewController {
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "自己紹介"
+        textView.isEditable = false
     }
 }

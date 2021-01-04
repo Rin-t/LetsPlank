@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		244B594A25A03851007A497A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 244B594925A03851007A497A /* GoogleService-Info.plist */; };
-		244B595925A0781B007A497A /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 244B595825A0781B007A497A /* SignUp.storyboard */; };
 		244B595E25A0798E007A497A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244B595D25A0798E007A497A /* SignUpViewController.swift */; };
 		24A66E36259F732700AC4E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E35259F732700AC4E7B /* AppDelegate.swift */; };
 		24A66E38259F732700AC4E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E37259F732700AC4E7B /* SceneDelegate.swift */; };
@@ -28,6 +27,7 @@
 		24AAAC6F25A0A66100F804F6 /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */; };
 		24AAAC7925A1807800F804F6 /* ManuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AAAC7825A1807800F804F6 /* ManuTableViewCell.xib */; };
 		24AC124525A1844500A81872 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC124425A1844500A81872 /* MenuTableViewCell.swift */; };
+		24CE631A25A31685006831F1 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CE631925A31685006831F1 /* SignUp.storyboard */; };
 		5EB9BAB82B7956E234CCB04D /* Pods_letsPlank_letsPlankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A003F2FA902960B9099738E2 /* Pods_letsPlank_letsPlankUITests.framework */; };
 		610F11D6174F97AC3FADCBEB /* Pods_letsPlank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BF44625257F90B6E5DE0E8 /* Pods_letsPlank.framework */; };
 		666F67255F9C5C6CABDABEC7 /* Pods_letsPlankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82106531CBA6181E98879D37 /* Pods_letsPlankTests.framework */; };
@@ -53,7 +53,6 @@
 /* Begin PBXFileReference section */
 		03BF44625257F90B6E5DE0E8 /* Pods_letsPlank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_letsPlank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		244B594925A03851007A497A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		244B595825A0781B007A497A /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		244B595D25A0798E007A497A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		24A66E32259F732700AC4E7B /* letsPlank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = letsPlank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A66E35259F732700AC4E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
 		24AAAC7825A1807800F804F6 /* ManuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManuTableViewCell.xib; sourceTree = "<group>"; };
 		24AC124425A1844500A81872 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		24CE631925A31685006831F1 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		35EF5BE16066B629E8EA9E17 /* Pods-letsPlankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letsPlankTests.release.xcconfig"; path = "Target Support Files/Pods-letsPlankTests/Pods-letsPlankTests.release.xcconfig"; sourceTree = "<group>"; };
 		503F548A590C48217297945D /* Pods-letsPlank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letsPlank.debug.xcconfig"; path = "Target Support Files/Pods-letsPlank/Pods-letsPlank.debug.xcconfig"; sourceTree = "<group>"; };
 		668094FA5F6D9590113DE158 /* Pods-letsPlank-letsPlankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letsPlank-letsPlankUITests.release.xcconfig"; path = "Target Support Files/Pods-letsPlank-letsPlankUITests/Pods-letsPlank-letsPlankUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 			children = (
 				24A66E6B259F735B00AC4E7B /* Main.storyboard */,
 				24A66E88259F73DD00AC4E7B /* SettingTimer.storyboard */,
-				244B595825A0781B007A497A /* SignUp.storyboard */,
+				24CE631925A31685006831F1 /* SignUp.storyboard */,
 				24AAAC6425A0A57900F804F6 /* MenuStoryboards */,
 			);
 			path = Storyboards;
@@ -367,9 +367,9 @@
 				24A66E6C259F735B00AC4E7B /* Main.storyboard in Resources */,
 				24AAAC7925A1807800F804F6 /* ManuTableViewCell.xib in Resources */,
 				24A66E8A259F73DD00AC4E7B /* SettingTimer.storyboard in Resources */,
-				244B595925A0781B007A497A /* SignUp.storyboard in Resources */,
 				24A66E42259F732900AC4E7B /* LaunchScreen.storyboard in Resources */,
 				244B594A25A03851007A497A /* GoogleService-Info.plist in Resources */,
+				24CE631A25A31685006831F1 /* SignUp.storyboard in Resources */,
 				24A66E3F259F732900AC4E7B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,7 +688,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.r.t.astronomy.letsPlank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -709,7 +709,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.r.t.astronomy.letsPlank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

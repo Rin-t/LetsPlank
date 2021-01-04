@@ -43,9 +43,13 @@ class DoPlankViewController: UIViewController {
             UserDefaults.standard.set(60, forKey: "PlankSec")
         }
         
-        let storyborad = UIStoryboard(name: "SignUp", bundle: nil)
+        let storyborad = UIStoryboard.init(name: "SignUp", bundle: nil)
         let sinUpViewController = storyborad.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        self.present(sinUpViewController, animated: true, completion: nil)
+        let navigation = UINavigationController(rootViewController: sinUpViewController)
+        navigation.modalPresentationStyle = .fullScreen
+        self.present(navigation, animated: true, completion: nil)
+        
+   
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,7 +118,7 @@ class DoPlankViewController: UIViewController {
     //MARK: - Animatioin
     func moveImageView() {
         centreConstraint.isActive.toggle()
-        defaultLeftConstraintOfPlankImage.constant = imageIsMoved ? -160 : view.frame.size.width/2 - 80
+        defaultLeftConstraintOfPlankImage.constant = imageIsMoved ? -170 : view.frame.size.width/2 - 80
         imageIsMoved = !imageIsMoved
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()

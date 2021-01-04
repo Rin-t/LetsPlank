@@ -150,7 +150,7 @@
                                 </state>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="腕立て" translatesAutoresizingMaskIntoConstraints="NO" id="cZW-qa-han">
-                                <rect key="frame" x="-160" y="405.5" width="160" height="85"/>
+                                <rect key="frame" x="-170" y="405.5" width="160" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="8OG-WT-Amx"/>
                                     <constraint firstAttribute="height" constant="85" id="yyT-Ma-Qe3"/>
@@ -160,12 +160,12 @@
                         <viewLayoutGuide key="safeArea" id="lno-0Q-D1N"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cZW-qa-han" firstAttribute="leading" secondItem="TXy-kR-a79" secondAttribute="leading" constant="-160" id="E7W-BP-KU0"/>
+                            <constraint firstItem="cZW-qa-han" firstAttribute="leading" secondItem="TXy-kR-a79" secondAttribute="leading" constant="-170" id="E7W-BP-KU0"/>
                             <constraint firstItem="GYF-Mt-nGg" firstAttribute="leading" secondItem="O7R-fN-yUq" secondAttribute="trailing" constant="5" id="Gxi-jU-OcB"/>
                             <constraint firstItem="GPi-1d-XF3" firstAttribute="centerX" secondItem="TXy-kR-a79" secondAttribute="centerX" id="NZ5-2P-mlM"/>
                             <constraint firstItem="V25-yg-ktE" firstAttribute="top" secondItem="GPi-1d-XF3" secondAttribute="bottom" constant="100" id="Tck-9F-9ad"/>
                             <constraint firstItem="O7R-fN-yUq" firstAttribute="centerX" secondItem="TXy-kR-a79" secondAttribute="centerX" id="YDH-ea-DTp"/>
-                            <constraint firstItem="GPi-1d-XF3" firstAttribute="leading" secondItem="cZW-qa-han" secondAttribute="trailing" constant="127" id="cWK-Iu-j0s"/>
+                            <constraint firstItem="GPi-1d-XF3" firstAttribute="leading" secondItem="cZW-qa-han" secondAttribute="trailing" constant="137" id="cWK-Iu-j0s"/>
                             <constraint firstItem="GPi-1d-XF3" firstAttribute="centerY" secondItem="TXy-kR-a79" secondAttribute="centerY" id="f5b-k7-zE7"/>
                             <constraint firstItem="GPi-1d-XF3" firstAttribute="top" secondItem="O7R-fN-yUq" secondAttribute="bottom" constant="110" id="gqx-Q7-kr5"/>
                             <constraint firstItem="V25-yg-ktE" firstAttribute="centerX" secondItem="TXy-kR-a79" secondAttribute="centerX" id="njY-ny-6Em"/>
@@ -197,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sds-Hf-cSB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1126.0869565217392" y="-182.14285714285714"/>
+            <point key="canvasLocation" x="-1126" y="-182"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4qV-1r-1Ic">

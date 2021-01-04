@@ -26,16 +26,33 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpViews()
+        //profileImageButton.layer.cornerRadius = 65
+        profileImageButton.frame.size.width = self.view.frame.size.width/3
+        profileImageButton.frame.size.height = self.view.frame.size.width/3
+        profileImageButton.layer.position = CGPoint(x: self.view.frame.size.width/2, y:self.view.frame.size.height/4 )
+        profileImageButton.layer.cornerRadius = self.view.frame.size.width/6
+        profileImageButton.layer.borderWidth = 1
+        profileImageButton.layer.borderColor = UIColor.gray.cgColor
+        registerButton.layer.cornerRadius = 12
+        
+        
+        navigationItem.title = "Create a New Account"
+        
+        //setUpViews()
 //        profileImageButton.frame.size.width = 10
 //        profileImageButton.frame.size.height = 10
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.navigationBar.isHidden = false
+//    }
 
+    @IBAction func tappedRegisterButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     private func setUpViews() {
         profileImageButton.layer.cornerRadius = 85
         profileImageButton.layer.borderWidth = 1
