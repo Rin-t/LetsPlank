@@ -40,7 +40,7 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSK-Oi-7bk">
-                                <rect key="frame" x="20" y="358" width="374" height="160"/>
+                                <rect key="frame" x="20" y="348" width="374" height="160"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="RMU-rE-Xa7"/>
@@ -57,7 +57,7 @@
                             <constraint firstItem="SSK-Oi-7bk" firstAttribute="centerX" secondItem="XpR-Fm-cvy" secondAttribute="centerX" id="3Zh-ME-h8X"/>
                             <constraint firstItem="WUH-ue-udB" firstAttribute="top" secondItem="rLi-hl-oi5" secondAttribute="top" constant="80" id="6bI-t5-0uk"/>
                             <constraint firstItem="SSK-Oi-7bk" firstAttribute="leading" secondItem="rLi-hl-oi5" secondAttribute="leading" constant="20" id="Rar-DN-x7V"/>
-                            <constraint firstItem="SSK-Oi-7bk" firstAttribute="top" secondItem="WUH-ue-udB" secondAttribute="bottom" constant="90" id="bGV-VC-goC"/>
+                            <constraint firstItem="SSK-Oi-7bk" firstAttribute="top" secondItem="WUH-ue-udB" secondAttribute="bottom" constant="80" id="bGV-VC-goC"/>
                             <constraint firstItem="WUH-ue-udB" firstAttribute="centerX" secondItem="XpR-Fm-cvy" secondAttribute="centerX" id="bYm-Lj-6OO"/>
                             <constraint firstItem="rLi-hl-oi5" firstAttribute="trailing" secondItem="SSK-Oi-7bk" secondAttribute="trailing" constant="20" id="cvC-Ae-EhE"/>
                         </constraints>

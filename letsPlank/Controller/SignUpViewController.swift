@@ -19,14 +19,16 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var alreadyHaveAccountButton: UIButton!
-
+    
+    
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpViews()
-
+//        profileImageButton.frame.size.width = 10
+//        profileImageButton.frame.size.height = 10
     }
 
     override func viewWillAppear(_ animated: Bool) {
