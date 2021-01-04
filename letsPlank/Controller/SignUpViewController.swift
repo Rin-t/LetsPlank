@@ -12,7 +12,7 @@ import FirebaseAuth
 import PKHUD
 
 class SignUpViewController: UIViewController {
-
+    
     @IBOutlet weak var profileImageButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwardTextField: UITextField!
@@ -21,8 +21,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var alreadyHaveAccountButton: UIButton!
     
     
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,42 +33,92 @@ class SignUpViewController: UIViewController {
         profileImageButton.layer.cornerRadius = self.view.frame.size.width/6
         profileImageButton.layer.borderWidth = 1
         profileImageButton.layer.borderColor = UIColor.gray.cgColor
-        registerButton.layer.cornerRadius = 12
+        profileImageButton.addTarget(self, action: #selector(tappedProfileImageButton), for: .touchUpInside)
         
+        registerButton.layer.cornerRadius = 12
+        registerButton.isEnabled = false
+        registerButton.backgroundColor = .lightGray
+        
+        emailTextField.delegate = self
+        passwardTextField.delegate = self
+        usernameTextField.delegate = self
         
         navigationItem.title = "Create a New Account"
         
         //setUpViews()
-//        profileImageButton.frame.size.width = 10
-//        profileImageButton.frame.size.height = 10
+        
     }
-
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.navigationBar.isHidden = false
-//    }
-
+    
+    //    override func viewWillAppear(_ animated: Bool) {
+    //        super.viewWillAppear(animated)
+    //        navigationController?.navigationBar.isHidden = false
+    //    }
+    
     @IBAction func tappedRegisterButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    @objc func tappedProfileImageButton() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
     
     private func setUpViews() {
-        profileImageButton.layer.cornerRadius = 85
-        profileImageButton.layer.borderWidth = 1
-        profileImageButton.layer.borderColor = UIColor.black.cgColor
-        registerButton.layer.cornerRadius = 12
-
-//        profileImageButton.addTarget(self, action: #selector(tappedProfileImageButton), for: .touchUpInside)
-//        registerButton.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
-//        alreadyHaveAccountButton.addTarget(self, action: #selector(tappedAlreadyHaveAccountButton), for: .touchUpInside)
-//
-//        emailTextField.delegate = self
-//        passwardTextField.delegate = self
-//        usernameTextField.delegate = self
-        registerButton.isEnabled = false
-        registerButton.backgroundColor = .baseColour
+        
+        //        registerButton.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
+        //        alreadyHaveAccountButton.addTarget(self, action: #selector(tappedAlreadyHaveAccountButton), for: .touchUpInside)
     }
+    
+    
+}
+
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editImage = info[.editedImage] as? UIImage {
+            profileImageButton.setImage(editImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            profileImageButton.setImage(originalImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
+        
+        profileImageButton.setTitle("", for:  .normal)
+        profileImageButton.imageView?.contentMode = .scaleAspectFill
+        profileImageButton.contentHorizontalAlignment = .fill
+        profileImageButton.contentVerticalAlignment = .fill
+        
+        profileImageButton.clipsToBounds = true
+        
+    
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        let emailIsEmpty = emailTextField.text?.isEmpty ?? false
+        let passwordIsEmpty = passwardTextField.text?.isEmpty ??  false
+        let usernameIsEmpty = usernameTextField.text?.isEmpty ?? false
+        
+        
+        if emailIsEmpty || passwordIsEmpty || usernameIsEmpty {
+            registerButton.isEnabled = false
+            registerButton.backgroundColor = .lightGray
+        } else {
+            registerButton.isEnabled = true
+            registerButton.backgroundColor = .baseColour
+        }
+
+    }
+}
+
+
+
 
 //    @objc private func tappedAlreadyHaveAccountButton() {
 //        let storyboard = UIStoryboard(name: "Login", bundle: nil)
@@ -177,21 +227,4 @@ class SignUpViewController: UIViewController {
 //}
 //
 //
-//extension SignUpViewController: UITextFieldDelegate {
-//
-//    func textFieldDidChangeSelection(_ textField: UITextField) {
-//        let emailIsEmpty = emailTextField.text?.isEmpty ?? false
-//        let passwordIsEmpty = passwardTextField.text?.isEmpty ??  false
-//        let usernameIsEmpty = usernameTextField.text?.isEmpty ?? false
-//
-//        if emailIsEmpty || passwordIsEmpty || usernameIsEmpty {
-//            registerButton.isEnabled = false
-//            registerButton.backgroundColor = .lightGray
-//        } else {
-//            registerButton.isEnabled = true
-//            registerButton.backgroundColor = .baseColour
-//            registerButton.alpha = 0.7
-//        }
-//
-//    }
-}
+
