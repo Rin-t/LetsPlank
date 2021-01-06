@@ -54,7 +54,7 @@
                                                 <rect key="frame" x="0.0" y="20.333333333333314" width="334" height="34"/>
                                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -71,7 +71,7 @@
                                                 <rect key="frame" x="0.0" y="20.333333333333314" width="334" height="34"/>
                                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -88,7 +88,7 @@
                                                 <rect key="frame" x="0.0" y="20.333333333333371" width="334" height="34"/>
                                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -105,9 +105,6 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="tappedRegisterButton:" destination="5AX-TC-VMM" eventType="touchUpInside" id="wo8-Kr-nhr"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8G-dR-9kn">
                                 <rect key="frame" x="154" y="207" width="106.99999999999997" height="28"/>
@@ -135,7 +132,7 @@
                         <outlet property="emailTextField" destination="QrP-5M-U6M" id="McO-QZ-IuY"/>
                         <outlet property="passwardTextField" destination="kv7-B4-ZC8" id="1Ij-kl-nE0"/>
                         <outlet property="profileImageButton" destination="b8G-dR-9kn" id="4xD-mh-tUO"/>
-                        <outlet property="registerButton" destination="0tY-OD-r8i" id="rjl-dA-AgS"/>
+                        <outlet property="registerButton" destination="0tY-OD-r8i" id="TmY-sf-DeB"/>
                         <outlet property="usernameTextField" destination="ubh-Rn-KJD" id="bkg-fJ-qxh"/>
                     </connections>
                 </viewController>

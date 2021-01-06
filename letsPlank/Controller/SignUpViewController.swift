@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseAuth
+import FirebaseStorage
 import PKHUD
 
 class SignUpViewController: UIViewController {
@@ -38,6 +39,7 @@ class SignUpViewController: UIViewController {
         registerButton.layer.cornerRadius = 12
         registerButton.isEnabled = false
         registerButton.backgroundColor = .lightGray
+        registerButton.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
         
         emailTextField.delegate = self
         passwardTextField.delegate = self
@@ -45,7 +47,6 @@ class SignUpViewController: UIViewController {
         
         navigationItem.title = "Create a New Account"
         
-        //setUpViews()
         
     }
     
@@ -54,9 +55,6 @@ class SignUpViewController: UIViewController {
     //        navigationController?.navigationBar.isHidden = false
     //    }
     
-    @IBAction func tappedRegisterButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
     
     @objc func tappedProfileImageButton() {
         let imagePickerController = UIImagePickerController()
@@ -65,10 +63,78 @@ class SignUpViewController: UIViewController {
         self.present(imagePickerController, animated: true, completion: nil)
     }
     
+    @objc private func tappedRegisterButton() {
+        guard let image = profileImageButton.imageView?.image else { return }
+        guard let uploadImage = image.jpegData(compressionQuality: 0.3) else { return }
+        
+        let fileName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child("profile_image").child(fileName)
+        
+        storageRef.putData(uploadImage, metadata: nil) { (metadata, err) in
+            if let err = err {
+                print("Firestorageへの情報の保存に失敗しました。", err)
+                return
+            }
+            storageRef.downloadURL { (url, err) in
+                if let err = err {
+                    print("Firestorageからのダウンロードに失敗。", err)
+                    return
+                }
+                
+                guard let urlString = url?.absoluteString else { return }
+                self.createUserToFirestore(profileImageUrl: urlString)
+            }
+        }
+
+    }
+    
+    private func createUserToFirestore(profileImageUrl: String) {
+        guard let email = emailTextField.text else { return }
+        guard let passward = passwardTextField.text else { return }
+        
+        Auth.auth().createUser(withEmail: email, password: passward) { [self] (res, err) in
+            if let err = err {
+                //エラーの時の処理を書く
+                print("失敗")
+                print(err)
+                return
+            }
+            
+            print("アカウントの作成に成功")
+            
+            guard let username = usernameTextField.text else { return }
+            guard let uid = res?.user.uid else { return }
+            
+            let docData = [
+                "email": email,
+                "username": username,
+                "createdAt": Timestamp(),
+                "profileImageUrl": profileImageUrl
+                ] as [String : Any]
+            
+            Firestore.firestore().collection("users").document(uid).setData(docData) { (err) in
+                if let err = err {
+                    print("Firestoreへの保存失敗", err)
+                }
+                print("Firestoreへの情報の保存が成功")
+            }
+            self.showAlert()
+        }
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: "ようこそ、プランクの世界へ", message: "アカウントの作成に成功しました。\nさぁプランクを始めましょう。", preferredStyle: .alert)
+        
+        let alertButton = UIAlertAction(title: "OK", style: .default) { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(alertButton)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
     private func setUpViews() {
         
-        //        registerButton.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
-        //        alreadyHaveAccountButton.addTarget(self, action: #selector(tappedAlreadyHaveAccountButton), for: .touchUpInside)
     }
     
     
@@ -90,7 +156,7 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
         
         profileImageButton.clipsToBounds = true
         
-    
+        
         
         dismiss(animated: true, completion: nil)
     }
@@ -99,7 +165,7 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
 }
 
 extension SignUpViewController: UITextFieldDelegate {
-
+    
     func textFieldDidChangeSelection(_ textField: UITextField) {
         let emailIsEmpty = emailTextField.text?.isEmpty ?? false
         let passwordIsEmpty = passwardTextField.text?.isEmpty ??  false
@@ -113,118 +179,18 @@ extension SignUpViewController: UITextFieldDelegate {
             registerButton.isEnabled = true
             registerButton.backgroundColor = .baseColour
         }
-
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }
 
 
 
-
-//    @objc private func tappedAlreadyHaveAccountButton() {
-//        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-//        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-//        self.navigationController?.pushViewController(loginViewController, animated: true)
-//    }
-//
-//    @objc private func tappedProfileImageButton() {
-//
-//        let imagePickerControlelr = UIImagePickerController()
-//        imagePickerControlelr.delegate = self
-//        imagePickerControlelr.allowsEditing = true
-//
-//        self.present(imagePickerControlelr, animated: true, completion: nil)
-//
-//    }
-//
-//    @objc private func tappedRegisterButton() {
-//        guard let image = profileImageButton.imageView?.image else { return }
-//        guard let uploadImage = image.jpegData(compressionQuality: 0.3) else { return }
-//
-//        HUD.show(.progress)
-//
-//        let fileName = NSUUID().uuidString
-//        let storageRef = Storage.storage().reference().child("profile_image").child(fileName)
-//
-//        storageRef.putData(uploadImage, metadata: nil) { (metadata, err) in
-//            if let err = err {
-//                print("err", err)
-//                print(err)
-//                HUD.hide()
-//                return
-//            }
-//
-//            storageRef.downloadURL{ (url, err) in
-//                if let err = err {
-//                    print("err2")
-//                    HUD.hide()
-//                    return
-//                }
-//
-//                guard let urlString = url?.absoluteString else { return }
-//                self.createUserToFireStore(profileImageUrl: urlString)
-//            }
-//        }
-//    }
-//
-//    private func createUserToFireStore(profileImageUrl: String) {
-//
-//        guard let email = emailTextField.text else { return }
-//        guard let password = passwardTextField.text else { return }
-//
-//        Auth.auth().createUser(withEmail: email, password: password) {  (res, err) in
-//            if let err = err {
-//                print(err)
-//                print("err3")
-//                HUD.hide()
-//                return
-//            }
-//            print("ok")
-//
-//            guard let uid = res?.user.uid else { return }
-//            guard let username = self.usernameTextField.text else { return }
-//            let docData = [
-//                "email": email,
-//                "username": username,
-//                "createdAt": Timestamp(),
-//                "profileImageUrl": profileImageUrl
-//            ] as [String : Any]
-//
-//            Firestore.firestore().collection("users").document(uid).setData(docData) {
-//                (err) in
-//                if let err = err {
-//                    print("err4")
-//                    HUD.hide()
-//                    return
-//                }
-//                print("保存成功")
-//                HUD.hide()
-//                self.dismiss(animated: true, completion: nil)
-//            }
-//        }
-//    }
-//
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        self.view.endEditing(true)
-//    }
-//}
-//
-//extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-//
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        if let editImage = info[.editedImage] as? UIImage {
-//            profileImageButton.setImage(editImage.withRenderingMode(.alwaysOriginal), for: .normal)
-//        } else if let originalImage = info[.originalImage] as? UIImage {
-//            profileImageButton.setImage(originalImage.withRenderingMode(.alwaysOriginal), for: .normal)
-//        }
-//        profileImageButton.setTitle("", for:  .normal)
-//        profileImageButton.imageView?.contentMode = .scaleAspectFill
-//        profileImageButton.contentHorizontalAlignment = .fill
-//        profileImageButton.clipsToBounds = true
-//
-//        dismiss(animated: true, completion: nil)
-//    }
-//
-//}
-//
-//
 
