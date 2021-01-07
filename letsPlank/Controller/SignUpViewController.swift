@@ -41,6 +41,8 @@ class SignUpViewController: UIViewController {
         registerButton.backgroundColor = .lightGray
         registerButton.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
         
+        alreadyHaveAccountButton.addTarget(self, action: #selector(tappedAlreadyHaveAccountButton), for: .touchUpInside)
+        
         emailTextField.delegate = self
         passwardTextField.delegate = self
         usernameTextField.delegate = self
@@ -133,9 +135,17 @@ class SignUpViewController: UIViewController {
         
     }
     
+    @objc private func tappedAlreadyHaveAccountButton() {
+        let storyborad = UIStoryboard.init(name: "Login", bundle: nil)
+        let loginViewController = storyborad.instantiateViewController(withIdentifier: "LoginViewController")
+        self.show(loginViewController, sender: nil)
+    }
+    
     private func setUpViews() {
         
     }
+    
+    
     
     
 }

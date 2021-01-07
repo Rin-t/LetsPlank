@@ -28,6 +28,8 @@
 		24AAAC7925A1807800F804F6 /* ManuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AAAC7825A1807800F804F6 /* ManuTableViewCell.xib */; };
 		24AC124525A1844500A81872 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC124425A1844500A81872 /* MenuTableViewCell.swift */; };
 		24CE631A25A31685006831F1 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CE631925A31685006831F1 /* SignUp.storyboard */; };
+		24CE632825A75764006831F1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CE632725A75764006831F1 /* Login.storyboard */; };
+		24CE632D25A7577C006831F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CE632C25A7577C006831F1 /* LoginViewController.swift */; };
 		5EB9BAB82B7956E234CCB04D /* Pods_letsPlank_letsPlankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A003F2FA902960B9099738E2 /* Pods_letsPlank_letsPlankUITests.framework */; };
 		610F11D6174F97AC3FADCBEB /* Pods_letsPlank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BF44625257F90B6E5DE0E8 /* Pods_letsPlank.framework */; };
 		666F67255F9C5C6CABDABEC7 /* Pods_letsPlankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82106531CBA6181E98879D37 /* Pods_letsPlankTests.framework */; };
@@ -79,6 +81,8 @@
 		24AAAC7825A1807800F804F6 /* ManuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManuTableViewCell.xib; sourceTree = "<group>"; };
 		24AC124425A1844500A81872 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		24CE631925A31685006831F1 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		24CE632725A75764006831F1 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		24CE632C25A7577C006831F1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		35EF5BE16066B629E8EA9E17 /* Pods-letsPlankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letsPlankTests.release.xcconfig"; path = "Target Support Files/Pods-letsPlankTests/Pods-letsPlankTests.release.xcconfig"; sourceTree = "<group>"; };
 		503F548A590C48217297945D /* Pods-letsPlank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letsPlank.debug.xcconfig"; path = "Target Support Files/Pods-letsPlank/Pods-letsPlank.debug.xcconfig"; sourceTree = "<group>"; };
 		668094FA5F6D9590113DE158 /* Pods-letsPlank-letsPlankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-letsPlank-letsPlankUITests.release.xcconfig"; path = "Target Support Files/Pods-letsPlank-letsPlankUITests/Pods-letsPlank-letsPlankUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 				24A66E6B259F735B00AC4E7B /* Main.storyboard */,
 				24A66E88259F73DD00AC4E7B /* SettingTimer.storyboard */,
 				24CE631925A31685006831F1 /* SignUp.storyboard */,
+				24CE632725A75764006831F1 /* Login.storyboard */,
 				24AAAC6425A0A57900F804F6 /* MenuStoryboards */,
 			);
 			path = Storyboards;
@@ -188,6 +193,7 @@
 		24A66E70259F738A00AC4E7B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				24CE632C25A7577C006831F1 /* LoginViewController.swift */,
 				24A66E71259F738A00AC4E7B /* SettingTimerViewController.swift */,
 				24A66E72259F738A00AC4E7B /* RecordViewController.swift */,
 				244B595D25A0798E007A497A /* SignUpViewController.swift */,
@@ -371,6 +377,7 @@
 				244B594A25A03851007A497A /* GoogleService-Info.plist in Resources */,
 				24CE631A25A31685006831F1 /* SignUp.storyboard in Resources */,
 				24A66E3F259F732900AC4E7B /* Assets.xcassets in Resources */,
+				24CE632825A75764006831F1 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24CE632D25A7577C006831F1 /* LoginViewController.swift in Sources */,
 				24AAAC6F25A0A66100F804F6 /* IntroduceViewController.swift in Sources */,
 				24A66E76259F738A00AC4E7B /* DoPlankViewController.swift in Sources */,
 				24A66E81259F739B00AC4E7B /* UiColourExtention.swift in Sources */,
