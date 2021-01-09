@@ -66,7 +66,11 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func tappedRegisterButton() {
-        guard let image = profileImageButton.imageView?.image else { return }
+        guard let image = profileImageButton.imageView?.image else {
+            
+            showAlert(title: "アカウント作成エラー", message: "プロフィール画像を登録してください！", isModalClosing: false)
+            return
+        }
         guard let uploadImage = image.jpegData(compressionQuality: 0.3) else { return }
         
         let fileName = NSUUID().uuidString
@@ -120,15 +124,17 @@ class SignUpViewController: UIViewController {
                 }
                 print("Firestoreへの情報の保存が成功")
             }
-            self.showAlert()
+            self.showAlert(title: "ようこそ、プランクの世界へ", message: "アカウントの作成に成功しました。\nさぁプランクを始めましょう。", isModalClosing: true)
         }
     }
     
-    private func showAlert() {
-        let alert = UIAlertController(title: "ようこそ、プランクの世界へ", message: "アカウントの作成に成功しました。\nさぁプランクを始めましょう。", preferredStyle: .alert)
+    private func showAlert(title: String, message: String, isModalClosing: Bool) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let alertButton = UIAlertAction(title: "OK", style: .default) { (_) in
-            self.dismiss(animated: true, completion: nil)
+            if isModalClosing {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
         alert.addAction(alertButton)
         present(alert, animated: true, completion: nil)
