@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Record-->
         <scene sceneID="Utv-6m-XPC">
             <objects>
                 <viewController storyboardIdentifier="RecordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Puc-Zc-fbF" customClass="RecordViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,14 +25,19 @@
                         <viewLayoutGuide key="safeArea" id="tX5-LH-8RS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="dJE-zS-cNC"/>
+                    <tabBarItem key="tabBarItem" title="Record" image="calendar" catalog="system" id="dJE-zS-cNC">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="NoK-6N-ezn"/>
+                    <connections>
+                        <outlet property="calender" destination="lID-NG-1nX" id="fnQ-0s-aXd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fjj-K2-ROu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1126.0869565217392" y="503.57142857142856"/>
         </scene>
-        <!--Item-->
+        <!--Menu-->
         <scene sceneID="yXg-tE-aZd">
             <objects>
                 <viewController id="zQf-E3-lDM" customClass="MenuViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,7 +97,7 @@
                             <constraint firstItem="yYe-Gb-qWg" firstAttribute="top" secondItem="Lyn-d7-PxO" secondAttribute="top" id="v1g-Jp-Oo0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="bKW-pR-A4Z"/>
+                    <tabBarItem key="tabBarItem" title="Menu" image="menubar.rectangle" catalog="system" id="bKW-pR-A4Z"/>
                     <navigationItem key="navigationItem" id="ZM6-mA-FEM"/>
                     <connections>
                         <outlet property="menuTableView" destination="yYe-Gb-qWg" id="JMd-3z-TrY"/>
@@ -102,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="-1126.0869565217392" y="1901.7857142857142"/>
         </scene>
-        <!--Item 1-->
+        <!--Plank-->
         <scene sceneID="XH0-p6-kDV">
             <objects>
                 <viewController storyboardIdentifier="DoPlankViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="llE-Pv-tJ7" customClass="DoPlankViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
@@ -138,10 +143,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V25-yg-ktE">
-                                <rect key="frame" x="112" y="590.5" width="190" height="90"/>
+                                <rect key="frame" x="112" y="590.5" width="190" height="80"/>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.69019607843137254" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="FwW-Cw-X9Y"/>
+                                    <constraint firstAttribute="height" constant="80" id="FwW-Cw-X9Y"/>
                                     <constraint firstAttribute="width" constant="190" id="P5G-Lg-vRe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -173,7 +178,7 @@
                             <constraint firstItem="cZW-qa-han" firstAttribute="centerY" secondItem="TXy-kR-a79" secondAttribute="centerY" id="wt4-Vs-1v0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="axo-Kz-6S0"/>
+                    <tabBarItem key="tabBarItem" title="Plank" image="腕立て" id="axo-Kz-6S0"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="biS-ON-uFe">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Ahi-Cp-Xv3"/>
@@ -202,7 +207,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="4qV-1r-1Ic">
             <objects>
-                <tabBarController id="a0G-Rw-PBJ" sceneMemberID="viewController">
+                <tabBarController id="a0G-Rw-PBJ" customClass="TabBarController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="4EK-ww-Fgx"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4YY-pI-XUG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -237,7 +242,7 @@
             </objects>
             <point key="canvasLocation" x="-2062" y="-182"/>
         </scene>
-        <!--Item-->
+        <!--Ranking-->
         <scene sceneID="Wee-E3-U0Q">
             <objects>
                 <viewController id="XFt-9c-Vzm" sceneMemberID="viewController">
@@ -247,7 +252,7 @@
                         <viewLayoutGuide key="safeArea" id="pgN-bo-CBu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="RnV-Jt-ijR"/>
+                    <tabBarItem key="tabBarItem" title="Ranking" image="person.3.fill" catalog="system" id="RnV-Jt-ijR"/>
                     <navigationItem key="navigationItem" id="uIu-kU-V2m"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7J-Af-SoT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -307,7 +312,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="menubar.rectangle" catalog="system" width="128" height="93"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="休憩" width="49" height="36"/>
         <image name="腕立て" width="61" height="22.5"/>
         <systemColor name="systemBackgroundColor">

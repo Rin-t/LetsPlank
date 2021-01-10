@@ -39,15 +39,19 @@ class DoPlankViewController: UIViewController {
         
         setUpView()
         
+        UITabBar.appearance().tintColor = .baseColour
+        
         if UserDefaults.standard.object(forKey: "PlankSec") == nil {
             UserDefaults.standard.set(60, forKey: "PlankSec")
         }
         
-        let storyborad = UIStoryboard.init(name: "SignUp", bundle: nil)
-        let sinUpViewController = storyborad.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        let navigation = UINavigationController(rootViewController: sinUpViewController)
-        navigation.modalPresentationStyle = .fullScreen
-        self.present(navigation, animated: true, completion: nil)
+        
+        
+//        let storyborad = UIStoryboard.init(name: "SignUp", bundle: nil)
+//        let sinUpViewController = storyborad.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+//        let navigation = UINavigationController(rootViewController: sinUpViewController)
+//        navigation.modalPresentationStyle = .fullScreen
+//        self.present(navigation, animated: true, completion: nil)
         
    
     }
