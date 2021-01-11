@@ -44,16 +44,6 @@ class DoPlankViewController: UIViewController {
         if UserDefaults.standard.object(forKey: "PlankSec") == nil {
             UserDefaults.standard.set(60, forKey: "PlankSec")
         }
-        
-        
-        
-//        let storyborad = UIStoryboard.init(name: "SignUp", bundle: nil)
-//        let sinUpViewController = storyborad.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-//        let navigation = UINavigationController(rootViewController: sinUpViewController)
-//        navigation.modalPresentationStyle = .fullScreen
-//        self.present(navigation, animated: true, completion: nil)
-        
-   
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,12 +72,14 @@ class DoPlankViewController: UIViewController {
         if buttonCurrentTitle == buttonTitle.start.rawValue {
             startAndStopButton.setTitle(buttonTitle.stop.rawValue, for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countTimer), userInfo: nil, repeats: true)
+           
         } else {
             timer.invalidate()
             startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
+            showAlert()
         }
-        isEnableButtonsStatus()
         moveImageView()
+        isEnableButtonsStatus()
         startAndStopButton.alpha = 1.0
         
     }
@@ -127,6 +119,31 @@ class DoPlankViewController: UIViewController {
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
+    }
+    
+    //MARK: - showAlert
+    
+    func showAlert() {
+        
+        let alert = UIAlertController(title: "えっ？やめるの？", message: "やめたら記録は保存しないぞ！\nさぁ続けるんだ！！", preferredStyle: .alert)
+        
+        let continuous = UIAlertAction(title: "続ける", style: .default) { [self] (_) in
+            moveImageView()
+            isEnableButtonsStatus()
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countTimer), userInfo: nil, repeats: true)
+            startAndStopButton.setTitle(buttonTitle.stop.rawValue, for: .normal)
+        }
+        
+        let stop = UIAlertAction(title: "や..め..る", style: .cancel) { [self] (_) in
+            timerInt = defaultSec
+            timerLabel.text = String(timerInt)
+            startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
+            
+        }
+        alert.addAction(stop)
+        alert.addAction(continuous)
+        present(alert, animated: true, completion: nil)
+        
     }
     
     //MARK: - NavigationBarButton

@@ -13,8 +13,8 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var menuTableView: UITableView!
     
     private let cellId = "cellId"
-    private let menuLabelArray = ["開発者","このアプリを広める"]
-    private let imageArray = ["person.fill","square.and.pencil"]
+    private let menuLabelArray = ["開発者","このアプリを広める","プロフィール画像変更"]
+    private let imageArray = ["person.fill","square.and.pencil","camera"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

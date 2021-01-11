@@ -12,6 +12,9 @@ class RecordViewController: UIViewController {
     @IBOutlet weak var calender: FSCalendar!
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var continuousDaysLabel: UILabel!
+    @IBOutlet weak var totalDaysLabel: UILabel!
+    @IBOutlet weak var totalSecLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

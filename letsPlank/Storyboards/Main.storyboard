@@ -124,8 +124,11 @@
                     <navigationItem key="navigationItem" id="NoK-6N-ezn"/>
                     <connections>
                         <outlet property="calender" destination="lID-NG-1nX" id="fnQ-0s-aXd"/>
+                        <outlet property="continuousDaysLabel" destination="2lp-UE-yhb" id="fJw-zw-9Wh"/>
                         <outlet property="stackView" destination="sdR-Cl-zcB" id="RLx-qH-9rq"/>
                         <outlet property="subView" destination="ojc-dl-VdD" id="ncJ-Rz-pXR"/>
+                        <outlet property="totalDaysLabel" destination="hXn-bZ-V6Z" id="YA8-yj-u7f"/>
+                        <outlet property="totalSecLabel" destination="Ki1-PI-sQB" id="9cI-aI-9Cs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fjj-K2-ROu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -159,9 +162,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHQ-BS-6Xv">
-                                                    <rect key="frame" x="80" y="25.5" width="80" height="24"/>
+                                                    <rect key="frame" x="80" y="25.5" width="200" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="vUD-uZ-oOp"/>
+                                                        <constraint firstAttribute="width" constant="200" id="vUD-uZ-oOp"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
