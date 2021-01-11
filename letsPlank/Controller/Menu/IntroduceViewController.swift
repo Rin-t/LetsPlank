@@ -14,5 +14,6 @@ class IntroduceViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "自己紹介"
         textView.isEditable = false
+        tabBarController?.tabBar.isHidden = true
     }
 }

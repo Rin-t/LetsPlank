@@ -23,6 +23,11 @@ class MenuViewController: UIViewController {
         menuTableView.dataSource = self
         navigationItem.title = "Menu"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
@@ -40,8 +45,6 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         cell.menuLabel.text = menuLabelArray[indexPath.row]
         cell.menuImage.image = UIImage(systemName: imageArray[indexPath.row])
         cell.menuImage.tintColor = .baseColour
-        
-        
         return cell
     }
     
