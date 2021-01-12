@@ -134,7 +134,7 @@ class DoPlankViewController: UIViewController {
             startAndStopButton.setTitle(buttonTitle.stop.rawValue, for: .normal)
         }
         
-        let stop = UIAlertAction(title: "や..め..る", style: .cancel) { [self] (_) in
+        let stop = UIAlertAction(title: "やめる", style: .destructive) { [self] (_) in
             timerInt = defaultSec
             timerLabel.text = String(timerInt)
             startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
