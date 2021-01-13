@@ -22,10 +22,10 @@
 		24A66E80259F739B00AC4E7B /* UIPickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E7E259F739B00AC4E7B /* UIPickerViewExtension.swift */; };
 		24A66E81259F739B00AC4E7B /* UiColourExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E7F259F739B00AC4E7B /* UiColourExtention.swift */; };
 		24A66E8A259F73DD00AC4E7B /* SettingTimer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A66E88259F73DD00AC4E7B /* SettingTimer.storyboard */; };
+		24A7872E25AF22630079FB54 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7872D25AF22630079FB54 /* Quotes.swift */; };
 		24AAAC6025A0A3DA00F804F6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AAAC5F25A0A3DA00F804F6 /* MenuViewController.swift */; };
 		24AAAC6925A0A5AE00F804F6 /* Introduce.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24AAAC6825A0A5AE00F804F6 /* Introduce.storyboard */; };
 		24AAAC6F25A0A66100F804F6 /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */; };
-		24AAAC7925A1807800F804F6 /* ManuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AAAC7825A1807800F804F6 /* ManuTableViewCell.xib */; };
 		24AC124525A1844500A81872 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC124425A1844500A81872 /* MenuTableViewCell.swift */; };
 		24CE631A25A31685006831F1 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CE631925A31685006831F1 /* SignUp.storyboard */; };
 		24CE632825A75764006831F1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CE632725A75764006831F1 /* Login.storyboard */; };
@@ -76,10 +76,10 @@
 		24A66E7E259F739B00AC4E7B /* UIPickerViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPickerViewExtension.swift; sourceTree = "<group>"; };
 		24A66E7F259F739B00AC4E7B /* UiColourExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiColourExtention.swift; sourceTree = "<group>"; };
 		24A66E88259F73DD00AC4E7B /* SettingTimer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingTimer.storyboard; sourceTree = "<group>"; };
+		24A7872D25AF22630079FB54 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 		24AAAC5F25A0A3DA00F804F6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		24AAAC6825A0A5AE00F804F6 /* Introduce.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduce.storyboard; sourceTree = "<group>"; };
 		24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
-		24AAAC7825A1807800F804F6 /* ManuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManuTableViewCell.xib; sourceTree = "<group>"; };
 		24AC124425A1844500A81872 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		24CE631925A31685006831F1 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		24CE632725A75764006831F1 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 				244B595125A0776F007A497A /* Storyboards */,
 				24A66E70259F738A00AC4E7B /* Controller */,
 				24A66E7D259F739B00AC4E7B /* Extensions */,
-				24AAAC7725A17F4100F804F6 /* Xibs */,
 				24A66E37259F732700AC4E7B /* SceneDelegate.swift */,
+				24A7872D25AF22630079FB54 /* Quotes.swift */,
 				24A66E35259F732700AC4E7B /* AppDelegate.swift */,
 				24A66E3E259F732900AC4E7B /* Assets.xcassets */,
 				24A66E40259F732900AC4E7B /* LaunchScreen.storyboard */,
@@ -231,14 +231,6 @@
 				24AC124425A1844500A81872 /* MenuTableViewCell.swift */,
 			);
 			path = Menu;
-			sourceTree = "<group>";
-		};
-		24AAAC7725A17F4100F804F6 /* Xibs */ = {
-			isa = PBXGroup;
-			children = (
-				24AAAC7825A1807800F804F6 /* ManuTableViewCell.xib */,
-			);
-			path = Xibs;
 			sourceTree = "<group>";
 		};
 		4CF50675CF6B8DB728DE54D9 /* Frameworks */ = {
@@ -374,7 +366,6 @@
 			files = (
 				24AAAC6925A0A5AE00F804F6 /* Introduce.storyboard in Resources */,
 				24A66E6C259F735B00AC4E7B /* Main.storyboard in Resources */,
-				24AAAC7925A1807800F804F6 /* ManuTableViewCell.xib in Resources */,
 				24A66E8A259F73DD00AC4E7B /* SettingTimer.storyboard in Resources */,
 				24A66E42259F732900AC4E7B /* LaunchScreen.storyboard in Resources */,
 				244B594A25A03851007A497A /* GoogleService-Info.plist in Resources */,
@@ -508,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24A7872E25AF22630079FB54 /* Quotes.swift in Sources */,
 				24CE632D25A7577C006831F1 /* LoginViewController.swift in Sources */,
 				24CE633525AAF31D006831F1 /* TabBarController.swift in Sources */,
 				24AAAC6F25A0A66100F804F6 /* IntroduceViewController.swift in Sources */,
