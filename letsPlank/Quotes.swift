@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Quptes {
+class Quotes {
     
     let quotesArray = [
         "天才とは努力する凡才のことである",

@@ -41,6 +41,8 @@ class RecordViewController: UIViewController {
     func setViews() {
         let width = self.view.frame.width
         let height = self.view.frame.height
+        
+        //カレンダーのレイアウト
         calender.frame.size.height = height/3
         calender.frame.size.width = width
         calender.layer.position = CGPoint(x: width/2, y: topSafeAreaHeight + height/6)
@@ -48,10 +50,16 @@ class RecordViewController: UIViewController {
         calender.appearance.todayColor = .systemTeal
         calender.appearance.weekdayTextColor = .orange
         
+        //名言コーナーのレイアウト
         quoteView.frame.size.height = height/3
         quoteView.frame.size.width = self.view.frame.width
-        quoteView.layer.position = CGPoint(x: width/2, y: height*3/4)
+        quoteView.layer.position = CGPoint(x: width/2, y: height*4/5)
         quoteTextView.frame.size.width = width*2/3 - 10
+        
+        //名言の挿入
+        let quote = Quotes()
+        let randomInt = Int.random(in: 0...quote.quotesArray.count - 1)
+        quoteTextView.text = quote.quotesArray[randomInt]
         
     }
     
@@ -62,6 +70,12 @@ extension RecordViewController: FSCalendarDataSource, FSCalendarDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/M/d"
         let da = formatter.string(from: date)
+        
+        let storyborad = UIStoryboard.init(name: "SelectImage", bundle: nil)
+        let selectedImageController = storyborad.instantiateViewController(withIdentifier: "SelectImageViewController") as! SelectImageViewController
+        let navigation = UINavigationController(rootViewController: selectedImageController)
+        
+        present(navigation, animated: true, completion: nil)
         
         print(da)
     }

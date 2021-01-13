@@ -23,6 +23,8 @@
 		24A66E81259F739B00AC4E7B /* UiColourExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E7F259F739B00AC4E7B /* UiColourExtention.swift */; };
 		24A66E8A259F73DD00AC4E7B /* SettingTimer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A66E88259F73DD00AC4E7B /* SettingTimer.storyboard */; };
 		24A7872E25AF22630079FB54 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7872D25AF22630079FB54 /* Quotes.swift */; };
+		24A7873625AF35B90079FB54 /* SelectImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A7873525AF35B90079FB54 /* SelectImage.storyboard */; };
+		24A7873E25AF35D60079FB54 /* SelectImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7873D25AF35D60079FB54 /* SelectImageViewController.swift */; };
 		24AAAC6025A0A3DA00F804F6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AAAC5F25A0A3DA00F804F6 /* MenuViewController.swift */; };
 		24AAAC6925A0A5AE00F804F6 /* Introduce.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24AAAC6825A0A5AE00F804F6 /* Introduce.storyboard */; };
 		24AAAC6F25A0A66100F804F6 /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */; };
@@ -77,6 +79,8 @@
 		24A66E7F259F739B00AC4E7B /* UiColourExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiColourExtention.swift; sourceTree = "<group>"; };
 		24A66E88259F73DD00AC4E7B /* SettingTimer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingTimer.storyboard; sourceTree = "<group>"; };
 		24A7872D25AF22630079FB54 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
+		24A7873525AF35B90079FB54 /* SelectImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectImage.storyboard; sourceTree = "<group>"; };
+		24A7873D25AF35D60079FB54 /* SelectImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageViewController.swift; sourceTree = "<group>"; };
 		24AAAC5F25A0A3DA00F804F6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		24AAAC6825A0A5AE00F804F6 /* Introduce.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduce.storyboard; sourceTree = "<group>"; };
 		24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				24A66E88259F73DD00AC4E7B /* SettingTimer.storyboard */,
 				24CE631925A31685006831F1 /* SignUp.storyboard */,
 				24CE632725A75764006831F1 /* Login.storyboard */,
+				24A7873525AF35B90079FB54 /* SelectImage.storyboard */,
 				24AAAC6425A0A57900F804F6 /* MenuStoryboards */,
 			);
 			path = Storyboards;
@@ -202,6 +207,7 @@
 				244B595D25A0798E007A497A /* SignUpViewController.swift */,
 				24A66E73259F738A00AC4E7B /* DoPlankViewController.swift */,
 				24AAAC6D25A0A62000F804F6 /* Menu */,
+				24A7873D25AF35D60079FB54 /* SelectImageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 				24A66E6C259F735B00AC4E7B /* Main.storyboard in Resources */,
 				24A66E8A259F73DD00AC4E7B /* SettingTimer.storyboard in Resources */,
 				24A66E42259F732900AC4E7B /* LaunchScreen.storyboard in Resources */,
+				24A7873625AF35B90079FB54 /* SelectImage.storyboard in Resources */,
 				244B594A25A03851007A497A /* GoogleService-Info.plist in Resources */,
 				24CE631A25A31685006831F1 /* SignUp.storyboard in Resources */,
 				24A66E3F259F732900AC4E7B /* Assets.xcassets in Resources */,
@@ -513,6 +520,7 @@
 				24A66E74259F738A00AC4E7B /* SettingTimerViewController.swift in Sources */,
 				24A66E38259F732700AC4E7B /* SceneDelegate.swift in Sources */,
 				24AC124525A1844500A81872 /* MenuTableViewCell.swift in Sources */,
+				24A7873E25AF35D60079FB54 /* SelectImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
