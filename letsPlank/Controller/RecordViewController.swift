@@ -68,16 +68,16 @@ class RecordViewController: UIViewController {
 extension RecordViewController: FSCalendarDataSource, FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/M/d"
-        let da = formatter.string(from: date)
-        
+        formatter.dateFormat = "yyyy / M / d"
+        let date = formatter.string(from: date)
+   
         let storyborad = UIStoryboard.init(name: "SelectImage", bundle: nil)
         let selectedImageController = storyborad.instantiateViewController(withIdentifier: "SelectImageViewController") as! SelectImageViewController
+        selectedImageController.selectedDay = String(date)
         let navigation = UINavigationController(rootViewController: selectedImageController)
-        
+        navigation.modalPresentationStyle = .fullScreen
         present(navigation, animated: true, completion: nil)
         
-        print(da)
     }
     
     

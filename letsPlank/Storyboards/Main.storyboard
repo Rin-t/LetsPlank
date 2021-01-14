@@ -196,10 +196,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V25-yg-ktE">
-                                <rect key="frame" x="112" y="590.5" width="190" height="80"/>
+                                <rect key="frame" x="112" y="590.5" width="190" height="70"/>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.69019607843137254" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="FwW-Cw-X9Y"/>
+                                    <constraint firstAttribute="height" constant="70" id="FwW-Cw-X9Y"/>
                                     <constraint firstAttribute="width" constant="190" id="P5G-Lg-vRe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>

@@ -31,14 +31,40 @@
                     <view key="view" contentMode="scaleToFill" id="YeP-Np-jyJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eI2-5k-Tpv">
+                                <rect key="frame" x="0.0" y="88" width="414" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNQ-mF-CAU">
+                                <rect key="frame" x="112" y="685" width="190" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.69019607839999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Uqx-eT-UCg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pxh-sU-UeH"/>
+                    <navigationItem key="navigationItem" id="pxh-sU-UeH">
+                        <barButtonItem key="rightBarButtonItem" title="Back" id="sx9-eY-JZ2">
+                            <connections>
+                                <action selector="tappedBackBarButton:" destination="yqo-Uu-GrM" id="ckE-Uc-XNY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backBarButton" destination="sx9-eY-JZ2" id="DzU-Pm-1vA"/>
+                        <outlet property="imageView" destination="eI2-5k-Tpv" id="Ojl-Km-gPh"/>
+                        <outlet property="saveButton" destination="cNQ-mF-CAU" id="FrP-6A-Au9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azV-Dn-Fa6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277" y="2500"/>
+            <point key="canvasLocation" x="276.81159420289856" y="2499.7767857142858"/>
         </scene>
     </scenes>
     <resources>

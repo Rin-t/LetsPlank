@@ -57,7 +57,6 @@ class SettingTimerViewController: UIViewController {
         UserDefaults.standard.set(totalSec, forKey: "PlankSec")
         setTimeButton.alpha = 1.0
         dismiss(animated: true, completion: nil)
-        print(totalSec)
         
     }
     
