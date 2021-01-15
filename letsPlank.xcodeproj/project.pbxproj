@@ -205,9 +205,9 @@
 				24A66E71259F738A00AC4E7B /* SettingTimerViewController.swift */,
 				24A66E72259F738A00AC4E7B /* RecordViewController.swift */,
 				244B595D25A0798E007A497A /* SignUpViewController.swift */,
+				24A7873D25AF35D60079FB54 /* SelectImageViewController.swift */,
 				24A66E73259F738A00AC4E7B /* DoPlankViewController.swift */,
 				24AAAC6D25A0A62000F804F6 /* Menu */,
-				24A7873D25AF35D60079FB54 /* SelectImageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
