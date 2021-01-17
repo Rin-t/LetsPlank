@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SelectImageViewController: UIViewController {
     
@@ -17,7 +18,8 @@ class SelectImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        saveButton.isEnabled = false
+        saveButton.backgroundColor = .lightGray
         navigationItem.title = selectedDay
     }
     
@@ -47,6 +49,28 @@ class SelectImageViewController: UIViewController {
     }
     
     @IBAction func tappedSaveButton(_ sender: Any) {
+        guard let image = imageButton.imageView?.image else { return }
+        guard let uploadImage = image.jpegData(compressionQuality: 0.3) else { return }
+        
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        guard let fileName = selectedDay else { return }
+        
+        let storageRef = Storage.storage().reference().child(userId).child(fileName)
+        
+        storageRef.putData(uploadImage, metadata: nil) { (metadata, err) in
+            if let err = err {
+                print("Firestorageへの情報の保存に失敗しました。", err)
+                return
+            }
+            storageRef.downloadURL { (url, err) in
+                if let err = err {
+                    print("Firestorageからのダウンロードに失敗。", err)
+                    return
+                }
+                
+                //guard let urlString = url?.absoluteString else { return }
+            }
+        }
         
     }
     
@@ -67,7 +91,8 @@ extension SelectImageViewController: UIImagePickerControllerDelegate, UINavigati
         } else if let originalImage = info[.originalImage] as? UIImage {
             imageButton.setImage(originalImage.withRenderingMode(.alwaysOriginal), for: .normal)
         }
-        
+        saveButton.backgroundColor = .baseColour
+        saveButton.isEnabled = true
         imageButton.setTitle("", for:  .normal)
         imageButton.imageView?.contentMode = .scaleAspectFill
         imageButton.contentHorizontalAlignment = .fill

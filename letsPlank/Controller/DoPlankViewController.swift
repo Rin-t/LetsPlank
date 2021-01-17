@@ -39,11 +39,14 @@ class DoPlankViewController: UIViewController {
         
         setUpView()
         
-        UITabBar.appearance().tintColor = .baseColour
-        
+        //初めてアプリを起動した時には60秒を標準設定にする
         if UserDefaults.standard.object(forKey: "PlankSec") == nil {
             UserDefaults.standard.set(60, forKey: "PlankSec")
         }
+        
+        //ログインしてない場合のみアカウント作成画面に遷移
+        if let _ = Auth.auth().currentUser { return }
+        presentSignUpViewController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,15 +57,16 @@ class DoPlankViewController: UIViewController {
         defaultSec = sec
     }
     
+    //MARK: - viewのレイアウト関係
     func setUpView() {
         self.navigationItem.title = "Let's Plank"
-        
+        UITabBar.appearance().tintColor = .baseColour
         startAndStopButton.layer.cornerRadius = 20
         startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
         startAndStopButton.addTarget(self, action: #selector(tappedStartAndStopButton), for: .touchUpInside)
         startAndStopButton.addTarget(self, action: #selector(changeButtonColour), for: .touchDown)
     }
-
+    
     //MARK: - StartAndStopButton
     @objc func tappedStartAndStopButton() {
         
@@ -72,7 +76,7 @@ class DoPlankViewController: UIViewController {
         if buttonCurrentTitle == buttonTitle.start.rawValue {
             startAndStopButton.setTitle(buttonTitle.stop.rawValue, for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countTimer), userInfo: nil, repeats: true)
-           
+            
         } else {
             timer.invalidate()
             startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
@@ -83,7 +87,7 @@ class DoPlankViewController: UIViewController {
         startAndStopButton.alpha = 1.0
         
     }
-    //他のところでも使うからModelで持たせる？
+    
     @objc func changeButtonColour() {
         startAndStopButton.alpha = 0.7
     }
@@ -109,8 +113,6 @@ class DoPlankViewController: UIViewController {
         isEnableButtonsStatus()
     }
     
-
-    
     //MARK: - Animatioin
     func moveImageView() {
         centreConstraint.isActive.toggle()
@@ -122,9 +124,7 @@ class DoPlankViewController: UIViewController {
     }
     
     //MARK: - showAlert
-    
     func showAlert() {
-        
         let alert = UIAlertController(title: "えっ？やめるの？", message: "やめたら記録は保存しないぞ！\nさぁ続けるんだ！！", preferredStyle: .alert)
         
         let continuous = UIAlertAction(title: "続ける", style: .default) { [self] (_) in
@@ -138,8 +138,8 @@ class DoPlankViewController: UIViewController {
             timerInt = defaultSec
             timerLabel.text = String(timerInt)
             startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
-            
         }
+        
         alert.addAction(stop)
         alert.addAction(continuous)
         present(alert, animated: true, completion: nil)
@@ -158,15 +158,17 @@ class DoPlankViewController: UIViewController {
     @IBAction func tappedLogoutButton(_ sender: Any) {
         do {
             try Auth.auth().signOut()
-            let storyborad = UIStoryboard(name: "SignUp", bundle: nil)
-            let signUpViewController = storyborad.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-            let nav = UINavigationController(rootViewController: signUpViewController)
-            nav.modalPresentationStyle = .fullScreen
-            self.present(nav, animated: true, completion: nil)
+            presentSignUpViewController()
         } catch {
             print("err")
         }
     }
     
-    
+    func presentSignUpViewController() {
+        let storyborad = UIStoryboard(name: "SignUp", bundle: nil)
+        let signUpViewController = storyborad.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        let nav = UINavigationController(rootViewController: signUpViewController)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil)
+    }
 }

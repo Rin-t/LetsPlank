@@ -27,6 +27,12 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpViews()
+        
+        
+    }
+    
+    private func setUpViews() {
         //profileImageButton.layer.cornerRadius = 65
         profileImageButton.frame.size.width = self.view.frame.size.width/3
         profileImageButton.frame.size.height = self.view.frame.size.width/3
@@ -48,14 +54,8 @@ class SignUpViewController: UIViewController {
         usernameTextField.delegate = self
         
         navigationItem.title = "Create a New Account"
-        
-        
     }
     
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        super.viewWillAppear(animated)
-    //        navigationController?.navigationBar.isHidden = false
-    //    }
     
     
     @objc func tappedProfileImageButton() {
@@ -67,7 +67,6 @@ class SignUpViewController: UIViewController {
     
     @objc private func tappedRegisterButton() {
         guard let image = profileImageButton.imageView?.image else {
-            
             showAlert(title: "アカウント作成エラー", message: "プロフィール画像を登録してください！", isModalClosing: false)
             return
         }
@@ -147,13 +146,6 @@ class SignUpViewController: UIViewController {
         self.navigationController?.pushViewController(loginViewController, animated: true)
     }
     
-    private func setUpViews() {
-        
-    }
-    
-    
-    
-    
 }
 
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -169,11 +161,8 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
         profileImageButton.imageView?.contentMode = .scaleAspectFill
         profileImageButton.contentHorizontalAlignment = .fill
         profileImageButton.contentVerticalAlignment = .fill
-        
         profileImageButton.clipsToBounds = true
-        
-        
-        
+
         dismiss(animated: true, completion: nil)
     }
     
@@ -187,7 +176,6 @@ extension SignUpViewController: UITextFieldDelegate {
         let passwordIsEmpty = passwardTextField.text?.isEmpty ??  false
         let usernameIsEmpty = usernameTextField.text?.isEmpty ?? false
         
-        
         if emailIsEmpty || passwordIsEmpty || usernameIsEmpty {
             registerButton.isEnabled = false
             registerButton.backgroundColor = .lightGray
@@ -195,7 +183,6 @@ extension SignUpViewController: UITextFieldDelegate {
             registerButton.isEnabled = true
             registerButton.backgroundColor = .baseColour
         }
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
