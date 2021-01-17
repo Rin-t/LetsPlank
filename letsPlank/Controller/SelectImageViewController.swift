@@ -39,6 +39,7 @@ class SelectImageViewController: UIViewController {
         imageButton.layer.position = CGPoint(x: width/2, y: topSafeAreaHeight + height/4)
         imageButton.layer.borderWidth = 0.5
         
+        saveButton.layer.cornerRadius = 12
         saveButton.frame.size.width = 70
         saveButton.frame.size.width = 190
         saveButton.layer.position = CGPoint(x: width/2, y: height*4/5)

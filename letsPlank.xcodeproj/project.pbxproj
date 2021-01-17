@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		244B594A25A03851007A497A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 244B594925A03851007A497A /* GoogleService-Info.plist */; };
 		244B595E25A0798E007A497A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244B595D25A0798E007A497A /* SignUpViewController.swift */; };
+		247D5D5125B484A000E45212 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D5D5025B484A000E45212 /* UIButtonExtension.swift */; };
 		24A66E36259F732700AC4E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E35259F732700AC4E7B /* AppDelegate.swift */; };
 		24A66E38259F732700AC4E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E37259F732700AC4E7B /* SceneDelegate.swift */; };
 		24A66E3F259F732900AC4E7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24A66E3E259F732900AC4E7B /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		03BF44625257F90B6E5DE0E8 /* Pods_letsPlank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_letsPlank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		244B594925A03851007A497A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		244B595D25A0798E007A497A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		247D5D5025B484A000E45212 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		24A66E32259F732700AC4E7B /* letsPlank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = letsPlank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A66E35259F732700AC4E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24A66E37259F732700AC4E7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				24A66E7E259F739B00AC4E7B /* UIPickerViewExtension.swift */,
 				24A66E7F259F739B00AC4E7B /* UiColourExtention.swift */,
+				247D5D5025B484A000E45212 /* UIButtonExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				244B595E25A0798E007A497A /* SignUpViewController.swift in Sources */,
 				24A66E36259F732700AC4E7B /* AppDelegate.swift in Sources */,
 				24AAAC6025A0A3DA00F804F6 /* MenuViewController.swift in Sources */,
+				247D5D5125B484A000E45212 /* UIButtonExtension.swift in Sources */,
 				24A66E80259F739B00AC4E7B /* UIPickerViewExtension.swift in Sources */,
 				24A66E75259F738A00AC4E7B /* RecordViewController.swift in Sources */,
 				24A66E74259F738A00AC4E7B /* SettingTimerViewController.swift in Sources */,
