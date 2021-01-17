@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iIR-tK-onX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -72,23 +72,20 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpL-WW-Xhh">
-                                <rect key="frame" x="119" y="618" width="173" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="アカウントを持っていない方"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoh-5X-ZPM">
-                                <rect key="frame" x="127" y="539.5" width="160" height="40"/>
+                                <rect key="frame" x="127" y="559.5" width="160" height="40"/>
                                 <color key="backgroundColor" name="defaultColour"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="r6R-tg-NWP"/>
                                     <constraint firstAttribute="width" constant="160" id="rz5-0d-rJN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Register">
+                                <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="tappedLoginButton:" destination="rqI-Yc-hfE" eventType="touchUpInside" id="REb-SH-8vm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome back!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGN-Fo-ALM">
                                 <rect key="frame" x="94" y="200" width="226" height="83"/>
@@ -101,7 +98,7 @@
                         <viewLayoutGuide key="safeArea" id="Qqj-Kc-5Wj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uoh-5X-ZPM" firstAttribute="top" secondItem="asq-ps-89k" secondAttribute="bottom" constant="30" id="1R4-dS-fwg"/>
+                            <constraint firstItem="uoh-5X-ZPM" firstAttribute="top" secondItem="asq-ps-89k" secondAttribute="bottom" constant="50" id="1R4-dS-fwg"/>
                             <constraint firstItem="Qqj-Kc-5Wj" firstAttribute="trailing" secondItem="asq-ps-89k" secondAttribute="trailing" constant="40" id="8pG-a5-nmK"/>
                             <constraint firstItem="asq-ps-89k" firstAttribute="centerY" secondItem="q4l-xu-Cd8" secondAttribute="centerY" id="GQK-mZ-QD2"/>
                             <constraint firstItem="asq-ps-89k" firstAttribute="leading" secondItem="Qqj-Kc-5Wj" secondAttribute="leading" constant="40" id="Pqb-i2-gMg"/>
@@ -111,7 +108,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="LmO-r3-lQX"/>
                     <connections>
+                        <outlet property="emailTextField" destination="1eT-md-nXS" id="ind-HE-dyV"/>
+                        <outlet property="loginButton" destination="uoh-5X-ZPM" id="vu8-jI-j2Q"/>
                         <outlet property="messageLabel" destination="gGN-Fo-ALM" id="Fin-gv-PfW"/>
+                        <outlet property="passwardTextField" destination="L6i-X4-aLO" id="UfI-uL-Tbv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V38-za-HEl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

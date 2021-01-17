@@ -155,4 +155,18 @@ class DoPlankViewController: UIViewController {
         self.present(navigation, animated: true, completion: nil)
         
     }
+    @IBAction func tappedLogoutButton(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            let storyborad = UIStoryboard(name: "SignUp", bundle: nil)
+            let signUpViewController = storyborad.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+            let nav = UINavigationController(rootViewController: signUpViewController)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        } catch {
+            print("err")
+        }
+    }
+    
+    
 }

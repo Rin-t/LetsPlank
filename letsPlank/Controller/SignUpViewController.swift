@@ -144,7 +144,7 @@ class SignUpViewController: UIViewController {
     @objc private func tappedAlreadyHaveAccountButton() {
         let storyborad = UIStoryboard.init(name: "Login", bundle: nil)
         let loginViewController = storyborad.instantiateViewController(withIdentifier: "LoginViewController")
-        self.show(loginViewController, sender: nil)
+        self.navigationController?.pushViewController(loginViewController, animated: true)
     }
     
     private func setUpViews() {

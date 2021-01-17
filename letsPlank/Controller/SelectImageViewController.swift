@@ -69,14 +69,11 @@ extension SelectImageViewController: UIImagePickerControllerDelegate, UINavigati
         }
         
         imageButton.setTitle("", for:  .normal)
-        imageButton.imageView?.contentMode = .scaleAspectFit
+        imageButton.imageView?.contentMode = .scaleAspectFill
         imageButton.contentHorizontalAlignment = .fill
         imageButton.contentVerticalAlignment = .fill
-        
         imageButton.clipsToBounds = true
-        
-        
-        
+
         dismiss(animated: true, completion: nil)
     }
 }

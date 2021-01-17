@@ -234,7 +234,11 @@
                     <tabBarItem key="tabBarItem" title="Plank" image="腕立て" id="axo-Kz-6S0"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="biS-ON-uFe">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Ahi-Cp-Xv3"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Ahi-Cp-Xv3">
+                            <connections>
+                                <action selector="tappedLogoutButton:" destination="llE-Pv-tJ7" id="e2d-fk-EG6"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="clock" catalog="system" id="U2c-Aa-arR">
                             <connections>
                                 <action selector="tappedSetTimerButton:" destination="llE-Pv-tJ7" id="iyz-9M-zil"/>
