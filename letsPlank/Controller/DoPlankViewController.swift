@@ -111,6 +111,25 @@ class DoPlankViewController: UIViewController {
         startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
         moveImageView()
         isEnableButtonsStatus()
+        saveDataToFirestore()
+    }
+    
+    func saveDataToFirestore() {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        let dateArray = [
+            "a": Timestamp()
+            ]
+        
+        
+        
+        Firestore.firestore().collection("users").document(userID).setData(dateArray) { err in
+            if let err = err {
+                print("追加失敗")
+            }
+            print("追加成功")
+        }
+        
+        
     }
     
     //MARK: - Animatioin
