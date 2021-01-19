@@ -116,19 +116,27 @@ class DoPlankViewController: UIViewController {
     
     func saveDataToFirestore() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
+        print("ユーザーID", userID)
         let dateArray = [
             "a": Timestamp()
             ]
         
-        
-        
-        Firestore.firestore().collection("users").document(userID).setData(dateArray) { err in
+        let date = Firestore.firestore().collection("users").document(userID).getDocument { (snapshot, err) in
             if let err = err {
-                print("追加失敗")
+                
+                print("データの取得に失敗")
             }
-            print("追加成功")
+            print("データの取得に成功", snapshot!.data())
         }
+        print("データ", date)
         
+//        Firestore.firestore().collection("users").document(userID).setData(dateArray) { err in
+//            if let err = err {
+//                print("追加失敗")
+//            }
+//            print("追加成功")
+//        }
+//
         
     }
     
