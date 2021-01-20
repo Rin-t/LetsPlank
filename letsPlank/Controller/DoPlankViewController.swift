@@ -121,14 +121,17 @@ class DoPlankViewController: UIViewController {
             "a": Timestamp()
             ]
         
-        let date = Firestore.firestore().collection("users").document(userID).getDocument { (snapshot, err) in
+        Firestore.firestore().collection("users").document(userID).getDocument { (snapshot, err) in
             if let err = err {
                 
-                print("データの取得に失敗")
+                print("データの取得に失敗", err)
             }
-            print("データの取得に成功", snapshot!.data())
+            print("データの取得に成功", snapshot?.data())
+            let date = snapshot!.data()
+            date!["a"].
+            print(self.dateFormatterForDateLabel(date: ))
         }
-        print("データ", date)
+        
         
 //        Firestore.firestore().collection("users").document(userID).setData(dateArray) { err in
 //            if let err = err {
@@ -139,6 +142,14 @@ class DoPlankViewController: UIViewController {
 //
         
     }
+    func dateFormatterForDateLabel(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .short
+        formatter.locale = Locale(identifier: "ja_JP")
+        return formatter.string(from: date)
+    }
+    
     
     //MARK: - Animatioin
     func moveImageView() {
