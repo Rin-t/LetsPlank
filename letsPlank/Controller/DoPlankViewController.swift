@@ -127,9 +127,8 @@ class DoPlankViewController: UIViewController {
                 print("データの取得に失敗", err)
             }
             print("データの取得に成功", snapshot?.data())
-            let date = snapshot!.data()
-            date!["a"].
-            print(self.dateFormatterForDateLabel(date: ))
+            let date: Timestamp = snapshot!.data()!["a"] as! Timestamp
+            print(self.dateFormatterForDateLabel(date: date.dateValue()))
         }
         
         
