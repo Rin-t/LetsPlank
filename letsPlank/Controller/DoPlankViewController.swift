@@ -118,18 +118,27 @@ class DoPlankViewController: UIViewController {
         guard let userID = Auth.auth().currentUser?.uid else { return }
         print("ユーザーID", userID)
         let dateArray = [
-            "a": Timestamp()
-            ]
-        
-        Firestore.firestore().collection("users").document(userID).getDocument { (snapshot, err) in
+            
+            
+            "d": "aava"
+        ] as [String : Any]
+        Firestore.firestore().collection("users").document(userID).updateData(dateArray) {
+            err in
             if let err = err {
-                
-                print("データの取得に失敗", err)
+                print("データのupdate失敗")
             }
-            print("データの取得に成功", snapshot?.data())
-            let date: Timestamp = snapshot!.data()!["a"] as! Timestamp
-            print(self.dateFormatterForDateLabel(date: date.dateValue()))
+            print("データのアップデート成功だ")
         }
+        
+//        Firestore.firestore().collection("users").document(userID).getDocument { (snapshot, err) in
+//            if let err = err {
+//
+//                print("データの取得に失敗", err)
+//            }
+//            print("データの取得に成功", snapshot?.data())
+//            let date: Timestamp = snapshot!.data()!["a"] as? Timestamp ?? Timestamp()
+//            print(self.dateFormatterForDateLabel(date: date.dateValue()))
+//        }
         
         
 //        Firestore.firestore().collection("users").document(userID).setData(dateArray) { err in
