@@ -116,38 +116,51 @@ class DoPlankViewController: UIViewController {
     
     func saveDataToFirestore() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        print("ユーザーID", userID)
-        let dateArray = [
-            
-            
-            "d": "aava"
-        ] as [String : Any]
-        Firestore.firestore().collection("users").document(userID).updateData(dateArray) {
-            err in
+        
+        Firestore.firestore().collection("users").document(userID).getDocument { (snapshot, err) in
             if let err = err {
-                print("データのupdate失敗")
+                
+                print("データの取得に失敗", err)
             }
-            print("データのアップデート成功だ")
+            print("データの取得に成功")
+            var date: [Timestamp] = snapshot!.data()!["didPlankDay"] as? [Timestamp] ?? [Timestamp()]
+            print(self.dateFormatterForDateLabel(date: date[0].dateValue()))
+            date.append(Timestamp())
+            
+            let dateArray = [
+                "didPlankDay": date
+            ]
+            
+            Firestore.firestore().collection("users").document(userID).updateData(dateArray) {
+                err in
+                if let err = err {
+                    print("データのupdate失敗")
+                }
+                print("データのアップデート成功だ")
+            }
+            
+            
+            //            let dateArray = [
+            //                "didPlankDay": [Timestamp()]
+            //            ]
+            //            Firestore.firestore().collection("users").document(userID).updateData(dateArray) {
+            //                err in
+            //                if let err = err {
+            //                    print("データのupdate失敗")
+            //                }
+            //                print("データのアップデート成功だ")
+            //            }
         }
         
-//        Firestore.firestore().collection("users").document(userID).getDocument { (snapshot, err) in
-//            if let err = err {
-//
-//                print("データの取得に失敗", err)
-//            }
-//            print("データの取得に成功", snapshot?.data())
-//            let date: Timestamp = snapshot!.data()!["a"] as? Timestamp ?? Timestamp()
-//            print(self.dateFormatterForDateLabel(date: date.dateValue()))
-//        }
         
         
-//        Firestore.firestore().collection("users").document(userID).setData(dateArray) { err in
-//            if let err = err {
-//                print("追加失敗")
-//            }
-//            print("追加成功")
-//        }
-//
+        //        Firestore.firestore().collection("users").document(userID).setData(dateArray) { err in
+        //            if let err = err {
+        //                print("追加失敗")
+        //            }
+        //            print("追加成功")
+        //        }
+        //
         
     }
     func dateFormatterForDateLabel(date: Date) -> String {
