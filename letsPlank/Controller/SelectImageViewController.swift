@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 import Nuke
-
+import SDWebImage
 
 class SelectImageViewController: UIViewController {
     
@@ -45,6 +45,7 @@ class SelectImageViewController: UIViewController {
             print(data)
             guard let data = data else { return }
             Nuke.loadImage(with: data, into: imageButton.imageView!)
+            imageButton.sd_setImage(with: data, for: .normal , completed: nil)
             print("画像セット完了")
         })
     }

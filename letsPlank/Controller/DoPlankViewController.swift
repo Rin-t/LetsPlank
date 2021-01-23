@@ -28,8 +28,8 @@ class DoPlankViewController: UIViewController {
     @IBOutlet var defaultLeftConstraintOfPlankImage: NSLayoutConstraint!
     @IBOutlet var centreConstraint: NSLayoutConstraint!
     
-    var defaultSec = 0
-    var timerInt = 0
+    var defaultSec = 0              //defaultの秒数
+    var timerInt = 0                //countDown用
     var timer: Timer!
     var imageIsMoved = false
     
@@ -45,13 +45,13 @@ class DoPlankViewController: UIViewController {
         }
         
         //ログインしてない場合のみアカウント作成画面に遷移
-        print(Auth.auth().currentUser)
         if let _ = Auth.auth().currentUser { return }
         presentSignUpViewController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //画面が表示された時は初期設定の時間をセットする
         let sec = UserDefaults.standard.integer(forKey: "PlankSec")
         timerLabel.text = String(sec)
         timerInt = sec
@@ -106,6 +106,7 @@ class DoPlankViewController: UIViewController {
         
         //タイマーが0になった時
         if timerInt != 0 { return }
+        
         timerInt = defaultSec
         timerLabel.text = String(timerInt)
         timer.invalidate()
@@ -115,17 +116,17 @@ class DoPlankViewController: UIViewController {
         saveDataToFirestore()
     }
     
+    //counterが0までいったら、firebaseに実行日を追加
     func saveDataToFirestore() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
         
         Firestore.firestore().collection("users").document(userID).getDocument { (snapshot, err) in
             if let err = err {
-                
                 print("データの取得に失敗", err)
             }
             print("データの取得に成功")
+            
             var date: [Timestamp] = snapshot!.data()!["didPlankDay"] as? [Timestamp] ?? [Timestamp()]
-            print(self.dateFormatterForDateLabel(date: date[0].dateValue()))
             date.append(Timestamp())
             
             let dateArray = [
@@ -135,35 +136,14 @@ class DoPlankViewController: UIViewController {
             Firestore.firestore().collection("users").document(userID).updateData(dateArray) {
                 err in
                 if let err = err {
-                    print("データのupdate失敗")
+                    print("データのupdate失敗", err)
                 }
                 print("データのアップデート成功だ")
             }
-            
-            
-            //            let dateArray = [
-            //                "didPlankDay": [Timestamp()]
-            //            ]
-            //            Firestore.firestore().collection("users").document(userID).updateData(dateArray) {
-            //                err in
-            //                if let err = err {
-            //                    print("データのupdate失敗")
-            //                }
-            //                print("データのアップデート成功だ")
-            //            }
         }
-        
-        
-        
-        //        Firestore.firestore().collection("users").document(userID).setData(dateArray) { err in
-        //            if let err = err {
-        //                print("追加失敗")
-        //            }
-        //            print("追加成功")
-        //        }
-        //
-        
     }
+    
+    //MARK: - dateFormatter
     func dateFormatterForDateLabel(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .full
