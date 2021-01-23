@@ -29,7 +29,6 @@ class SignUpViewController: UIViewController {
         
         setUpViews()
         
-        
     }
     
     private func setUpViews() {
@@ -100,8 +99,8 @@ class SignUpViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: passward) { [self] (res, err) in
             if let err = err {
                 //エラーの時の処理を書く
+                //なんでアカウントが作れないかのポップを出す
                 print("失敗")
-                print(err)
                 return
             }
             

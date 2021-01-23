@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Nuke
 
 class SelectImageViewController: UIViewController {
     
@@ -23,10 +24,28 @@ class SelectImageViewController: UIViewController {
         navigationItem.title = selectedDay
     }
     
+    //safeareaの取得
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         topSafeAreaHeight = self.view.safeAreaInsets.top
         setViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        guard let selectedDay = selectedDay else { return }
+        
+        Storage.storage().reference().child(userId).child(selectedDay).downloadURL(completion: { [self] (data, err) in
+            if let err = err {
+                print("storageからのimageのダウンロードに失敗")
+            }
+            print("strageからimageのダウンロードを成功")
+            print(data)
+            guard let data = data else { return }
+            Nuke.loadImage(with: data, into: imageButton.imageView!)
+            
+        })
     }
     
     func setViews() {
@@ -56,20 +75,12 @@ class SelectImageViewController: UIViewController {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         guard let fileName = selectedDay else { return }
         
-        let storageRef = Storage.storage().reference().child(userId).child(fileName)
+        let storageRef = Storage.storage().reference().child(userId).child(selectedDay!)
         
         storageRef.putData(uploadImage, metadata: nil) { (metadata, err) in
             if let err = err {
                 print("Firestorageへの情報の保存に失敗しました。", err)
                 return
-            }
-            storageRef.downloadURL { (url, err) in
-                if let err = err {
-                    print("Firestorageからのダウンロードに失敗。", err)
-                    return
-                }
-                
-                //guard let urlString = url?.absoluteString else { return }
             }
         }
         
