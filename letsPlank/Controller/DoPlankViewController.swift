@@ -45,6 +45,7 @@ class DoPlankViewController: UIViewController {
         }
         
         //ログインしてない場合のみアカウント作成画面に遷移
+        print(Auth.auth().currentUser)
         if let _ = Auth.auth().currentUser { return }
         presentSignUpViewController()
     }

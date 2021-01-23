@@ -13,6 +13,7 @@ pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
 pod 'Nuke'
 pod 'PKHUD'
+pod 'SDWebImage', '~> 5.0'
 
   target 'letsPlankTests' do
     inherit! :search_paths

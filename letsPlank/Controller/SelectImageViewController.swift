@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import Nuke
 
+
 class SelectImageViewController: UIViewController {
     
     @IBOutlet weak var imageButton: UIButton!
@@ -44,7 +45,7 @@ class SelectImageViewController: UIViewController {
             print(data)
             guard let data = data else { return }
             Nuke.loadImage(with: data, into: imageButton.imageView!)
-            
+            print("画像セット完了")
         })
     }
     
@@ -71,17 +72,18 @@ class SelectImageViewController: UIViewController {
     @IBAction func tappedSaveButton(_ sender: Any) {
         guard let image = imageButton.imageView?.image else { return }
         guard let uploadImage = image.jpegData(compressionQuality: 0.3) else { return }
-        
         guard let userId = Auth.auth().currentUser?.uid else { return }
         guard let fileName = selectedDay else { return }
         
-        let storageRef = Storage.storage().reference().child(userId).child(selectedDay!)
+        let storageRef = Storage.storage().reference().child(userId).child(fileName)
         
         storageRef.putData(uploadImage, metadata: nil) { (metadata, err) in
             if let err = err {
                 print("Firestorageへの情報の保存に失敗しました。", err)
                 return
             }
+            print("fileをアップロードした")
+            self.dismiss(animated: true, completion: nil)
         }
         
     }
