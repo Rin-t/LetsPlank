@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24377C1F25BEEA460072E844 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24377C1E25BEEA460072E844 /* UIViewControllerExtension.swift */; };
 		244B594A25A03851007A497A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 244B594925A03851007A497A /* GoogleService-Info.plist */; };
 		244B595E25A0798E007A497A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244B595D25A0798E007A497A /* SignUpViewController.swift */; };
 		247D5D5125B484A000E45212 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D5D5025B484A000E45212 /* UIButtonExtension.swift */; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		03BF44625257F90B6E5DE0E8 /* Pods_letsPlank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_letsPlank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24377C1E25BEEA460072E844 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		244B594925A03851007A497A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		244B595D25A0798E007A497A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		247D5D5025B484A000E45212 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				24A66E7E259F739B00AC4E7B /* UIPickerViewExtension.swift */,
 				24A66E7F259F739B00AC4E7B /* UiColourExtention.swift */,
 				247D5D5025B484A000E45212 /* UIButtonExtension.swift */,
+				24377C1E25BEEA460072E844 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				24CE632D25A7577C006831F1 /* LoginViewController.swift in Sources */,
 				24CE633525AAF31D006831F1 /* TabBarController.swift in Sources */,
 				24AAAC6F25A0A66100F804F6 /* IntroduceViewController.swift in Sources */,
+				24377C1F25BEEA460072E844 /* UIViewControllerExtension.swift in Sources */,
 				24A66E76259F738A00AC4E7B /* DoPlankViewController.swift in Sources */,
 				24A66E81259F739B00AC4E7B /* UiColourExtention.swift in Sources */,
 				244B595E25A0798E007A497A /* SignUpViewController.swift in Sources */,

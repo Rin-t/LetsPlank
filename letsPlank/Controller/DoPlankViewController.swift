@@ -23,7 +23,6 @@ class DoPlankViewController: UIViewController {
     @IBOutlet weak var plankImageView: UIImageView!
     @IBOutlet weak var startAndStopButton: UIButton!
     @IBOutlet weak var setTimerButton: UIBarButtonItem!
-    @IBOutlet weak var logoutButton: UIBarButtonItem!
     
     @IBOutlet var defaultLeftConstraintOfPlankImage: NSLayoutConstraint!
     @IBOutlet var centreConstraint: NSLayoutConstraint!
@@ -46,7 +45,7 @@ class DoPlankViewController: UIViewController {
         
         //ログインしてない場合のみアカウント作成画面に遷移
         if let _ = Auth.auth().currentUser { return }
-        presentSignUpViewController()
+        presentModalFullScreen(storyboradName: "SignUp", withIdentifier: "SignUpViewController")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,7 +95,7 @@ class DoPlankViewController: UIViewController {
     func isEnableButtonsStatus() {
         tabBarController?.tabBar.isHidden.toggle()
         setTimerButton.isEnabled.toggle()
-        logoutButton.isEnabled.toggle()
+        
     }
     
     //MARK: - Timer
@@ -188,27 +187,6 @@ class DoPlankViewController: UIViewController {
     
     //MARK: - NavigationBarButton
     @IBAction func tappedSetTimerButton(_ sender: Any) {
-        let storyboard = UIStoryboard.init(name: "SettingTimer", bundle: nil)
-        let settingTimerController = storyboard.instantiateViewController(withIdentifier: "SettingTimerViewController") as! SettingTimerViewController
-        let navigation = UINavigationController(rootViewController: settingTimerController)
-        navigation.modalPresentationStyle = .fullScreen
-        self.present(navigation, animated: true, completion: nil)
-        
-    }
-    @IBAction func tappedLogoutButton(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
-            presentSignUpViewController()
-        } catch {
-            print("err")
-        }
-    }
-    
-    func presentSignUpViewController() {
-        let storyborad = UIStoryboard(name: "SignUp", bundle: nil)
-        let signUpViewController = storyborad.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        let nav = UINavigationController(rootViewController: signUpViewController)
-        nav.modalPresentationStyle = .fullScreen
-        self.present(nav, animated: true, completion: nil)
+        presentModalFullScreen(storyboradName: "SettingTimer", withIdentifier: "SettingTimerViewController")
     }
 }

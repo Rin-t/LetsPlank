@@ -234,11 +234,6 @@
                     <tabBarItem key="tabBarItem" title="Plank" image="腕立て" id="axo-Kz-6S0"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="biS-ON-uFe">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Ahi-Cp-Xv3">
-                            <connections>
-                                <action selector="tappedLogoutButton:" destination="llE-Pv-tJ7" id="e2d-fk-EG6"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="clock" catalog="system" id="U2c-Aa-arR">
                             <connections>
                                 <action selector="tappedSetTimerButton:" destination="llE-Pv-tJ7" id="iyz-9M-zil"/>
@@ -249,7 +244,6 @@
                     <connections>
                         <outlet property="centreConstraint" destination="NZ5-2P-mlM" id="YuM-ik-rdO"/>
                         <outlet property="defaultLeftConstraintOfPlankImage" destination="E7W-BP-KU0" id="uTA-AY-oed"/>
-                        <outlet property="logoutButton" destination="Ahi-Cp-Xv3" id="1JW-hX-IGt"/>
                         <outlet property="plankImageView" destination="cZW-qa-han" id="PCS-ht-Rx5"/>
                         <outlet property="restImageView" destination="GPi-1d-XF3" id="edR-m3-9xH"/>
                         <outlet property="setTimerButton" destination="U2c-Aa-arR" id="ZSb-nh-R1Y"/>

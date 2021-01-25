@@ -13,8 +13,8 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var menuTableView: UITableView!
     
     private let cellId = "cellId"
-    private let menuLabelArray = ["開発者","このアプリを広める","プロフィール画像変更"]
-    private let imageArray = ["person.fill","square.and.pencil","camera"]
+    private let menuLabelArray = ["開発者","このアプリを広める","プロフィール画像変更","ログアウト"]
+    private let imageArray = ["person.fill","square.and.pencil","camera","arrowshape.turn.up.backward.fill"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,12 @@ class MenuViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
+        
+        if let indexPathForSelectedRow = menuTableView.indexPathForSelectedRow {
+            UIView.animate(withDuration: 0.6, animations: {
+                self.menuTableView.deselectRow(at: indexPathForSelectedRow, animated: true)
+            })
+        }
     }
 }
 
@@ -56,3 +62,12 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     
 }
+
+//@IBAction func tappedLogoutButton(_ sender: Any) {
+//    do {
+//        try Auth.auth().signOut()
+//        presentSignUpViewController()
+//    } catch {
+//        print("err")
+//    }
+//}

@@ -21,9 +21,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var alreadyHaveAccountButton: UIButton!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

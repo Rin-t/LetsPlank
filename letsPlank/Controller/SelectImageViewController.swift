@@ -39,10 +39,10 @@ class SelectImageViewController: UIViewController {
         
         Storage.storage().reference().child(userId).child(selectedDay).downloadURL(completion: { [self] (data, err) in
             if let err = err {
-                print("storageからのimageのダウンロードに失敗")
+                print("storageからのimageのダウンロードに失敗", err)
             }
             print("strageからimageのダウンロードを成功")
-            print(data)
+        
             guard let data = data else { return }
             Nuke.loadImage(with: data, into: imageButton.imageView!)
             imageButton.sd_setImage(with: data, for: .normal , completed: nil)
