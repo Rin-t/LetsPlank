@@ -18,8 +18,8 @@ class SettingTimerViewController: UIViewController {
     var selectedMin = 1
     var selectedSec = 0
     
-    let settingTimerPickerView = UIPickerView()
-    let setTimeButton = UIButton()
+    @IBOutlet weak var settingTimerPickerView: UIPickerView!
+    @IBOutlet weak var setTimeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,26 +30,14 @@ class SettingTimerViewController: UIViewController {
     
     func setUpView() {
         //PickerView
-        settingTimerPickerView.frame.size.width = 240
-        settingTimerPickerView.frame.size.height = self.view.frame.size.height/3
-        settingTimerPickerView.layer.position = CGPoint(x: self.view.frame.width/2, y:self.view.frame.size.height/3)
-        self.view.addSubview(settingTimerPickerView)
         settingTimerPickerView.delegate = self
         settingTimerPickerView.dataSource = self
         settingTimerPickerView.selectRow(1, inComponent: 0, animated: false)
         
-        //Buttons
-        setTimeButton.frame.size.width = 170
-        setTimeButton.frame.size.height = 80
-        setTimeButton.layer.cornerRadius = 20
-        setTimeButton.backgroundColor = .baseColour
-        setTimeButton.setTitle("Set", for: .normal)
-        setTimeButton.layer.position = CGPoint(x: self.view.frame.width/2, y:self.view.frame.height * 2/3)
-        setTimeButton.titleLabel?.font = UIFont.systemFont(ofSize: 22)
-        self.view.addSubview(setTimeButton)
+        //Button
         setTimeButton.addTarget(self, action: #selector(tappedSetTime), for: .touchUpInside)
         setTimeButton.addTarget(self, action: #selector(changeButtonColour), for: .touchDown)
-        
+        setTimeButton.layer.cornerRadius = 20
         self.navigationItem.title = "Setting Timer"
     }
     

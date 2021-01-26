@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,12 +28,49 @@
         <!--Setting Timer View Controller-->
         <scene sceneID="Wra-n6-S70">
             <objects>
-                <viewController storyboardIdentifier="SettingTimerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6nN-Nc-mnl" customClass="SettingTimerViewController" customModule="Let_sPlank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingTimerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6nN-Nc-mnl" customClass="SettingTimerViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qL6-If-wZD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9q-qi-zPL">
+                                <rect key="frame" x="67" y="88" width="280" height="358.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="IlO-Ln-odb"/>
+                                </constraints>
+                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iP-yQ-ry7">
+                                <rect key="frame" x="0.0" y="537.5" width="414" height="358.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZw-ic-65L">
+                                        <rect key="frame" x="103.5" y="143.5" width="207" height="71.5"/>
+                                        <color key="backgroundColor" name="defaultColour"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Set">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="RZw-ic-65L" firstAttribute="centerY" secondItem="3iP-yQ-ry7" secondAttribute="centerY" id="HJ1-j4-eCT"/>
+                                    <constraint firstItem="RZw-ic-65L" firstAttribute="width" secondItem="3iP-yQ-ry7" secondAttribute="width" multiplier="0.5" id="RhL-aV-66Y"/>
+                                    <constraint firstItem="RZw-ic-65L" firstAttribute="height" secondItem="3iP-yQ-ry7" secondAttribute="height" multiplier="0.2" id="g0s-uy-8JV"/>
+                                    <constraint firstItem="RZw-ic-65L" firstAttribute="centerX" secondItem="3iP-yQ-ry7" secondAttribute="centerX" id="lET-KP-psu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qV4-sG-uhO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="3iP-yQ-ry7" secondAttribute="bottom" id="4V5-TB-uOQ"/>
+                            <constraint firstItem="3iP-yQ-ry7" firstAttribute="trailing" secondItem="qV4-sG-uhO" secondAttribute="trailing" id="4g7-JM-VCR"/>
+                            <constraint firstItem="P9q-qi-zPL" firstAttribute="height" secondItem="qL6-If-wZD" secondAttribute="height" multiplier="0.4" id="6wF-Ui-GPS"/>
+                            <constraint firstItem="P9q-qi-zPL" firstAttribute="centerX" secondItem="qL6-If-wZD" secondAttribute="centerX" id="Cbc-KD-7tv"/>
+                            <constraint firstItem="P9q-qi-zPL" firstAttribute="top" secondItem="qV4-sG-uhO" secondAttribute="top" id="GyC-Ut-agG"/>
+                            <constraint firstItem="3iP-yQ-ry7" firstAttribute="leading" secondItem="qV4-sG-uhO" secondAttribute="leading" id="YQj-Gk-dLv"/>
+                            <constraint firstItem="3iP-yQ-ry7" firstAttribute="height" secondItem="qL6-If-wZD" secondAttribute="height" multiplier="0.4" id="vXS-qh-8PK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U32-M2-eBU">
                         <barButtonItem key="rightBarButtonItem" title="back" id="y7k-s1-dc3">
@@ -43,14 +81,19 @@
                     </navigationItem>
                     <connections>
                         <outlet property="buckButton" destination="y7k-s1-dc3" id="sat-EZ-y2X"/>
+                        <outlet property="setTimeButton" destination="RZw-ic-65L" id="fDM-cq-IMb"/>
+                        <outlet property="settingTimerPickerView" destination="P9q-qi-zPL" id="RDb-V1-0VF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFO-C3-wTN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="848" y="59"/>
+            <point key="canvasLocation" x="847.82608695652175" y="58.928571428571423"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="defaultColour">
+            <color red="0.97299998998641968" green="0.68999999761581421" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
