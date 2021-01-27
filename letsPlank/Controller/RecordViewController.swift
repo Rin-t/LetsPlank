@@ -36,20 +36,10 @@ class RecordViewController: UIViewController {
     
     
     func setViews() {
-        let width = self.view.frame.width
-        let height = self.view.frame.height
-        
         //カレンダーのレイアウト
-//        calender.frame.size.height = height/3
-//        calender.frame.size.width = width
-//        calender.layer.position = CGPoint(x: width/2, y: topSafeAreaHeight + height/6)
         calender.appearance.headerTitleColor = .orange
         calender.appearance.todayColor = .systemTeal
         calender.appearance.weekdayTextColor = .orange
-        
-        //名言コーナーのレイアウト
-        
-        
         //名言の挿入
         let quote = Quotes()
         let randomInt = Int.random(in: 0...quote.quotesArray.count - 1)

@@ -28,7 +28,7 @@
         <!--Setting Timer View Controller-->
         <scene sceneID="Wra-n6-S70">
             <objects>
-                <viewController storyboardIdentifier="SettingTimerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6nN-Nc-mnl" customClass="SettingTimerViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingTimer" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6nN-Nc-mnl" customClass="SettingTimerViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qL6-If-wZD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

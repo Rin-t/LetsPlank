@@ -27,7 +27,7 @@
         <!--Introduce View Controller-->
         <scene sceneID="U85-VP-qs1">
             <objects>
-                <viewController storyboardIdentifier="IntroduceView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qOt-V1-3s3" customClass="IntroduceViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Introduce" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qOt-V1-3s3" customClass="IntroduceViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XpR-Fm-cvy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
                                     <constraint firstAttribute="width" constant="100" id="vXo-PK-Rdl"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSK-Oi-7bk">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSK-Oi-7bk">
                                 <rect key="frame" x="20" y="348" width="374" height="160"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>

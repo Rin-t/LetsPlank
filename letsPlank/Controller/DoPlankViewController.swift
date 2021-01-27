@@ -45,7 +45,7 @@ class DoPlankViewController: UIViewController {
         
         //ログインしてない場合のみアカウント作成画面に遷移
         if let _ = Auth.auth().currentUser { return }
-        presentModalFullScreen(storyboradName: "SignUp", withIdentifier: "SignUpViewController")
+        presentModalFullScreen(storyboradName: "SignUp")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -187,6 +187,6 @@ class DoPlankViewController: UIViewController {
     
     //MARK: - NavigationBarButton
     @IBAction func tappedSetTimerButton(_ sender: Any) {
-        presentModalFullScreen(storyboradName: "SettingTimer", withIdentifier: "SettingTimerViewController")
+        presentModalFullScreen(storyboradName: "SettingTimer")
     }
 }

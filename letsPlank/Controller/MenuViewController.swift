@@ -13,8 +13,9 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var menuTableView: UITableView!
     
     private let cellId = "cellId"
-    private let menuLabelArray = ["開発者","このアプリを広める","プロフィール画像変更","ログアウト"]
-    private let imageArray = ["person.fill","square.and.pencil","camera","arrowshape.turn.up.backward.fill"]
+    private let menuLabelArray = ["開発者","プロフィール画像変更","このアプリを広める","ログアウト"]
+    private let presentStoryboradNames = ["Introduce","ChangeProfileImage"]
+    private let imageArray = ["person.fill","camera","square.and.pencil","arrowshape.turn.up.backward.fill"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +56,9 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyborad = UIStoryboard.init(name: "Introduce", bundle: nil)
-        let introduceView = storyborad.instantiateViewController(withIdentifier: "IntroduceView")
-        self.show(introduceView, sender: nil)
+        if 0...1 ~= indexPath.row {
+            presentShow(storyboradName: presentStoryboradNames[indexPath.row])
+        }
     }
     
     
