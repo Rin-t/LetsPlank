@@ -10,10 +10,7 @@ import FSCalendar
 
 class RecordViewController: UIViewController {
     @IBOutlet weak var calender: FSCalendar!
-    
-    @IBOutlet weak var iamgeView: UIImageView!
     @IBOutlet weak var continuousDaysLabel: UILabel!
-    @IBOutlet weak var quoteView: UIView!
     @IBOutlet weak var quoteTextView: UITextView!
     
     var topSafeAreaHeight: CGFloat = 0
@@ -43,18 +40,15 @@ class RecordViewController: UIViewController {
         let height = self.view.frame.height
         
         //カレンダーのレイアウト
-        calender.frame.size.height = height/3
-        calender.frame.size.width = width
-        calender.layer.position = CGPoint(x: width/2, y: topSafeAreaHeight + height/6)
+//        calender.frame.size.height = height/3
+//        calender.frame.size.width = width
+//        calender.layer.position = CGPoint(x: width/2, y: topSafeAreaHeight + height/6)
         calender.appearance.headerTitleColor = .orange
         calender.appearance.todayColor = .systemTeal
         calender.appearance.weekdayTextColor = .orange
         
         //名言コーナーのレイアウト
-        quoteView.frame.size.height = height/3
-        quoteView.frame.size.width = self.view.frame.width
-        quoteView.layer.position = CGPoint(x: width/2, y: height*4/5)
-        quoteTextView.frame.size.width = width*2/3 - 10
+        
         
         //名言の挿入
         let quote = Quotes()
