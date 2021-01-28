@@ -321,7 +321,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="4qV-1r-1Ic">
             <objects>
-                <tabBarController id="a0G-Rw-PBJ" customClass="TabBarController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a0G-Rw-PBJ" customClass="TabBarController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="4EK-ww-Fgx"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4YY-pI-XUG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

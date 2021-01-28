@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 
 class MenuViewController: UIViewController {
     
@@ -28,7 +28,10 @@ class MenuViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
-        
+        deselectRowAnimation()
+    }
+    
+    private func deselectRowAnimation() {
         if let indexPathForSelectedRow = menuTableView.indexPathForSelectedRow {
             UIView.animate(withDuration: 0.6, animations: {
                 self.menuTableView.deselectRow(at: indexPathForSelectedRow, animated: true)
@@ -58,7 +61,27 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if 0...1 ~= indexPath.row {
             presentShow(storyboradName: presentStoryboradNames[indexPath.row])
+        } else if indexPath.row == 2 {
+            showAlert()
+            deselectRowAnimation()
+        } else {
+            do {
+                try Auth.auth().signOut()
+                presentModalFullScreen(storyboradName: "SignUp")
+                
+            } catch {
+                print("err")
+            }
         }
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: "ありがとうございます！", message: "このアプリを広めてくれようとしたのでしょうか?\n何と心やさしきお方なのでしょう。\nしかしながら定形文は用意しておりませんので、お好きな画面をキャプチャしてSNS等に投稿してください。", preferredStyle: .alert)
+        let continuous = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alert.addAction(continuous)
+        present(alert, animated: true, completion: nil)
+        
     }
     
     

@@ -164,7 +164,7 @@ class DoPlankViewController: UIViewController {
     
     //MARK: - showAlert
     func showAlert() {
-        let alert = UIAlertController(title: "えっ？やめるの？", message: "やめたら記録は保存しないぞ！\nさぁ続けるんだ！！", preferredStyle: .alert)
+        let alert = UIAlertController(title: "やめるの？", message: "やめたら記録は保存しないぞ！", preferredStyle: .alert)
         
         let continuous = UIAlertAction(title: "続ける", style: .default) { [self] (_) in
             moveImageView()
