@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 import Nuke
 import SDWebImage
 
@@ -37,14 +38,14 @@ class SelectImageViewController: UIViewController {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         guard let selectedDay = selectedDay else { return }
         
-        Storage.storage().reference().child(userId).child(selectedDay).downloadURL(completion: { [self] (data, err) in
+        Storage.storage().reference().child(userId).child("aaa").downloadURL(completion: { [self] (data, err) in
             if let err = err {
                 print("storageからのimageのダウンロードに失敗", err)
             }
             print("strageからimageのダウンロードを成功")
         
             guard let data = data else { return }
-            Nuke.loadImage(with: data, into: imageButton.imageView!)
+            //Nuke.loadImage(with: data, into: imageButton.imageView!)
             imageButton.sd_setImage(with: data, for: .normal , completed: nil)
             print("画像セット完了")
         })
@@ -75,6 +76,7 @@ class SelectImageViewController: UIViewController {
         guard let uploadImage = image.jpegData(compressionQuality: 0.3) else { return }
         guard let userId = Auth.auth().currentUser?.uid else { return }
         guard let fileName = selectedDay else { return }
+        let id = NSUUID().uuidString
         
         let storageRef = Storage.storage().reference().child(userId).child(fileName)
         
