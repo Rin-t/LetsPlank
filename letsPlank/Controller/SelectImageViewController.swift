@@ -19,6 +19,8 @@ class SelectImageViewController: UIViewController {
     var selectedDay: String?
     var topSafeAreaHeight: CGFloat = 0
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.isEnabled = false
@@ -38,15 +40,15 @@ class SelectImageViewController: UIViewController {
         guard let userId = Auth.auth().currentUser?.uid else { return }
         guard let selectedDay = selectedDay else { return }
         
-        Storage.storage().reference().child(userId).child("aaa").downloadURL(completion: { [self] (data, err) in
+        Storage.storage().reference().child(userId).child(selectedDay).downloadURL(completion: { [self] (data, err) in
             if let err = err {
                 print("storageからのimageのダウンロードに失敗", err)
             }
             print("strageからimageのダウンロードを成功")
         
             guard let data = data else { return }
-            //Nuke.loadImage(with: data, into: imageButton.imageView!)
-            imageButton.sd_setImage(with: data, for: .normal , completed: nil)
+            Nuke.loadImage(with: data, into: imageView)
+            imageView.contentMode = .scaleAspectFill
             print("画像セット完了")
         })
     }
@@ -115,6 +117,7 @@ extension SelectImageViewController: UIImagePickerControllerDelegate, UINavigati
         imageButton.contentHorizontalAlignment = .fill
         imageButton.contentVerticalAlignment = .fill
         imageButton.clipsToBounds = true
+        imageView.image = nil
 
         dismiss(animated: true, completion: nil)
     }

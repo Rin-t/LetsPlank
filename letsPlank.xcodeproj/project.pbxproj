@@ -10,6 +10,8 @@
 		24377C1F25BEEA460072E844 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24377C1E25BEEA460072E844 /* UIViewControllerExtension.swift */; };
 		244B594A25A03851007A497A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 244B594925A03851007A497A /* GoogleService-Info.plist */; };
 		244B595E25A0798E007A497A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244B595D25A0798E007A497A /* SignUpViewController.swift */; };
+		24696ECE25C53BB00005E1F8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24696ECD25C53BB00005E1F8 /* Profile.storyboard */; };
+		24696ED325C53BCA0005E1F8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24696ED225C53BCA0005E1F8 /* ProfileViewController.swift */; };
 		247D5D5125B484A000E45212 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D5D5025B484A000E45212 /* UIButtonExtension.swift */; };
 		24A1D51525C1A900001D5665 /* ChangeProfileImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A1D51425C1A900001D5665 /* ChangeProfileImage.storyboard */; };
 		24A1D52825C1AD11001D5665 /* ChangeProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1D52725C1AD11001D5665 /* ChangeProfileImageViewController.swift */; };
@@ -64,6 +66,8 @@
 		24377C1E25BEEA460072E844 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		244B594925A03851007A497A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		244B595D25A0798E007A497A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		24696ECD25C53BB00005E1F8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		24696ED225C53BCA0005E1F8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		247D5D5025B484A000E45212 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		24A1D51425C1A900001D5665 /* ChangeProfileImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfileImage.storyboard; sourceTree = "<group>"; };
 		24A1D52725C1AD11001D5665 /* ChangeProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileImageViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 			children = (
 				24AAAC6825A0A5AE00F804F6 /* Introduce.storyboard */,
 				24A1D51425C1A900001D5665 /* ChangeProfileImage.storyboard */,
+				24696ECD25C53BB00005E1F8 /* Profile.storyboard */,
 			);
 			path = MenuStoryboards;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */,
 				24AC124425A1844500A81872 /* MenuTableViewCell.swift */,
 				24A1D52725C1AD11001D5665 /* ChangeProfileImageViewController.swift */,
+				24696ED225C53BCA0005E1F8 /* ProfileViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -383,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24AAAC6925A0A5AE00F804F6 /* Introduce.storyboard in Resources */,
+				24696ECE25C53BB00005E1F8 /* Profile.storyboard in Resources */,
 				24A66E6C259F735B00AC4E7B /* Main.storyboard in Resources */,
 				24A66E8A259F73DD00AC4E7B /* SettingTimer.storyboard in Resources */,
 				24A66E42259F732900AC4E7B /* LaunchScreen.storyboard in Resources */,
@@ -528,6 +535,7 @@
 				24A66E76259F738A00AC4E7B /* DoPlankViewController.swift in Sources */,
 				24A66E81259F739B00AC4E7B /* UiColourExtention.swift in Sources */,
 				244B595E25A0798E007A497A /* SignUpViewController.swift in Sources */,
+				24696ED325C53BCA0005E1F8 /* ProfileViewController.swift in Sources */,
 				24A66E36259F732700AC4E7B /* AppDelegate.swift in Sources */,
 				24AAAC6025A0A3DA00F804F6 /* MenuViewController.swift in Sources */,
 				247D5D5125B484A000E45212 /* UIButtonExtension.swift in Sources */,

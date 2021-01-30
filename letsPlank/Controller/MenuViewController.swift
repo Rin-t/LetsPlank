@@ -13,9 +13,9 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var menuTableView: UITableView!
     
     private let cellId = "cellId"
-    private let menuLabelArray = ["開発者","プロフィール画像変更","このアプリを広める","ログアウト"]
-    private let presentStoryboradNames = ["Introduce","ChangeProfileImage"]
-    private let imageArray = ["person.fill","camera","square.and.pencil","arrowshape.turn.up.backward.fill"]
+    private let menuLabelArray = ["プロフィール","開発者","このアプリを広める","ログアウト"]
+    private let presentStoryboradNames = ["ChangeProfileImage","Introduce"]
+    private let imageArray = ["person.fill","pc","square.and.pencil","arrowshape.turn.up.backward.fill"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
