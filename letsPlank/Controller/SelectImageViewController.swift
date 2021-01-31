@@ -78,7 +78,7 @@ class SelectImageViewController: UIViewController {
         guard let uploadImage = image.jpegData(compressionQuality: 0.3) else { return }
         guard let userId = Auth.auth().currentUser?.uid else { return }
         guard let fileName = selectedDay else { return }
-        let id = NSUUID().uuidString
+       
         
         let storageRef = Storage.storage().reference().child(userId).child(fileName)
         

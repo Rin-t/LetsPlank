@@ -253,11 +253,29 @@
                                     <constraint firstItem="GYF-Mt-nGg" firstAttribute="leading" secondItem="O7R-fN-yUq" secondAttribute="trailing" constant="8" id="cxD-fY-5cH"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAe-76-44n">
+                                <rect key="frame" x="0.0" y="674.5" width="414" height="89.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日はまだ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-df-SGA">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="VnH-df-SGA" secondAttribute="trailing" id="2md-q6-tIw"/>
+                                    <constraint firstItem="VnH-df-SGA" firstAttribute="leading" secondItem="VAe-76-44n" secondAttribute="leading" id="HYQ-og-WQ6"/>
+                                    <constraint firstItem="VnH-df-SGA" firstAttribute="top" secondItem="VAe-76-44n" secondAttribute="top" id="VUp-yI-9Rx"/>
+                                    <constraint firstItem="VnH-df-SGA" firstAttribute="height" secondItem="VAe-76-44n" secondAttribute="height" multiplier="0.5" id="iLp-jD-kr1"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ld-1I-DC3">
-                                <rect key="frame" x="0.0" y="540" width="414" height="224"/>
+                                <rect key="frame" x="0.0" y="585" width="414" height="89.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V25-yg-ktE">
-                                        <rect key="frame" x="103.5" y="73" width="207" height="78"/>
+                                        <rect key="frame" x="103.5" y="13" width="207" height="63"/>
                                         <color key="backgroundColor" red="0.97254901960784312" green="0.69019607843137254" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Just Do It!">
@@ -270,7 +288,7 @@
                                     <constraint firstItem="V25-yg-ktE" firstAttribute="centerX" secondItem="8ld-1I-DC3" secondAttribute="centerX" id="GKU-tt-c3L"/>
                                     <constraint firstItem="V25-yg-ktE" firstAttribute="width" secondItem="8ld-1I-DC3" secondAttribute="width" multiplier="0.5" id="KRM-My-QdG"/>
                                     <constraint firstItem="V25-yg-ktE" firstAttribute="centerY" secondItem="8ld-1I-DC3" secondAttribute="centerY" id="k4I-D2-ymZ"/>
-                                    <constraint firstItem="V25-yg-ktE" firstAttribute="height" secondItem="8ld-1I-DC3" secondAttribute="height" multiplier="0.35" id="mQO-JD-fbB"/>
+                                    <constraint firstItem="V25-yg-ktE" firstAttribute="height" secondItem="8ld-1I-DC3" secondAttribute="height" multiplier="0.7" id="mQO-JD-fbB"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -278,19 +296,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KWw-gh-1af" firstAttribute="trailing" secondItem="lno-0Q-D1N" secondAttribute="trailing" id="8eY-69-m4A"/>
+                            <constraint firstItem="VAe-76-44n" firstAttribute="trailing" secondItem="lno-0Q-D1N" secondAttribute="trailing" id="DUt-xy-PeE"/>
                             <constraint firstItem="cZW-qa-han" firstAttribute="leading" secondItem="TXy-kR-a79" secondAttribute="leading" constant="-170" id="E7W-BP-KU0"/>
                             <constraint firstItem="GPi-1d-XF3" firstAttribute="centerY" secondItem="TXy-kR-a79" secondAttribute="centerY" id="FBw-cC-xr9"/>
                             <constraint firstItem="KWw-gh-1af" firstAttribute="leading" secondItem="lno-0Q-D1N" secondAttribute="leading" id="Hy5-RF-zdK"/>
                             <constraint firstItem="KWw-gh-1af" firstAttribute="height" secondItem="TXy-kR-a79" secondAttribute="height" multiplier="0.3" id="NFD-K5-W7Q"/>
+                            <constraint firstItem="VAe-76-44n" firstAttribute="top" secondItem="8ld-1I-DC3" secondAttribute="bottom" id="NKq-Nb-Hvv"/>
                             <constraint firstItem="lno-0Q-D1N" firstAttribute="trailing" secondItem="8ld-1I-DC3" secondAttribute="trailing" id="RAD-Dx-qD9"/>
+                            <constraint firstItem="VAe-76-44n" firstAttribute="height" secondItem="TXy-kR-a79" secondAttribute="height" multiplier="0.1" id="V7G-mJ-K5O"/>
                             <constraint firstItem="GPi-1d-XF3" firstAttribute="centerX" secondItem="TXy-kR-a79" secondAttribute="centerX" id="b4V-tT-nqR"/>
                             <constraint firstItem="8ld-1I-DC3" firstAttribute="leading" secondItem="lno-0Q-D1N" secondAttribute="leading" id="bQj-PV-Nd2"/>
                             <constraint firstItem="GPi-1d-XF3" firstAttribute="height" secondItem="TXy-kR-a79" secondAttribute="height" multiplier="0.1" id="bzA-sm-Mbq"/>
                             <constraint firstItem="GPi-1d-XF3" firstAttribute="leading" secondItem="cZW-qa-han" secondAttribute="trailing" constant="137" id="cWK-Iu-j0s"/>
+                            <constraint firstItem="VAe-76-44n" firstAttribute="bottom" secondItem="lno-0Q-D1N" secondAttribute="bottom" id="dsc-VV-d1l"/>
                             <constraint firstItem="KWw-gh-1af" firstAttribute="top" secondItem="lno-0Q-D1N" secondAttribute="top" id="gmi-PL-QeB"/>
-                            <constraint firstItem="lno-0Q-D1N" firstAttribute="bottom" secondItem="8ld-1I-DC3" secondAttribute="bottom" id="hfQ-Gj-3f7"/>
                             <constraint firstItem="cZW-qa-han" firstAttribute="height" secondItem="TXy-kR-a79" secondAttribute="height" multiplier="0.08" id="jXa-ft-ZyF"/>
-                            <constraint firstItem="8ld-1I-DC3" firstAttribute="height" secondItem="TXy-kR-a79" secondAttribute="height" multiplier="0.25" id="k4D-lT-jNL"/>
+                            <constraint firstItem="8ld-1I-DC3" firstAttribute="height" secondItem="TXy-kR-a79" secondAttribute="height" multiplier="0.1" id="k4D-lT-jNL"/>
+                            <constraint firstItem="VAe-76-44n" firstAttribute="leading" secondItem="lno-0Q-D1N" secondAttribute="leading" id="vvn-X2-WFg"/>
                             <constraint firstItem="cZW-qa-han" firstAttribute="centerY" secondItem="TXy-kR-a79" secondAttribute="centerY" id="wt4-Vs-1v0"/>
                         </constraints>
                     </view>
