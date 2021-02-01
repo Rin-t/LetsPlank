@@ -26,6 +26,7 @@ class DoPlankViewController: UIViewController {
     
     @IBOutlet var defaultLeftConstraintOfPlankImage: NSLayoutConstraint!
     @IBOutlet var centreConstraint: NSLayoutConstraint!
+    @IBOutlet weak var todaysActivityLabel: UILabel!
     
     var defaultSec = 0              //defaultの秒数
     var timerInt = 0                //countDown用
@@ -110,6 +111,8 @@ class DoPlankViewController: UIViewController {
         timerLabel.text = String(timerInt)
         timer.invalidate()
         startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
+        todaysActivityLabel.text = "今日はもうやったよ！"
+        todaysActivityLabel.textColor = .systemBlue
         moveImageView()
         isEnableButtonsStatus()
         saveDataToFirestore()
@@ -125,7 +128,9 @@ class DoPlankViewController: UIViewController {
             }
             print("データの取得に成功")
             
-            var date: [Timestamp] = snapshot!.data()!["didPlankDay"] as? [Timestamp] ?? [Timestamp()]
+            guard var date: [Timestamp] = snapshot!.data()!["didPlankDay"] as? [Timestamp] else {
+                
+            }
             date.append(Timestamp())
             
             let dateArray = [

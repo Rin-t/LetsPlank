@@ -42,10 +42,24 @@ class SettingTimerViewController: UIViewController {
     }
     
     @objc func tappedSetTime() {
-        UserDefaults.standard.set(totalSec, forKey: "PlankSec")
-        setTimeButton.alpha = 1.0
-        dismiss(animated: true, completion: nil)
+        if totalSec >= 30 {
+            UserDefaults.standard.set(totalSec, forKey: "PlankSec")
+            setTimeButton.alpha = 1.0
+            dismiss(animated: true, completion: nil)
+        } else {
+            showAlert()
+        }
         
+        
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: "設定時間が短すぎます", message: "設定時間は30秒以上にしてください。", preferredStyle: .alert)
+        
+        let continuous = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alert.addAction(continuous)
+        present(alert, animated: true, completion: nil)
     }
     
     @objc func changeButtonColour() {

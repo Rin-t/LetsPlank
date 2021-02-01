@@ -256,7 +256,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAe-76-44n">
                                 <rect key="frame" x="0.0" y="674.5" width="414" height="89.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日はまだ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-df-SGA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日はまだやってないよ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-df-SGA">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -334,6 +334,7 @@
                         <outlet property="setTimerButton" destination="U2c-Aa-arR" id="ZSb-nh-R1Y"/>
                         <outlet property="startAndStopButton" destination="V25-yg-ktE" id="Iug-Ij-fZi"/>
                         <outlet property="timerLabel" destination="O7R-fN-yUq" id="33S-aI-02P"/>
+                        <outlet property="todaysActivityLabel" destination="VnH-df-SGA" id="xoN-VR-Gs7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sds-Hf-cSB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
