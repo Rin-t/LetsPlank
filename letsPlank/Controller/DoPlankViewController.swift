@@ -38,7 +38,7 @@ class DoPlankViewController: UIViewController {
         super.viewDidLoad()
         
         setUpView()
-        
+        confirmAleadyDoneToday()
         //初めてアプリを起動した時には60秒を標準設定にする
         if UserDefaults.standard.object(forKey: "PlankSec") == nil {
             UserDefaults.standard.set(60, forKey: "PlankSec")
@@ -56,6 +56,26 @@ class DoPlankViewController: UIViewController {
         timerLabel.text = String(sec)
         timerInt = sec
         defaultSec = sec
+    }
+    
+    private func confirmAleadyDoneToday() {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+        Firestore.firestore().collection("users").document(userID).getDocument { [self] (snapshot, err) in
+            if let err = err {
+                print("データの取得に失敗", err)
+            }
+            print("データの取得に成功")
+            
+            guard let  date: [Timestamp] = snapshot!.data()!["didPlankDay"] as? [Timestamp] else { return }
+            let lastDay = dateFormatterForDateLabel(date: (date.last!.dateValue()))
+            let today =  dateFormatterForDateLabel(date: Date())
+            if lastDay == today {
+                todaysActivityLabel.text = "今日はもうやったよ"
+                todaysActivityLabel.textColor = .systemBlue
+            }
+        
+        }
     }
     
     //MARK: - viewのレイアウト関係
@@ -128,10 +148,10 @@ class DoPlankViewController: UIViewController {
             }
             print("データの取得に成功")
             
-            guard var date: [Timestamp] = snapshot!.data()!["didPlankDay"] as? [Timestamp] else {
-                
+            var date: [Timestamp] = snapshot!.data()!["didPlankDay"] as? [Timestamp] ?? [Timestamp()]
+            if date.count != 1 {
+                date.append(Timestamp())
             }
-            date.append(Timestamp())
             
             let dateArray = [
                 "didPlankDay": date
@@ -150,8 +170,7 @@ class DoPlankViewController: UIViewController {
     //MARK: - dateFormatter
     func dateFormatterForDateLabel(date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .full
-        formatter.timeStyle = .short
+        formatter.dateFormat = "yyyy.M.d"
         formatter.locale = Locale(identifier: "ja_JP")
         return formatter.string(from: date)
     }
