@@ -33,9 +33,23 @@ class DoPlankViewController: UIViewController {
     var timer: Timer!
     var imageIsMoved = false
     
+    var imageView = UIImageView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //imageView作成
+        self.imageView.frame.size.width = 100
+        self.imageView.frame.size.width = 45
+        //中央寄せ
+        self.imageView.center = self.view.center
+        //画像を設定
+        self.imageView.image = UIImage(named: "腕立て")
+        //viewに追加
+        self.view.addSubview(self.imageView)
+        
+        
         
         setUpView()
         confirmAleadyDoneToday()
@@ -47,6 +61,30 @@ class DoPlankViewController: UIViewController {
         //ログインしてない場合のみアカウント作成画面に遷移
         if let _ = Auth.auth().currentUser { return }
         presentModalFullScreen(storyboradName: "SignUp")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.3,
+                       delay: 1.0,
+                       options: UIView.AnimationOptions.curveEaseOut,
+                       animations: { () in
+                        self.imageView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                       }, completion: { (Bool) in
+                        
+                       })
+        
+        //8倍まで拡大！
+        UIView.animate(withDuration: 0.2,
+                       delay: 1.3,
+                       options: UIView.AnimationOptions.curveEaseOut,
+                       animations: { () in
+                        self.imageView.transform = CGAffineTransform(scaleX: 8.0, y: 8.0)
+                        self.imageView.alpha = 0
+                       }, completion: { (Bool) in
+                        //で、アニメーションが終わったらimageViewを消す
+                        self.imageView.removeFromSuperview()
+                       })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,7 +112,7 @@ class DoPlankViewController: UIViewController {
                 todaysActivityLabel.text = "今日はもうやったよ"
                 todaysActivityLabel.textColor = .systemBlue
             }
-        
+            
         }
     }
     
