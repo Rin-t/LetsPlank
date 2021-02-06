@@ -32,20 +32,15 @@ class DoPlankViewController: UIViewController {
     var timerInt = 0                //countDown用
     var timer: Timer!
     var imageIsMoved = false
-    
-    var imageView = UIImageView()
+   
+    @IBOutlet weak var imageView: UIView!
+    @IBOutlet weak var logoImageView: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //imageView作成
-        self.imageView.frame.size.width = 100
-        self.imageView.frame.size.width = 45
-        //中央寄せ
-        self.imageView.center = self.view.center
-        //画像を設定
-        self.imageView.image = UIImage(named: "腕立て")
+        self.logoImageView.image = UIImage(named: "白プランク")
         //viewに追加
         self.view.addSubview(self.imageView)
         
@@ -105,7 +100,7 @@ class DoPlankViewController: UIViewController {
             }
             print("データの取得に成功")
             
-            guard let  date: [Timestamp] = snapshot!.data()!["didPlankDay"] as? [Timestamp] else { return }
+            guard let  date: [Timestamp] = snapshot?.data()!["didPlankDay"] as? [Timestamp] else { return }
             let lastDay = dateFormatterForDateLabel(date: (date.last!.dateValue()))
             let today =  dateFormatterForDateLabel(date: Date())
             if lastDay == today {
@@ -186,7 +181,7 @@ class DoPlankViewController: UIViewController {
             }
             print("データの取得に成功")
             
-            var date: [Timestamp] = snapshot!.data()!["didPlankDay"] as? [Timestamp] ?? [Timestamp()]
+            var date: [Timestamp] = snapshot?.data()!["didPlankDay"] as? [Timestamp] ?? [Timestamp()]
             if date.count != 1 {
                 date.append(Timestamp())
             }

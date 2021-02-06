@@ -42,13 +42,13 @@ class SettingTimerViewController: UIViewController {
     }
     
     @objc func tappedSetTime() {
-        if totalSec >= 30 {
+       // if totalSec >= 30 {
             UserDefaults.standard.set(totalSec, forKey: "PlankSec")
             setTimeButton.alpha = 1.0
             dismiss(animated: true, completion: nil)
-        } else {
-            showAlert()
-        }
+        //} else {
+          //  showAlert()
+        //}
         
         
     }
