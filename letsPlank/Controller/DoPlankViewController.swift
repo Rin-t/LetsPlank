@@ -43,9 +43,10 @@ class DoPlankViewController: UIViewController {
         self.logoImageView.image = UIImage(named: "白プランク")
         //viewに追加
         self.view.addSubview(self.imageView)
+        tabBarController?.tabBar.isHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
-        
-        
+        launchAppImageAnimation()
         setUpView()
         confirmAleadyDoneToday()
         //初めてアプリを起動した時には60秒を標準設定にする
@@ -54,33 +55,15 @@ class DoPlankViewController: UIViewController {
         }
         
         //ログインしてない場合のみアカウント作成画面に遷移
-        if let _ = Auth.auth().currentUser { return }
-        presentModalFullScreen(storyboradName: "SignUp")
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 0.3,
-                       delay: 1.0,
-                       options: UIView.AnimationOptions.curveEaseOut,
-                       animations: { () in
-                        self.imageView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-                       }, completion: { (Bool) in
-                        
-                       })
-        
-        //8倍まで拡大！
-        UIView.animate(withDuration: 0.2,
-                       delay: 1.3,
-                       options: UIView.AnimationOptions.curveEaseOut,
-                       animations: { () in
-                        self.imageView.transform = CGAffineTransform(scaleX: 8.0, y: 8.0)
-                        self.imageView.alpha = 0
-                       }, completion: { (Bool) in
-                        //で、アニメーションが終わったらimageViewを消す
-                        self.imageView.removeFromSuperview()
-                       })
+
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -89,6 +72,34 @@ class DoPlankViewController: UIViewController {
         timerLabel.text = String(sec)
         timerInt = sec
         defaultSec = sec
+        
+    }
+    
+    private func launchAppImageAnimation() {
+        UIView.animate(withDuration: 0.3,
+                       delay: 0.5,
+                       options: UIView.AnimationOptions.curveEaseOut,
+                       animations: { () in
+                        self.logoImageView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                       }, completion: { (Bool) in
+                        
+                       })
+        
+        //8倍まで拡大！
+        UIView.animate(withDuration: 0.2,
+                       delay: 0.8,
+                       options: UIView.AnimationOptions.curveEaseOut,
+                       animations: { () in
+                        self.logoImageView.transform = CGAffineTransform(scaleX: 8.0, y: 8.0)
+                        self.logoImageView.alpha = 0
+                       }, completion: { (Bool) in
+                        //で、アニメーションが終わったらimageViewを消す
+                        self.imageView.removeFromSuperview()
+                        self.tabBarController?.tabBar.isHidden = false
+                        self.navigationController?.setNavigationBarHidden(false, animated: false)
+                        if let _ = Auth.auth().currentUser { return }
+                        self.presentModalFullScreen(storyboradName: "SignUp")
+                       })
     }
     
     private func confirmAleadyDoneToday() {
