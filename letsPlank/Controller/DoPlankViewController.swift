@@ -9,6 +9,8 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseStorage
+import Nuke
+import SDWebImage
 
 //buttonTitle
 enum buttonTitle: String {
@@ -23,10 +25,11 @@ class DoPlankViewController: UIViewController {
     @IBOutlet weak var plankImageView: UIImageView!
     @IBOutlet weak var startAndStopButton: UIButton!
     @IBOutlet weak var setTimerButton: UIBarButtonItem!
-    
     @IBOutlet var defaultLeftConstraintOfPlankImage: NSLayoutConstraint!
     @IBOutlet var centreConstraint: NSLayoutConstraint!
     @IBOutlet weak var todaysActivityLabel: UILabel!
+    @IBOutlet weak var profileBarButtonItem: UIBarButtonItem!
+    
     
     var defaultSec = 0              //defaultの秒数
     var timerInt = 0                //countDown用
@@ -40,6 +43,7 @@ class DoPlankViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        profileBarButtonItem.image = UIImage(named: "休憩")
         self.logoImageView.image = UIImage(named: "白プランク")
         //viewに追加
         self.view.addSubview(self.imageView)
@@ -57,6 +61,7 @@ class DoPlankViewController: UIViewController {
         //ログインしてない場合のみアカウント作成画面に遷移
         
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -126,10 +131,38 @@ class DoPlankViewController: UIViewController {
     func setUpView() {
         self.navigationItem.title = "Let's Plank"
         UITabBar.appearance().tintColor = .baseColour
+        
+        setUpStartAndStopButton()
+        setUpProfileBarButtonItem()
+        
+    }
+    
+    func setUpStartAndStopButton() {
         startAndStopButton.layer.cornerRadius = 20
         startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
         startAndStopButton.addTarget(self, action: #selector(tappedStartAndStopButton), for: .touchUpInside)
         startAndStopButton.addTarget(self, action: #selector(changeButtonColour), for: .touchDown)
+    }
+    
+    func setUpProfileBarButtonItem() {
+        guard let userId = Auth.auth().currentUser?.uid else { return }
+        
+        Firestore.firestore().collection("users").document(userId).getDocument { (data, err) in
+            if let err = err {
+                print("profileImageの取得に失敗")
+                return
+            }
+            
+            guard let profileImageString = data?.data()!["profileImageUrl"] else { return }
+            let profileImageURL = URL(string: profileImageString as! String)!
+            print("プロフィールURL", profileImageURL)
+            let view = UIImageView()
+            
+            Nuke.loadImage(with: profileImageURL, into: view)
+            print(view)
+            self.profileBarButtonItem.image = view.image
+            
+        }
     }
     
     //MARK: - StartAndStopButton

@@ -9,7 +9,6 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import Nuke
-import SDWebImage
 
 class SelectImageViewController: UIViewController {
     

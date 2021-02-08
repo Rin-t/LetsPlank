@@ -96,6 +96,7 @@
                     <navigationItem key="navigationItem" id="NoK-6N-ezn"/>
                     <connections>
                         <outlet property="calender" destination="lID-NG-1nX" id="fnQ-0s-aXd"/>
+                        <outlet property="continuousDaysLabel" destination="4CU-hI-BDK" id="uBP-yZ-NWC"/>
                         <outlet property="quoteTextView" destination="Nc2-64-u0Q" id="3DP-bq-oLq"/>
                     </connections>
                 </viewController>
@@ -313,6 +314,7 @@
                     <tabBarItem key="tabBarItem" title="Plank" image="腕立て" id="axo-Kz-6S0"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="biS-ON-uFe">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="zjN-JV-gQC"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="clock" catalog="system" id="U2c-Aa-arR">
                             <connections>
                                 <action selector="tappedSetTimerButton:" destination="llE-Pv-tJ7" id="iyz-9M-zil"/>
@@ -326,6 +328,7 @@
                         <outlet property="imageView" destination="Fw8-VL-ffK" id="v4P-Gc-oxU"/>
                         <outlet property="logoImageView" destination="ejT-HM-EMB" id="IAc-Rr-mhb"/>
                         <outlet property="plankImageView" destination="cZW-qa-han" id="PCS-ht-Rx5"/>
+                        <outlet property="profileBarButtonItem" destination="zjN-JV-gQC" id="5jq-EC-a4P"/>
                         <outlet property="restImageView" destination="GPi-1d-XF3" id="edR-m3-9xH"/>
                         <outlet property="setTimerButton" destination="U2c-Aa-arR" id="ZSb-nh-R1Y"/>
                         <outlet property="startAndStopButton" destination="V25-yg-ktE" id="Iug-Ij-fZi"/>

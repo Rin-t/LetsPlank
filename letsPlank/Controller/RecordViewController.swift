@@ -7,6 +7,8 @@
 
 import UIKit
 import FSCalendar
+import Firebase
+
 
 class RecordViewController: UIViewController {
     @IBOutlet weak var calender: FSCalendar!
@@ -32,8 +34,6 @@ class RecordViewController: UIViewController {
         topSafeAreaHeight = self.view.safeAreaInsets.top
         setViews()
     }
-    
-    
     
     func setViews() {
         //カレンダーのレイアウト
