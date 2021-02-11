@@ -42,6 +42,7 @@ class SelectImageViewController: UIViewController {
         Storage.storage().reference().child(userId).child(selectedDay).downloadURL(completion: { [self] (data, err) in
             if let err = err {
                 print("storageからのimageのダウンロードに失敗", err)
+                return
             }
             print("strageからimageのダウンロードを成功")
         

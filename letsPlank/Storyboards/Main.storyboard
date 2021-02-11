@@ -314,6 +314,7 @@
                     <tabBarItem key="tabBarItem" title="Plank" image="腕立て" id="axo-Kz-6S0"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="biS-ON-uFe">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" id="zjN-JV-gQC"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="clock" catalog="system" id="U2c-Aa-arR">
                             <connections>

@@ -133,7 +133,7 @@ class DoPlankViewController: UIViewController {
         UITabBar.appearance().tintColor = .baseColour
         
         setUpStartAndStopButton()
-        setUpProfileBarButtonItem()
+        setUpProfileBarButtonItem(profileBarButtonItem: profileBarButtonItem)
         
     }
     
@@ -144,26 +144,7 @@ class DoPlankViewController: UIViewController {
         startAndStopButton.addTarget(self, action: #selector(changeButtonColour), for: .touchDown)
     }
     
-    func setUpProfileBarButtonItem() {
-        guard let userId = Auth.auth().currentUser?.uid else { return }
-        
-        Firestore.firestore().collection("users").document(userId).getDocument { (data, err) in
-            if let err = err {
-                print("profileImageの取得に失敗")
-                return
-            }
-            
-            guard let profileImageString = data?.data()!["profileImageUrl"] else { return }
-            let profileImageURL = URL(string: profileImageString as! String)!
-            print("プロフィールURL", profileImageURL)
-            let view = UIImageView()
-            
-            Nuke.loadImage(with: profileImageURL, into: view)
-            print(view)
-            self.profileBarButtonItem.image = view.image
-            
-        }
-    }
+
     
     //MARK: - StartAndStopButton
     @objc func tappedStartAndStopButton() {
