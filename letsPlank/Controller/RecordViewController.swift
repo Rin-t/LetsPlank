@@ -48,6 +48,7 @@ extension RecordViewController: FSCalendarDataSource, FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.M.d"
+        //データフォー待ったーは使わない
         let date = formatter.string(from: date)
    
         let storyborad = UIStoryboard.init(name: "SelectImage", bundle: nil)

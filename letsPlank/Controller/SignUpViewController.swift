@@ -29,11 +29,7 @@ class SignUpViewController: UIViewController {
     }
     
     private func setUpViews() {
-        //profileImageButton.layer.cornerRadius = 65
-        profileImageButton.frame.size.width = self.view.frame.size.width/3
-        profileImageButton.frame.size.height = self.view.frame.size.width/3
-        profileImageButton.layer.position = CGPoint(x: self.view.frame.size.width/2, y:self.view.frame.size.height/4 )
-        profileImageButton.layer.cornerRadius = self.view.frame.size.width/6
+        profileImageButton.layer.cornerRadius = self.view.frame.size.width / 4.5
         profileImageButton.layer.borderWidth = 1
         profileImageButton.layer.borderColor = UIColor.gray.cgColor
         profileImageButton.addTarget(self, action: #selector(tappedProfileImageButton), for: .touchUpInside)

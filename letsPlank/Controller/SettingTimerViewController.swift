@@ -12,13 +12,13 @@ class SettingTimerViewController: UIViewController {
     
     @IBOutlet weak var buckButton: UIBarButtonItem!
     
-    var secIntArray = [Int](0...59)
-    var minIntArray = [Int](0...10)
-    var totalSec = 60
-    var selectedMin = 1
-    var selectedSec = 0
-    let minLabel = UILabel()
-    let secLabel = UILabel()
+    private var secIntArray = [Int](0...59)
+    private var minIntArray = [Int](0...10)
+    private var totalSec = 60
+    private var selectedMin = 1
+    private var selectedSec = 0
+    private let minLabel = UILabel()
+    private let secLabel = UILabel()
     
     @IBOutlet weak var settingTimerPickerView: UIPickerView!
     @IBOutlet weak var setTimeButton: UIButton!

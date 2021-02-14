@@ -18,6 +18,13 @@ enum buttonTitle: String {
     case stop = "Stop"
 }
 
+enum buttonStatus {
+    case idel
+    case plnk
+    
+}
+//startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
+
 class DoPlankViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
@@ -31,11 +38,11 @@ class DoPlankViewController: UIViewController {
     @IBOutlet weak var profileBarButtonItem: UIBarButtonItem!
     
     
-    var defaultSec = 0              //defaultの秒数
-    var timerInt = 0                //countDown用
-    var timer: Timer!
-    var imageIsMoved = false
-    var displayCount = 0
+    private var defaultSec = 0              //defaultの秒数
+    private var timerInt = 0                //countDown用
+    private var timer: Timer!
+    private var imageIsMoved = false
+    private var displayCount = 0
    
     @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var logoImageView: UIImageView!

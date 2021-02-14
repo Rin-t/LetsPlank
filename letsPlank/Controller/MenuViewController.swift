@@ -8,17 +8,29 @@
 import UIKit
 import Firebase
 
+struct MenuComponent {
+    var label: String
+    var image: UIImage
+}
+
 class MenuViewController: UIViewController {
     
     @IBOutlet weak var menuTableView: UITableView!
     
+    private let menu: [MenuComponent] = [
+        MenuComponent(label: "プロフィール", image: UIImage(systemName: "person.fill")!),
+        MenuComponent(label: "開発者", image: UIImage(systemName: "pc")!),
+        MenuComponent(label: "このアプリを広める", image: UIImage(systemName: "square.and.pencil")!),
+        MenuComponent(label: "ログアウト", image: UIImage(systemName: "arrowshape.turn.up.left.fill")!)
+    ]
+    
     private let cellId = "cellId"
-    private let menuLabelArray = ["プロフィール","開発者","このアプリを広める","ログアウト"]
     private let presentStoryboradNames = ["ChangeProfileImage","Introduce"]
-    private let imageArray = ["person.fill","pc","square.and.pencil","arrowshape.turn.up.backward.fill"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(menu)
         
         menuTableView.delegate = self
         menuTableView.dataSource = self
@@ -47,13 +59,13 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuLabelArray.count
+        return menu.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = menuTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MenuTableViewCell
-        cell.menuLabel.text = menuLabelArray[indexPath.row]
-        cell.menuImage.image = UIImage(systemName: imageArray[indexPath.row])
+        cell.menuLabel.text = menu[indexPath.row].label
+        cell.menuImage.image = menu[indexPath.row].image
         cell.menuImage.tintColor = .baseColour
         return cell
     }
@@ -86,12 +98,3 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     
 }
-
-//@IBAction func tappedLogoutButton(_ sender: Any) {
-//    do {
-//        try Auth.auth().signOut()
-//        presentSignUpViewController()
-//    } catch {
-//        print("err")
-//    }
-//}

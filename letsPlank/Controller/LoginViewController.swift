@@ -24,11 +24,6 @@ class LoginViewController: UIViewController {
         passwardTextField.delegate = self
         
         loginButton.layer.cornerRadius = 12
-        
-        messageLabel.frame.size.width = self.view.frame.width*2 / 3
-        messageLabel.frame.size.height = 80
-        messageLabel.layer.position = CGPoint(x: self.view.frame.width/2, y: self.view.frame.height/4)
-        
         loginButton.isEnabled = false
         loginButton.backgroundColor = .lightGray
         
