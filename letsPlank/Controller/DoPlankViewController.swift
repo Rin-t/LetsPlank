@@ -18,10 +18,20 @@ enum buttonTitle: String {
     case stop = "Stop"
 }
 
-enum buttonStatus {
+enum ActionStatus {
     case idel
     case plnk
     
+    func setTitle(button: UIButton) -> UIButton {
+        switch self {
+        case .idel:
+            return button.setTitle("Let's Plank", for: .normal)
+        case .plnk:
+            return button.setTitle("Stop", for: .normal)
+        default:
+            return button
+        }
+    }
 }
 //startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
 
@@ -37,6 +47,7 @@ class DoPlankViewController: UIViewController {
     @IBOutlet weak var todaysActivityLabel: UILabel!
     @IBOutlet weak var profileBarButtonItem: UIBarButtonItem!
     
+    var status: ActionStatus = .idel
     
     private var defaultSec = 0              //defaultの秒数
     private var timerInt = 0                //countDown用
