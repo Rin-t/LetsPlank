@@ -15,6 +15,8 @@ class SelectImageViewController: UIViewController {
     @IBOutlet weak var imageButton: UIButton!
     @IBOutlet weak var backBarButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var deleteBarButtonItem: UIBarButtonItem!
+    
     var selectedDay: String?
     var topSafeAreaHeight: CGFloat = 0
     
@@ -25,6 +27,7 @@ class SelectImageViewController: UIViewController {
         saveButton.isEnabled = false
         saveButton.backgroundColor = .lightGray
         navigationItem.title = selectedDay
+        navigationController?.navigationBar.barTintColor = .systemGray6
     }
     
     //safeareaの取得
@@ -88,6 +91,7 @@ class SelectImageViewController: UIViewController {
                 return
             }
             print("fileをアップロードした")
+            self.imageButton.isEnabled = false
             self.dismiss(animated: true, completion: nil)
         }
         

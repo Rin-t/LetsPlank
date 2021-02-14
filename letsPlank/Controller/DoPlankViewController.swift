@@ -35,6 +35,7 @@ class DoPlankViewController: UIViewController {
     var timerInt = 0                //countDown用
     var timer: Timer!
     var imageIsMoved = false
+    var displayCount = 0
    
     @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var logoImageView: UIImageView!
@@ -43,29 +44,23 @@ class DoPlankViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profileBarButtonItem.image = UIImage(named: "休憩")
-        self.logoImageView.image = UIImage(named: "白プランク")
-        //viewに追加
-        self.view.addSubview(self.imageView)
+
         tabBarController?.tabBar.isHidden = true
         navigationController?.setNavigationBarHidden(true, animated: false)
         
+        //起動時のアニメーション
         launchAppImageAnimation()
+        
+        //view関係のセットアップ
         setUpView()
+        
+        //その日にすでにプランクをしているかの確認
         confirmAleadyDoneToday()
+        
         //初めてアプリを起動した時には60秒を標準設定にする
         if UserDefaults.standard.object(forKey: "PlankSec") == nil {
             UserDefaults.standard.set(60, forKey: "PlankSec")
         }
-        
-        //ログインしてない場合のみアカウント作成画面に遷移
-        
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
     }
     
     
@@ -78,9 +73,21 @@ class DoPlankViewController: UIViewController {
         timerInt = sec
         defaultSec = sec
         
+        //ログイン後にプロフィールアイコンに画像をセット
+        //何回も通信しないようにした、ただ実装方法が美しくない
+        if displayCount == 1 {
+            setUpProfileBarButtonItem(profileBarButtonItem: profileBarButtonItem)
+            displayCount += 1
+        }
+        displayCount += 1
+        
     }
     
     private func launchAppImageAnimation() {
+        //アニメーションようのlogoをviewにセット
+        self.logoImageView.image = UIImage(named: "白プランク")
+        self.view.addSubview(self.imageView)
+        
         UIView.animate(withDuration: 0.3,
                        delay: 0.5,
                        options: UIView.AnimationOptions.curveEaseOut,
@@ -90,7 +97,6 @@ class DoPlankViewController: UIViewController {
                         
                        })
         
-        //8倍まで拡大！
         UIView.animate(withDuration: 0.2,
                        delay: 0.8,
                        options: UIView.AnimationOptions.curveEaseOut,
@@ -98,15 +104,18 @@ class DoPlankViewController: UIViewController {
                         self.logoImageView.transform = CGAffineTransform(scaleX: 8.0, y: 8.0)
                         self.logoImageView.alpha = 0
                        }, completion: { (Bool) in
-                        //で、アニメーションが終わったらimageViewを消す
+                        //アニメーションが終わったらimageViewを消す
                         self.imageView.removeFromSuperview()
                         self.tabBarController?.tabBar.isHidden = false
                         self.navigationController?.setNavigationBarHidden(false, animated: false)
+                        
+                        //アニメーションが終わってアカウントにログインしていない場合の画面遷移
                         if let _ = Auth.auth().currentUser { return }
                         self.presentModalFullScreen(storyboradName: "SignUp")
                        })
     }
     
+//MARK: - confirmAleadyDoneToday
     private func confirmAleadyDoneToday() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
         
@@ -196,6 +205,7 @@ class DoPlankViewController: UIViewController {
         saveDataToFirestore()
     }
     
+    //MARK: - saveDataToFirestore
     //counterが0までいったら、firebaseに実行日を追加
     func saveDataToFirestore() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
@@ -272,3 +282,6 @@ class DoPlankViewController: UIViewController {
         presentModalFullScreen(storyboradName: "SettingTimer")
     }
 }
+
+
+//test01@gmail.com

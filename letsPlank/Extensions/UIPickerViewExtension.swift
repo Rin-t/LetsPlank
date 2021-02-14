@@ -12,7 +12,6 @@ extension UIPickerView {
         
         let fontSize:CGFloat = 20
         let labelWidth:CGFloat = self.frame.size.width / CGFloat(self.numberOfComponents)
-        let x:CGFloat = self.frame.origin.x
         let y:CGFloat = (self.frame.size.height / 2) - (fontSize / 2)
         
         for i in 0...self.numberOfComponents {
@@ -24,6 +23,7 @@ extension UIPickerView {
                 label.textAlignment = NSTextAlignment.center
                 
                 self.addSubview(label)
+                print("ラベル", labels)
             }
         }
     }

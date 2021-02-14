@@ -93,10 +93,15 @@
                     <tabBarItem key="tabBarItem" title="Record" image="calendar" catalog="system" id="dJE-zS-cNC">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="NoK-6N-ezn"/>
+                    <navigationItem key="navigationItem" id="NoK-6N-ezn">
+                        <barButtonItem key="leftBarButtonItem" id="giK-4L-5uc">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="calender" destination="lID-NG-1nX" id="fnQ-0s-aXd"/>
                         <outlet property="continuousDaysLabel" destination="4CU-hI-BDK" id="uBP-yZ-NWC"/>
+                        <outlet property="profileBarButtonItem" destination="giK-4L-5uc" id="SYc-jl-7t5"/>
                         <outlet property="quoteTextView" destination="Nc2-64-u0Q" id="3DP-bq-oLq"/>
                     </connections>
                 </viewController>
@@ -208,10 +213,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYF-Mt-nGg">
-                                        <rect key="frame" x="265" y="114.5" width="20" height="40"/>
+                                        <rect key="frame" x="265" y="114.5" width="30" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="0rg-mX-dTd"/>
-                                            <constraint firstAttribute="width" constant="20" id="Q0L-p6-jXw"/>
+                                            <constraint firstAttribute="width" constant="30" id="Q0L-p6-jXw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="51"/>
                                         <nil key="textColor"/>
@@ -390,7 +395,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ranking" image="person.3.fill" catalog="system" id="RnV-Jt-ijR"/>
-                    <navigationItem key="navigationItem" id="uIu-kU-V2m"/>
+                    <navigationItem key="navigationItem" id="uIu-kU-V2m">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="RA6-xy-0Yg"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7J-Af-SoT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

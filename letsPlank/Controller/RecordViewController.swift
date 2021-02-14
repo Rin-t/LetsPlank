@@ -14,6 +14,7 @@ class RecordViewController: UIViewController {
     @IBOutlet weak var calender: FSCalendar!
     @IBOutlet weak var continuousDaysLabel: UILabel!
     @IBOutlet weak var quoteTextView: UITextView!
+    @IBOutlet weak var profileBarButtonItem: UIBarButtonItem!
     
     var topSafeAreaHeight: CGFloat = 0
     var bottomSafeAreaHeight: CGFloat = 0
@@ -21,18 +22,12 @@ class RecordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setViews()
         self.navigationItem.title = "Record"
         self.calender.dataSource = self
         self.calender.delegate = self
         
         
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        topSafeAreaHeight = self.view.safeAreaInsets.top
-        setViews()
     }
     
     func setViews() {
@@ -43,8 +38,8 @@ class RecordViewController: UIViewController {
         //名言の挿入
         let quote = Quotes()
         let randomInt = Int.random(in: 0...quote.quotesArray.count - 1)
-        quoteTextView.text = quote.quotesArray[randomInt]
         
+        quoteTextView.text = quote.quotesArray[randomInt]
     }
     
 }

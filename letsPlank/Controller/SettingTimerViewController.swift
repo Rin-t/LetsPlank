@@ -17,6 +17,8 @@ class SettingTimerViewController: UIViewController {
     var totalSec = 60
     var selectedMin = 1
     var selectedSec = 0
+    let minLabel = UILabel()
+    let secLabel = UILabel()
     
     @IBOutlet weak var settingTimerPickerView: UIPickerView!
     @IBOutlet weak var setTimeButton: UIButton!
@@ -100,16 +102,14 @@ extension SettingTimerViewController: UIPickerViewDelegate, UIPickerViewDataSour
         case 0:
             return String(minIntArray[row])
         case 1:
-            let min = UILabel()
-            min.text = "min"
-            settingTimerPickerView.setPickerLabels(labels: [1: min])
+            minLabel.text = "min"
+            settingTimerPickerView.setPickerLabels(labels: [1: minLabel])
             return ""
         case 2:
             return String(secIntArray[row])
         case 3:
-            let sec = UILabel()
-            sec.text = "sec"
-            settingTimerPickerView.setPickerLabels(labels: [3: sec])
+            secLabel.text = "sec"
+            settingTimerPickerView.setPickerLabels(labels: [3: secLabel])
             return ""
         default:
             return "error"
@@ -126,7 +126,7 @@ extension SettingTimerViewController: UIPickerViewDelegate, UIPickerViewDataSour
         default:
             return
         }
-        totalSec = selectedMin*60 + selectedSec
+        totalSec = selectedMin * 60 + selectedSec
     }
     
     
