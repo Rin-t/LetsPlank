@@ -13,26 +13,11 @@ import Nuke
 import SDWebImage
 
 //buttonTitle
-enum buttonTitle: String {
-    case start = "Let's Plank"
-    case stop = "Stop"
+enum ActionStatus: String {
+    case idel = "let's plank"
+    case plank = "Stop"
 }
 
-enum ActionStatus {
-    case idel
-    case plnk
-    
-    func setTitle(button: UIButton) -> UIButton {
-        switch self {
-        case .idel:
-            return button.setTitle("Let's Plank", for: .normal)
-        case .plnk:
-            return button.setTitle("Stop", for: .normal)
-        default:
-            return button
-        }
-    }
-}
 //startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
 
 class DoPlankViewController: UIViewController {
@@ -47,8 +32,7 @@ class DoPlankViewController: UIViewController {
     @IBOutlet weak var todaysActivityLabel: UILabel!
     @IBOutlet weak var profileBarButtonItem: UIBarButtonItem!
     
-    var status: ActionStatus = .idel
-    
+    var currentActionStatus: ActionStatus = .idel
     private var defaultSec = 0              //defaultの秒数
     private var timerInt = 0                //countDown用
     private var timer: Timer!
@@ -65,6 +49,8 @@ class DoPlankViewController: UIViewController {
 
         tabBarController?.tabBar.isHidden = true
         navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        
         
         //起動時のアニメーション
         launchAppImageAnimation()
@@ -133,6 +119,11 @@ class DoPlankViewController: UIViewController {
                        })
     }
     
+    func setButtonTitle(actionStatus: ActionStatus) {
+        startAndStopButton.setTitle(actionStatus.rawValue, for: .normal)
+    }
+    
+    
 //MARK: - confirmAleadyDoneToday
     private func confirmAleadyDoneToday() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
@@ -165,8 +156,8 @@ class DoPlankViewController: UIViewController {
     }
     
     func setUpStartAndStopButton() {
+        setButtonTitle(actionStatus: .idel)
         startAndStopButton.layer.cornerRadius = 20
-        startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
         startAndStopButton.addTarget(self, action: #selector(tappedStartAndStopButton), for: .touchUpInside)
         startAndStopButton.addTarget(self, action: #selector(changeButtonColour), for: .touchDown)
     }
@@ -176,16 +167,15 @@ class DoPlankViewController: UIViewController {
     //MARK: - StartAndStopButton
     @objc func tappedStartAndStopButton() {
         
-        guard let buttonCurrentTitle = startAndStopButton.currentTitle else { return }
-        
         //開始と停止の処理
-        if buttonCurrentTitle == buttonTitle.start.rawValue {
-            startAndStopButton.setTitle(buttonTitle.stop.rawValue, for: .normal)
+        if  currentActionStatus == .idel {
+            currentActionStatus = .plank
+            setButtonTitle(actionStatus: currentActionStatus)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countTimer), userInfo: nil, repeats: true)
-            
         } else {
+            currentActionStatus = .idel
             timer.invalidate()
-            startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
+            setButtonTitle(actionStatus: currentActionStatus)
             showAlert()
         }
         moveImageView()
@@ -215,7 +205,8 @@ class DoPlankViewController: UIViewController {
         timerInt = defaultSec
         timerLabel.text = String(timerInt)
         timer.invalidate()
-        startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
+        
+        //startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
         todaysActivityLabel.text = "今日はもうやったよ！"
         todaysActivityLabel.textColor = .systemBlue
         moveImageView()
@@ -280,13 +271,13 @@ class DoPlankViewController: UIViewController {
             moveImageView()
             isEnableButtonsStatus()
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countTimer), userInfo: nil, repeats: true)
-            startAndStopButton.setTitle(buttonTitle.stop.rawValue, for: .normal)
+            setButtonTitle(actionStatus: currentActionStatus)
         }
         
         let stop = UIAlertAction(title: "やめる", style: .destructive) { [self] (_) in
             timerInt = defaultSec
             timerLabel.text = String(timerInt)
-            startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
+            setButtonTitle(actionStatus: currentActionStatus)
         }
         
         alert.addAction(stop)
