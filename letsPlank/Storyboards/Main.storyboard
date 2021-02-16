@@ -12,7 +12,7 @@
         <!--Record-->
         <scene sceneID="Utv-6m-XPC">
             <objects>
-                <viewController storyboardIdentifier="RecordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Puc-Zc-fbF" customClass="RecordViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Puc-Zc-fbF" customClass="CalenderViewControllar" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZAr-2d-tLT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="calender" destination="lID-NG-1nX" id="fnQ-0s-aXd"/>
+                        <outlet property="calendar" destination="lID-NG-1nX" id="fnQ-0s-aXd"/>
                         <outlet property="continuousDaysLabel" destination="4CU-hI-BDK" id="uBP-yZ-NWC"/>
                         <outlet property="profileBarButtonItem" destination="giK-4L-5uc" id="SYc-jl-7t5"/>
                         <outlet property="quoteTextView" destination="Nc2-64-u0Q" id="3DP-bq-oLq"/>

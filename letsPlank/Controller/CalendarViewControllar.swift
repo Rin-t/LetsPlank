@@ -10,8 +10,8 @@ import FSCalendar
 import Firebase
 
 
-class RecordViewController: UIViewController {
-    @IBOutlet weak var calender: FSCalendar!
+class CalenderViewControllar: UIViewController {
+    @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var continuousDaysLabel: UILabel!
     @IBOutlet weak var quoteTextView: UITextView!
     @IBOutlet weak var profileBarButtonItem: UIBarButtonItem!
@@ -24,17 +24,17 @@ class RecordViewController: UIViewController {
         super.viewDidLoad()
         setViews()
         self.navigationItem.title = "Record"
-        self.calender.dataSource = self
-        self.calender.delegate = self
+        self.calendar.dataSource = self
+        self.calendar.delegate = self
         
         
     }
     
     func setViews() {
         //カレンダーのレイアウト
-        calender.appearance.headerTitleColor = .orange
-        calender.appearance.todayColor = .systemTeal
-        calender.appearance.weekdayTextColor = .orange
+        calendar.appearance.headerTitleColor = .orange
+        calendar.appearance.todayColor = .systemTeal
+        calendar.appearance.weekdayTextColor = .orange
         //名言の挿入
         let quote = Quotes()
         let randomInt = Int.random(in: 0...quote.quotesArray.count - 1)
@@ -44,11 +44,11 @@ class RecordViewController: UIViewController {
     
 }
 
-extension RecordViewController: FSCalendarDataSource, FSCalendarDelegate {
+extension CalenderViewControllar: FSCalendarDataSource, FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.M.d"
-        //データフォー待ったーは使わない
+        formatter.timeStyle = .none
+        formatter.dateStyle = .medium
         let date = formatter.string(from: date)
    
         let storyborad = UIStoryboard.init(name: "SelectImage", bundle: nil)
@@ -59,7 +59,6 @@ extension RecordViewController: FSCalendarDataSource, FSCalendarDelegate {
         present(navigation, animated: true, completion: nil)
         
     }
-    
     
 }
 

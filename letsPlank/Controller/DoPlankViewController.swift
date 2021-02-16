@@ -10,11 +10,10 @@ import Firebase
 import FirebaseFirestore
 import FirebaseStorage
 import Nuke
-import SDWebImage
 
 //buttonTitle
 enum ActionStatus: String {
-    case idel = "let's plank"
+    case idel = "Let's plank"
     case plank = "Stop"
 }
 
@@ -31,17 +30,16 @@ class DoPlankViewController: UIViewController {
     @IBOutlet var centreConstraint: NSLayoutConstraint!
     @IBOutlet weak var todaysActivityLabel: UILabel!
     @IBOutlet weak var profileBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var imageView: UIView!
+    @IBOutlet weak var logoImageView: UIImageView!
     
-    var currentActionStatus: ActionStatus = .idel
+    private var currentActionStatus: ActionStatus = .idel
     private var defaultSec = 0              //defaultの秒数
     private var timerInt = 0                //countDown用
     private var timer: Timer!
     private var imageIsMoved = false
     private var displayCount = 0
    
-    @IBOutlet weak var imageView: UIView!
-    @IBOutlet weak var logoImageView: UIImageView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +47,6 @@ class DoPlankViewController: UIViewController {
 
         tabBarController?.tabBar.isHidden = true
         navigationController?.setNavigationBarHidden(true, animated: false)
-        
-        
         
         //起動時のアニメーション
         launchAppImageAnimation()
@@ -119,7 +115,7 @@ class DoPlankViewController: UIViewController {
                        })
     }
     
-    func setButtonTitle(actionStatus: ActionStatus) {
+    private func setButtonTitle(actionStatus: ActionStatus) {
         startAndStopButton.setTitle(actionStatus.rawValue, for: .normal)
     }
     
@@ -146,7 +142,7 @@ class DoPlankViewController: UIViewController {
     }
     
     //MARK: - viewのレイアウト関係
-    func setUpView() {
+    private func setUpView() {
         self.navigationItem.title = "Let's Plank"
         UITabBar.appearance().tintColor = .baseColour
         
@@ -155,7 +151,7 @@ class DoPlankViewController: UIViewController {
         
     }
     
-    func setUpStartAndStopButton() {
+    private func setUpStartAndStopButton() {
         setButtonTitle(actionStatus: .idel)
         startAndStopButton.layer.cornerRadius = 20
         startAndStopButton.addTarget(self, action: #selector(tappedStartAndStopButton), for: .touchUpInside)
@@ -165,7 +161,7 @@ class DoPlankViewController: UIViewController {
 
     
     //MARK: - StartAndStopButton
-    @objc func tappedStartAndStopButton() {
+    @objc private func tappedStartAndStopButton() {
         
         //開始と停止の処理
         if  currentActionStatus == .idel {
@@ -184,7 +180,7 @@ class DoPlankViewController: UIViewController {
         
     }
     
-    @objc func changeButtonColour() {
+    @objc private func changeButtonColour() {
         startAndStopButton.alpha = 0.7
     }
     
@@ -195,28 +191,27 @@ class DoPlankViewController: UIViewController {
     }
     
     //MARK: - Timer
-    @objc func countTimer() {
+    @objc private func countTimer() {
         timerInt -= 1
         timerLabel.text = String(timerInt)
         
         //タイマーが0になった時
-        if timerInt != 0 { return }
+        if timerInt == 0 {
+            timerInt = defaultSec
+            timerLabel.text = String(timerInt)
+            timer.invalidate()
+            todaysActivityLabel.text = "今日はもうやったよ！"
+            todaysActivityLabel.textColor = .systemBlue
+            moveImageView()
+            isEnableButtonsStatus()
+            saveDataToFirestore()
+        }
         
-        timerInt = defaultSec
-        timerLabel.text = String(timerInt)
-        timer.invalidate()
-        
-        //startAndStopButton.setTitle(buttonTitle.start.rawValue, for: .normal)
-        todaysActivityLabel.text = "今日はもうやったよ！"
-        todaysActivityLabel.textColor = .systemBlue
-        moveImageView()
-        isEnableButtonsStatus()
-        saveDataToFirestore()
     }
     
     //MARK: - saveDataToFirestore
     //counterが0までいったら、firebaseに実行日を追加
-    func saveDataToFirestore() {
+    private func saveDataToFirestore() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
         
         Firestore.firestore().collection("users").document(userID).getDocument { (snapshot, err) in
@@ -245,16 +240,16 @@ class DoPlankViewController: UIViewController {
     }
     
     //MARK: - dateFormatter
-    func dateFormatterForDateLabel(date: Date) -> String {
+    private func dateFormatterForDateLabel(date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.M.d"
-        formatter.locale = Locale(identifier: "ja_JP")
+        formatter.timeStyle = .none
+        formatter.dateStyle = .medium
         return formatter.string(from: date)
     }
     
     
     //MARK: - Animatioin
-    func moveImageView() {
+    private func moveImageView() {
         centreConstraint.isActive.toggle()
         defaultLeftConstraintOfPlankImage.constant = imageIsMoved ? -170 : view.frame.size.width/2 - 80
         imageIsMoved = !imageIsMoved
@@ -264,19 +259,22 @@ class DoPlankViewController: UIViewController {
     }
     
     //MARK: - showAlert
-    func showAlert() {
+    private func showAlert() {
         let alert = UIAlertController(title: "やめるの？", message: "やめたら記録は保存しないぞ！", preferredStyle: .alert)
         
         let continuous = UIAlertAction(title: "続ける", style: .default) { [self] (_) in
             moveImageView()
             isEnableButtonsStatus()
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countTimer), userInfo: nil, repeats: true)
+            currentActionStatus = .plank
             setButtonTitle(actionStatus: currentActionStatus)
         }
         
         let stop = UIAlertAction(title: "やめる", style: .destructive) { [self] (_) in
+            
             timerInt = defaultSec
             timerLabel.text = String(timerInt)
+            currentActionStatus = .idel
             setButtonTitle(actionStatus: currentActionStatus)
         }
         
@@ -287,7 +285,7 @@ class DoPlankViewController: UIViewController {
     }
     
     //MARK: - NavigationBarButton
-    @IBAction func tappedSetTimerButton(_ sender: Any) {
+    @IBAction private func tappedSetTimerButton(_ sender: Any) {
         presentModalFullScreen(storyboradName: "SettingTimer")
     }
 }

@@ -23,7 +23,7 @@
 		24A66E58259F732900AC4E7B /* letsPlankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E57259F732900AC4E7B /* letsPlankUITests.swift */; };
 		24A66E6C259F735B00AC4E7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A66E6B259F735B00AC4E7B /* Main.storyboard */; };
 		24A66E74259F738A00AC4E7B /* SettingTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E71259F738A00AC4E7B /* SettingTimerViewController.swift */; };
-		24A66E75259F738A00AC4E7B /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E72259F738A00AC4E7B /* RecordViewController.swift */; };
+		24A66E75259F738A00AC4E7B /* CalendarViewControllar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E72259F738A00AC4E7B /* CalendarViewControllar.swift */; };
 		24A66E76259F738A00AC4E7B /* DoPlankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E73259F738A00AC4E7B /* DoPlankViewController.swift */; };
 		24A66E80259F739B00AC4E7B /* UIPickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E7E259F739B00AC4E7B /* UIPickerViewExtension.swift */; };
 		24A66E81259F739B00AC4E7B /* UiColourExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E7F259F739B00AC4E7B /* UiColourExtention.swift */; };
@@ -85,7 +85,7 @@
 		24A66E59259F732900AC4E7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24A66E6B259F735B00AC4E7B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		24A66E71259F738A00AC4E7B /* SettingTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTimerViewController.swift; sourceTree = "<group>"; };
-		24A66E72259F738A00AC4E7B /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		24A66E72259F738A00AC4E7B /* CalendarViewControllar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewControllar.swift; sourceTree = "<group>"; };
 		24A66E73259F738A00AC4E7B /* DoPlankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoPlankViewController.swift; sourceTree = "<group>"; };
 		24A66E7E259F739B00AC4E7B /* UIPickerViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPickerViewExtension.swift; sourceTree = "<group>"; };
 		24A66E7F259F739B00AC4E7B /* UiColourExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiColourExtention.swift; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 			children = (
 				24CE632C25A7577C006831F1 /* LoginViewController.swift */,
 				24A66E71259F738A00AC4E7B /* SettingTimerViewController.swift */,
-				24A66E72259F738A00AC4E7B /* RecordViewController.swift */,
+				24A66E72259F738A00AC4E7B /* CalendarViewControllar.swift */,
 				244B595D25A0798E007A497A /* SignUpViewController.swift */,
 				24A7873D25AF35D60079FB54 /* SelectImageViewController.swift */,
 				24A66E73259F738A00AC4E7B /* DoPlankViewController.swift */,
@@ -540,7 +540,7 @@
 				24AAAC6025A0A3DA00F804F6 /* MenuViewController.swift in Sources */,
 				247D5D5125B484A000E45212 /* UIButtonExtension.swift in Sources */,
 				24A66E80259F739B00AC4E7B /* UIPickerViewExtension.swift in Sources */,
-				24A66E75259F738A00AC4E7B /* RecordViewController.swift in Sources */,
+				24A66E75259F738A00AC4E7B /* CalendarViewControllar.swift in Sources */,
 				24A66E74259F738A00AC4E7B /* SettingTimerViewController.swift in Sources */,
 				24A66E38259F732700AC4E7B /* SceneDelegate.swift in Sources */,
 				24AC124525A1844500A81872 /* MenuTableViewCell.swift in Sources */,

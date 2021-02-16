@@ -31,14 +31,12 @@ extension UIViewController {
     
     func setUpProfileBarButtonItem(profileBarButtonItem: UIBarButtonItem) {
         
-        let button = UIButton(frame: CGRect(x: 0.0, y: 0.0, width: 35.0, height: 35.0))
+        let button = UIButton()
         button.layer.cornerRadius = 15
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.black.cgColor
         button.imageView?.contentMode = .scaleToFill
         button.clipsToBounds = true
-        
- 
         
         guard let userId = Auth.auth().currentUser?.uid else { return }
         
@@ -52,11 +50,8 @@ extension UIViewController {
             let profileImageURL = URL(string: profileImageString as! String)!
             print("プロフィールURL", profileImageURL)
             let image = UIImage(url: profileImageString as! String)
-            
-            //profileBarButtonItem.setBackgroundImage(image, for: .normal, barMetrics: .defaultPrompt)
-            
-           
             button.setImage(image, for: .normal)
+            
             profileBarButtonItem.customView = button
             profileBarButtonItem.customView?.widthAnchor.constraint(equalToConstant: 35.0).isActive = true
             profileBarButtonItem.customView?.heightAnchor.constraint(equalToConstant: 35.0).isActive = true
