@@ -64,7 +64,6 @@ class DoPlankViewController: UIViewController {
     }
     
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //画面が表示された時は初期設定の時間をセットする

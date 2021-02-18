@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Record-->
+        <!--Calerdar-->
         <scene sceneID="Utv-6m-XPC">
             <objects>
                 <viewController storyboardIdentifier="RecordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Puc-Zc-fbF" customClass="CalenderViewControllar" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,18 +90,13 @@
                             <constraint firstItem="lID-NG-1nX" firstAttribute="top" secondItem="tX5-LH-8RS" secondAttribute="top" constant="5" id="xQu-pt-dWV"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Record" image="calendar" catalog="system" id="dJE-zS-cNC">
+                    <tabBarItem key="tabBarItem" title="Calerdar" image="calendar" catalog="system" id="dJE-zS-cNC">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="NoK-6N-ezn">
-                        <barButtonItem key="leftBarButtonItem" id="giK-4L-5uc">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="NoK-6N-ezn"/>
                     <connections>
                         <outlet property="calendar" destination="lID-NG-1nX" id="fnQ-0s-aXd"/>
                         <outlet property="continuousDaysLabel" destination="4CU-hI-BDK" id="uBP-yZ-NWC"/>
-                        <outlet property="profileBarButtonItem" destination="giK-4L-5uc" id="SYc-jl-7t5"/>
                         <outlet property="quoteTextView" destination="Nc2-64-u0Q" id="3DP-bq-oLq"/>
                     </connections>
                 </viewController>
@@ -320,7 +315,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="biS-ON-uFe">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="zjN-JV-gQC"/>
+                        <barButtonItem key="leftBarButtonItem" id="zjN-JV-gQC"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="clock" catalog="system" id="U2c-Aa-arR">
                             <connections>
                                 <action selector="tappedSetTimerButton:" destination="llE-Pv-tJ7" id="iyz-9M-zil"/>
@@ -384,7 +379,7 @@
             </objects>
             <point key="canvasLocation" x="-2062" y="-182"/>
         </scene>
-        <!--Ranking-->
+        <!--Record-->
         <scene sceneID="Wee-E3-U0Q">
             <objects>
                 <viewController id="XFt-9c-Vzm" sceneMemberID="viewController">
@@ -394,7 +389,7 @@
                         <viewLayoutGuide key="safeArea" id="pgN-bo-CBu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Ranking" image="person.3.fill" catalog="system" id="RnV-Jt-ijR"/>
+                    <tabBarItem key="tabBarItem" title="Record" image="book" catalog="system" id="RnV-Jt-ijR"/>
                     <navigationItem key="navigationItem" id="uIu-kU-V2m">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="RA6-xy-0Yg"/>
                     </navigationItem>
@@ -456,10 +451,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="102"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="menubar.rectangle" catalog="system" width="128" height="93"/>
-        <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="ダンベル" width="52" height="71.5"/>
         <image name="休憩" width="49" height="36"/>
         <image name="腕立て" width="61" height="22.5"/>

@@ -11,13 +11,13 @@ import Firebase
 
 
 class CalenderViewControllar: UIViewController {
-    @IBOutlet weak var calendar: FSCalendar!
-    @IBOutlet weak var continuousDaysLabel: UILabel!
-    @IBOutlet weak var quoteTextView: UITextView!
-    @IBOutlet weak var profileBarButtonItem: UIBarButtonItem!
+    @IBOutlet private weak var calendar: FSCalendar!
+    @IBOutlet private weak var continuousDaysLabel: UILabel!
+    @IBOutlet private weak var quoteTextView: UITextView!
     
-    var topSafeAreaHeight: CGFloat = 0
-    var bottomSafeAreaHeight: CGFloat = 0
+    
+    private var topSafeAreaHeight: CGFloat = 0
+    private var bottomSafeAreaHeight: CGFloat = 0
     
     
     override func viewDidLoad() {
@@ -27,8 +27,13 @@ class CalenderViewControllar: UIViewController {
         self.calendar.dataSource = self
         self.calendar.delegate = self
         
+       
+        
         
     }
+    
+   
+    
     
     func setViews() {
         //カレンダーのレイアウト
