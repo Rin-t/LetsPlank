@@ -35,6 +35,7 @@
 		24AAAC6925A0A5AE00F804F6 /* Introduce.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24AAAC6825A0A5AE00F804F6 /* Introduce.storyboard */; };
 		24AAAC6F25A0A66100F804F6 /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */; };
 		24AC124525A1844500A81872 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC124425A1844500A81872 /* MenuTableViewCell.swift */; };
+		24B05BBA25DEA06000A6A186 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B05BB925DEA06000A6A186 /* RecordViewController.swift */; };
 		24C09AA925D4D8590053B72F /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C09AA825D4D8590053B72F /* UIImageExtension.swift */; };
 		24CE631A25A31685006831F1 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CE631925A31685006831F1 /* SignUp.storyboard */; };
 		24CE632825A75764006831F1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CE632725A75764006831F1 /* Login.storyboard */; };
@@ -97,6 +98,7 @@
 		24AAAC6825A0A5AE00F804F6 /* Introduce.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduce.storyboard; sourceTree = "<group>"; };
 		24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
 		24AC124425A1844500A81872 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		24B05BB925DEA06000A6A186 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		24C09AA825D4D8590053B72F /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		24CE631925A31685006831F1 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		24CE632725A75764006831F1 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				24A66E73259F738A00AC4E7B /* DoPlankViewController.swift */,
 				24AAAC5F25A0A3DA00F804F6 /* MenuViewController.swift */,
 				24AAAC6D25A0A62000F804F6 /* Menu */,
+				24B05BB925DEA06000A6A186 /* RecordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				24AAAC6F25A0A66100F804F6 /* IntroduceViewController.swift in Sources */,
 				24377C1F25BEEA460072E844 /* UIViewControllerExtension.swift in Sources */,
 				24A66E76259F738A00AC4E7B /* DoPlankViewController.swift in Sources */,
+				24B05BBA25DEA06000A6A186 /* RecordViewController.swift in Sources */,
 				24A66E81259F739B00AC4E7B /* UiColourExtention.swift in Sources */,
 				244B595E25A0798E007A497A /* SignUpViewController.swift in Sources */,
 				24696ED325C53BCA0005E1F8 /* ProfileViewController.swift in Sources */,

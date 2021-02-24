@@ -133,7 +133,7 @@ class DoPlankViewController: UIViewController {
             let lastDay = dateFormatterForDateLabel(date: (date.last!.dateValue()))
             let today =  dateFormatterForDateLabel(date: Date())
             if lastDay == today {
-                todaysActivityLabel.text = "今日はもうやったよ"
+                todaysActivityLabel.text = "Done today!"
                 todaysActivityLabel.textColor = .systemBlue
             }
             
@@ -199,7 +199,7 @@ class DoPlankViewController: UIViewController {
             timerInt = defaultSec
             timerLabel.text = String(timerInt)
             timer.invalidate()
-            todaysActivityLabel.text = "今日はもうやったよ！"
+            todaysActivityLabel.text = "Done today!"
             todaysActivityLabel.textColor = .systemBlue
             moveImageView()
             isEnableButtonsStatus()
@@ -259,9 +259,9 @@ class DoPlankViewController: UIViewController {
     
     //MARK: - showAlert
     private func showAlert() {
-        let alert = UIAlertController(title: "やめるの？", message: "やめたら記録は保存しないぞ！", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Stop？", message: "やめたら記録は保存しないぞ！", preferredStyle: .alert)
         
-        let continuous = UIAlertAction(title: "続ける", style: .default) { [self] (_) in
+        let continuous = UIAlertAction(title: "continue", style: .default) { [self] (_) in
             moveImageView()
             isEnableButtonsStatus()
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countTimer), userInfo: nil, repeats: true)
@@ -269,7 +269,7 @@ class DoPlankViewController: UIViewController {
             setButtonTitle(actionStatus: currentActionStatus)
         }
         
-        let stop = UIAlertAction(title: "やめる", style: .destructive) { [self] (_) in
+        let stop = UIAlertAction(title: "stop", style: .destructive) { [self] (_) in
             
             timerInt = defaultSec
             timerLabel.text = String(timerInt)
