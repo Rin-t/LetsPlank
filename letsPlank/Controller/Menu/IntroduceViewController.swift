@@ -12,7 +12,7 @@ class IntroduceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Introduce about developer"
+        navigationItem.title = "About Developer"
         textView.isEditable = false
         tabBarController?.tabBar.isHidden = true
     }

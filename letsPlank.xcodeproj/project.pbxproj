@@ -68,7 +68,7 @@
 		244B594925A03851007A497A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		244B595D25A0798E007A497A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		24696ECD25C53BB00005E1F8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		24696ED225C53BCA0005E1F8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		24696ED225C53BCA0005E1F8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Menu/ProfileViewController.swift; sourceTree = "<group>"; };
 		247D5D5025B484A000E45212 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		24A1D51425C1A900001D5665 /* ChangeProfileImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfileImage.storyboard; sourceTree = "<group>"; };
 		24A1D52725C1AD11001D5665 /* ChangeProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileImageViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +149,7 @@
 				24CE631925A31685006831F1 /* SignUp.storyboard */,
 				24CE632725A75764006831F1 /* Login.storyboard */,
 				24A7873525AF35B90079FB54 /* SelectImage.storyboard */,
+				24696ECD25C53BB00005E1F8 /* Profile.storyboard */,
 				24AAAC6425A0A57900F804F6 /* MenuStoryboards */,
 			);
 			path = Storyboards;
@@ -223,6 +224,7 @@
 				24AAAC5F25A0A3DA00F804F6 /* MenuViewController.swift */,
 				24AAAC6D25A0A62000F804F6 /* Menu */,
 				24B05BB925DEA06000A6A186 /* RecordViewController.swift */,
+				24696ED225C53BCA0005E1F8 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -244,7 +246,6 @@
 			children = (
 				24AAAC6825A0A5AE00F804F6 /* Introduce.storyboard */,
 				24A1D51425C1A900001D5665 /* ChangeProfileImage.storyboard */,
-				24696ECD25C53BB00005E1F8 /* Profile.storyboard */,
 			);
 			path = MenuStoryboards;
 			sourceTree = "<group>";
@@ -255,7 +256,6 @@
 				24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */,
 				24AC124425A1844500A81872 /* MenuTableViewCell.swift */,
 				24A1D52725C1AD11001D5665 /* ChangeProfileImageViewController.swift */,
-				24696ED225C53BCA0005E1F8 /* ProfileViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";

@@ -15,9 +15,9 @@ class RecordViewController: UIViewController {
         super.viewDidLoad()
         
         contentView.layer.cornerRadius = 30
-        contentView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        contentView.layer.shadowOffset = CGSize(width: 3, height: 3)
         contentView.layer.shadowColor = UIColor.gray.cgColor
-        contentView.layer.shadowOpacity = 0.5
+        contentView.layer.shadowOpacity = 0.8
         navigationItem.title = "Record"
         
     }

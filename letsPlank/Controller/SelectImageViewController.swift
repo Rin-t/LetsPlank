@@ -15,7 +15,7 @@ class SelectImageViewController: UIViewController {
     @IBOutlet weak var imageButton: UIButton!
     @IBOutlet weak var backBarButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var deleteBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var deleteBarButton: UIBarButtonItem!
     
     var selectedDay: String?
     var topSafeAreaHeight: CGFloat = 0
@@ -57,19 +57,7 @@ class SelectImageViewController: UIViewController {
     }
     
     func setViews() {
-        let width = self.view.frame.width
-        let height = self.view.frame.height
-        
-        //imageviewのレイアウト
-        imageButton.frame.size.width = width
-        imageButton.frame.size.height = height/2
-        imageButton.layer.position = CGPoint(x: width/2, y: topSafeAreaHeight + height/4)
-        imageButton.layer.borderWidth = 0.5
-        
-        saveButton.layer.cornerRadius = 12
-        saveButton.frame.size.width = 70
-        saveButton.frame.size.width = 190
-        saveButton.layer.position = CGPoint(x: width/2, y: height*4/5)
+          saveButton.layer.cornerRadius = 12
     }
     
     @IBAction func tappedBackBarButton(_ sender: Any) {
@@ -103,6 +91,37 @@ class SelectImageViewController: UIViewController {
         imagePickerController.allowsEditing = true
         self.present(imagePickerController, animated: true, completion: nil)
     }
+    
+    @IBAction func tappedDeleteBarButton(_ sender: Any) {
+        showAlert()
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: "写真の削除", message: "保存している写真を削除しますか？", preferredStyle: .alert)
+        
+        let notDelete = UIAlertAction(title: "いいえ", style: .default) { (_) in
+            
+        }
+        
+        let delete = UIAlertAction(title: "はい", style: .destructive) { [self] (_) in
+            imageView.image = nil
+            guard let userId = Auth.auth().currentUser?.uid else { return }
+            guard let selectedDay = selectedDay else { return }
+            
+            Storage.storage().reference().child(userId).child(selectedDay).delete { (err) in
+                if let err = err {
+                    print("写真の削除に失敗しました")
+                }
+                print("写真の削除が完了しました。")
+            }
+        }
+        
+        alert.addAction(delete)
+        alert.addAction(notDelete)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
     
 }
 

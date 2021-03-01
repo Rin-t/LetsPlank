@@ -391,67 +391,67 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5e-QU-7xu">
                                 <rect key="frame" x="0.0" y="269" width="414" height="358"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="hhE-wh-0r0">
-                                        <rect key="frame" x="62" y="35.5" width="290" height="287"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hhE-wh-0r0">
+                                        <rect key="frame" x="62" y="26.5" width="290" height="305"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="20g-Jn-Lx2">
-                                                <rect key="frame" x="0.0" y="0.0" width="290" height="67.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="290" height="88.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continuation Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="pOL-xb-CJF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <color key="textColor" red="1" green="0.58431372550000005" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="1j8-qF-E6H">
-                                                        <rect key="frame" x="0.0" y="28" width="290" height="39.5"/>
+                                                        <rect key="frame" x="0.0" y="38" width="290" height="50.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                         <color key="textColor" name="defaultColour"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="1j8-qF-E6H" firstAttribute="height" secondItem="pOL-xb-CJF" secondAttribute="height" multiplier="2" id="k5V-AC-uXW"/>
+                                                    <constraint firstItem="1j8-qF-E6H" firstAttribute="height" secondItem="pOL-xb-CJF" secondAttribute="height" multiplier="1.7" id="k5V-AC-uXW"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="aIl-Gg-TPl">
-                                                <rect key="frame" x="0.0" y="109.5" width="290" height="68"/>
+                                                <rect key="frame" x="0.0" y="108.5" width="290" height="88"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="BZu-jn-Zku">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="21.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="31"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <color key="textColor" red="1" green="0.58431372550000005" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12334" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="MUe-BM-2KT">
-                                                        <rect key="frame" x="0.0" y="25.5" width="290" height="42.5"/>
+                                                        <rect key="frame" x="0.0" y="35" width="290" height="53"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                         <color key="textColor" name="defaultColour"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="MUe-BM-2KT" firstAttribute="height" secondItem="BZu-jn-Zku" secondAttribute="height" multiplier="2" id="vi1-82-baZ"/>
+                                                    <constraint firstItem="MUe-BM-2KT" firstAttribute="height" secondItem="BZu-jn-Zku" secondAttribute="height" multiplier="1.7" id="vi1-82-baZ"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fka-EO-YkP">
-                                                <rect key="frame" x="0.0" y="219.5" width="290" height="67.5"/>
+                                                <rect key="frame" x="0.0" y="216.5" width="290" height="88.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="BFw-TX-iI7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="19.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <color key="textColor" red="1" green="0.58431372550000005" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="TEl-3X-b5n">
-                                                        <rect key="frame" x="0.0" y="27.5" width="290" height="40"/>
+                                                        <rect key="frame" x="0.0" y="38" width="290" height="50.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                         <color key="textColor" name="defaultColour"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="TEl-3X-b5n" firstAttribute="height" secondItem="BFw-TX-iI7" secondAttribute="height" multiplier="2" id="S81-gX-kqu"/>
+                                                    <constraint firstItem="TEl-3X-b5n" firstAttribute="height" secondItem="BFw-TX-iI7" secondAttribute="height" multiplier="1.7" id="S81-gX-kqu"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -463,7 +463,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="hhE-wh-0r0" firstAttribute="height" secondItem="k5e-QU-7xu" secondAttribute="height" multiplier="0.8" id="96L-NI-uEV"/>
+                                    <constraint firstItem="hhE-wh-0r0" firstAttribute="height" secondItem="k5e-QU-7xu" secondAttribute="height" multiplier="0.85" id="96L-NI-uEV"/>
                                     <constraint firstItem="hhE-wh-0r0" firstAttribute="centerY" secondItem="k5e-QU-7xu" secondAttribute="centerY" id="Jvu-5C-m3P"/>
                                     <constraint firstItem="hhE-wh-0r0" firstAttribute="centerX" secondItem="k5e-QU-7xu" secondAttribute="centerX" id="Uat-uY-Jm3"/>
                                     <constraint firstItem="hhE-wh-0r0" firstAttribute="width" secondItem="k5e-QU-7xu" secondAttribute="width" multiplier="0.7" id="xOf-Wb-4XV"/>

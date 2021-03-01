@@ -87,7 +87,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pxh-sU-UeH">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="l5V-gs-xMG"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="trash" catalog="system" id="l5V-gs-xMG">
+                            <color key="tintColor" red="1" green="0.100608435" blue="0.18035401240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="tappedDeleteBarButton:" destination="yqo-Uu-GrM" id="gbx-zs-oCb"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Back" id="sx9-eY-JZ2">
                             <connections>
                                 <action selector="tappedBackBarButton:" destination="yqo-Uu-GrM" id="ckE-Uc-XNY"/>
@@ -96,7 +101,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backBarButton" destination="sx9-eY-JZ2" id="DzU-Pm-1vA"/>
-                        <outlet property="deleteBarButtonItem" destination="l5V-gs-xMG" id="W2p-nb-8FE"/>
+                        <outlet property="deleteBarButton" destination="l5V-gs-xMG" id="W2p-nb-8FE"/>
                         <outlet property="imageButton" destination="8mN-kc-hQS" id="CFc-eC-lE8"/>
                         <outlet property="imageView" destination="VLq-ii-DHb" id="gMS-A0-9LM"/>
                         <outlet property="saveButton" destination="cNQ-mF-CAU" id="FrP-6A-Au9"/>
@@ -108,6 +113,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

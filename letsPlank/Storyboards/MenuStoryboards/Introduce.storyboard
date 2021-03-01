@@ -39,15 +39,22 @@
                                     <constraint firstAttribute="width" constant="100" id="vXo-PK-Rdl"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSK-Oi-7bk">
-                                <rect key="frame" x="20" y="348" width="374" height="160"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSK-Oi-7bk">
+                                <rect key="frame" x="20" y="348" width="374" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="RMU-rE-Xa7"/>
+                                    <constraint firstAttribute="height" constant="200" id="RMU-rE-Xa7"/>
                                 </constraints>
-                                <string key="text">あっ。このページを見てしまいましたか？開発者の自己紹介です。僕は日本という国のどこかで中学校の教員ってやつをやってます。「変わってるね」と言われるのが好きなちょっと変わったやつです。留学したり、自転車で日本を旅したり、結構自由に生きてます。まぁそんなやつです。ではみなさん、毎日プランクして、刃牙もびっくりなバッキバキ腹筋を手に入れましょう。僕も頑張ります。</string>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">あっ。このページを見てしまいましたか？開発者の自己紹介です。僕は日本という国のどこかで中学校の教員ってやつをやってます。「変わってるね」と言われるのが好きなちょっと変わったやつです。留学したり、自転車で日本を旅したり、結構自由に生きてます。まぁそんなやつです。ではみなさん、毎日プランクして、刃牙もびっくりなバッキバキ腹筋を手に入れましょう。僕も頑張ります。</string>
+                                        <attributes>
+                                            <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="15" name=".HiraKakuInterface-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -69,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVq-xQ-Pur" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="343.47826086956525" y="205.58035714285714"/>
+            <point key="canvasLocation" x="162" y="206"/>
         </scene>
     </scenes>
     <resources>

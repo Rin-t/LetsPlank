@@ -8,12 +8,20 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    @IBOutlet weak var profileImageView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Profile"
+        navigationItem.title = "Your Profile"
+        
+        
         
         
         
     }
+    
+    @IBAction func tappedBackButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 }
