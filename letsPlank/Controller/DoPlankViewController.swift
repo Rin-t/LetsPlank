@@ -217,7 +217,7 @@ class DoPlankViewController: UIViewController {
                 return
             }
             
-            guard let profileImageString = data?.data()!["profileImageUrl"] else { return }
+            guard let profileImageString = data?.data()?["profileImageUrl"] else { return }
             let image = UIImage(url: profileImageString as! String)
             button.setImage(image, for: .normal)
             
