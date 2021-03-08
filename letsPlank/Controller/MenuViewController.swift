@@ -11,6 +11,7 @@ import Firebase
 struct MenuComponent {
     var label: String
     var image: UIImage
+    var nextStoryboradName: String?
 }
 
 class MenuViewController: UIViewController {
@@ -18,8 +19,8 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var menuTableView: UITableView!
     
     private let menu: [MenuComponent] = [
-        MenuComponent(label: "プロフィール", image: UIImage(systemName: "person.fill")!),
-        MenuComponent(label: "開発者", image: UIImage(systemName: "pc")!),
+        MenuComponent(label: "プロフィール", image: UIImage(systemName: "person.fill")!, nextStoryboradName: "Profile"),
+        MenuComponent(label: "開発者", image: UIImage(systemName: "pc")!, nextStoryboradName: "Introduce"),
         MenuComponent(label: "このアプリを広める", image: UIImage(systemName: "square.and.pencil")!),
         MenuComponent(label: "ログアウト", image: UIImage(systemName: "arrowshape.turn.up.left.fill")!)
     ]
@@ -72,10 +73,13 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if 0...1 ~= indexPath.row {
-            presentShow(storyboradName: presentStoryboradNames[indexPath.row])
+            guard let nextStoryborad = menu[indexPath.row].nextStoryboradName else { return }
+            presentShow(storyboradName: nextStoryborad)
+            
         } else if indexPath.row == 2 {
             showAlert()
             deselectRowAnimation()
+            
         } else {
             do {
                 try Auth.auth().signOut()
@@ -84,6 +88,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             } catch {
                 print("err")
             }
+            
         }
     }
     

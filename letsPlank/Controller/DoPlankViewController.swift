@@ -34,11 +34,13 @@ class DoPlankViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     
     private var currentActionStatus: ActionStatus = .idel
-    private var defaultSec = 0              //defaultの秒数
-    private var timerInt = 0                //countDown用
+    ///plankの秒数
+    private var defaultSec = 0
+    ///timerのカウント用
+    private var timerInt = 0
     private var timer: Timer!
     private var imageIsMoved = false
-    private var displayCount = 0
+
    
     
     override func viewDidLoad() {
@@ -54,8 +56,7 @@ class DoPlankViewController: UIViewController {
         //view関係のセットアップ
         setUpView()
         
-        //その日にすでにプランクをしているかの確認
-        confirmAleadyDoneToday()
+        
         
         //初めてアプリを起動した時には60秒を標準設定にする
         if UserDefaults.standard.object(forKey: "PlankSec") == nil {
@@ -72,13 +73,11 @@ class DoPlankViewController: UIViewController {
         timerInt = sec
         defaultSec = sec
         
-        //ログイン後にプロフィールアイコンに画像をセット
-        //何回も通信しないようにした、ただ実装方法が美しくない
-        if displayCount == 1 {
-            setUpProfileBarButtonItem(profileBarButtonItem: profileBarButtonItem)
-            displayCount += 1
-        }
-        displayCount += 1
+        setUpProfileBarButtonItem(profileBarButtonItem: profileBarButtonItem)
+        
+        //その日にすでにプランクをしているかの確認
+        confirmAleadyDoneToday()
+          
         
     }
     
@@ -155,11 +154,14 @@ class DoPlankViewController: UIViewController {
         startAndStopButton.layer.cornerRadius = 20
         startAndStopButton.addTarget(self, action: #selector(tappedStartAndStopButton), for: .touchUpInside)
         startAndStopButton.addTarget(self, action: #selector(changeButtonColour), for: .touchDown)
+        startAndStopButton.addTarget(self, action: #selector(changeButtonColour), for: .touchDragExit)
     }
     
 
     
     //MARK: - StartAndStopButton
+    
+    
     @objc private func tappedStartAndStopButton() {
         
         //開始と停止の処理
@@ -180,7 +182,16 @@ class DoPlankViewController: UIViewController {
     }
     
     @objc private func changeButtonColour() {
-        startAndStopButton.alpha = 0.7
+        //ボタンタップ時の背景色の変更
+        //非常に美しくない
+        //enum使ったらいいのかな？
+        if startAndStopButton.alpha == 1.0 {
+            startAndStopButton.alpha = 0.7
+        } else {
+            startAndStopButton.alpha = 1.0
+            startAndStopButton.isSelected = false
+        }
+        
     }
     
     func isEnableButtonsStatus() {
@@ -189,39 +200,30 @@ class DoPlankViewController: UIViewController {
         
     }
     
-    //MARK: - TappedProfileBarButton
-    
-    @objc private func tappedProfileBarButton() {
-        print("tapped")
-        presentModalFullScreen(storyboradName: "Profile")
-    }
-    
-    
+    //MARK: - setUpProfileBarButtonItem
     
     private func setUpProfileBarButtonItem(profileBarButtonItem: UIBarButtonItem) {
         
-        let button = UIButton()
-        button.layer.cornerRadius = 15
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.black.cgColor
-        button.imageView?.contentMode = .scaleToFill
-        button.clipsToBounds = true
-        
-        button.addTarget(self, action: #selector(tappedProfileBarButton), for: .touchUpInside)
-        
+        let imageView = UIImageView()
+        imageView.layer.cornerRadius = 15
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = UIColor.black.cgColor
+        imageView.contentMode = .scaleToFill
+        imageView.clipsToBounds = true
+
         guard let userId = Auth.auth().currentUser?.uid else { return }
         
-        Firestore.firestore().collection("users").document(userId).getDocument { [self] (data, err) in
+        Firestore.firestore().collection("users").document(userId).getDocument { (data, err) in
             if let err = err {
                 print("profileImageの取得に失敗")
                 return
             }
             
             guard let profileImageString = data?.data()?["profileImageUrl"] else { return }
-            let image = UIImage(url: profileImageString as! String)
-            button.setImage(image, for: .normal)
-            
-            profileBarButtonItem.customView = button
+            let profileImageUrl = URL(string: profileImageString as! String)!
+            //button.setImage(image, for: .normal)
+            Nuke.loadImage(with: profileImageUrl, into: imageView)
+            profileBarButtonItem.customView = imageView
             profileBarButtonItem.customView?.widthAnchor.constraint(equalToConstant: 35.0).isActive = true
             profileBarButtonItem.customView?.heightAnchor.constraint(equalToConstant: 35.0).isActive = true
             
@@ -246,6 +248,8 @@ class DoPlankViewController: UIViewController {
             moveImageView()
             isEnableButtonsStatus()
             saveDataToFirestore()
+            setButtonTitle(actionStatus: .idel)
+            currentActionStatus = .idel
         }
         
     }
@@ -261,14 +265,20 @@ class DoPlankViewController: UIViewController {
             }
             print("データの取得に成功")
             
+            //初めてプランクをする場合はその時のtimestampをおす。
             var date: [Timestamp] = snapshot?.data()!["didPlankDay"] as? [Timestamp] ?? [Timestamp()]
-            if date.count != 1 {
+            //初めての時はすでにtimestampを押しているのでスキップ
+            if date.count <= 1 {
                 date.append(Timestamp())
             }
             
+            var totalSec: Int = snapshot?.data()!["totalSec"] as? Int ?? 0
+            totalSec += self.defaultSec
+            
             let dateArray = [
-                "didPlankDay": date
-            ]
+                "didPlankDay": date,
+                "totalSec": totalSec
+            ] as [String : Any]
             
             Firestore.firestore().collection("users").document(userID).updateData(dateArray) {
                 err in

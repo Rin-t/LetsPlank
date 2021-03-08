@@ -23,37 +23,42 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m0Z-Y8-oYg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168" y="169"/>
+            <point key="canvasLocation" x="-84" y="133"/>
         </scene>
-        <!--Change Profile Image View Controller-->
+        <!--Change Profile View Controller-->
         <scene sceneID="ejb-ng-wWM">
             <objects>
-                <viewController storyboardIdentifier="ChangeProfileImage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8u5-tW-CNZ" customClass="ChangeProfileImageViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeProfile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8u5-tW-CNZ" customClass="ChangeProfileViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dtn-mp-ZL4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chp-U3-FHV">
-                                <rect key="frame" x="0.0" y="446.5" width="414" height="415.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chp-U3-FHV" userLabel="BottomView">
+                                <rect key="frame" x="0.0" y="581" width="414" height="281"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9d-P1-l89">
-                                        <rect key="frame" x="103.5" y="176.5" width="207" height="62.5"/>
+                                        <rect key="frame" x="107" y="110.5" width="200" height="60"/>
                                         <color key="backgroundColor" name="defaultColour"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="rPr-er-WQn"/>
+                                            <constraint firstAttribute="height" constant="60" id="yyN-lA-rs9"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Save">
+                                        <state key="normal" title="change">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tappedChangeButton:" destination="8u5-tW-CNZ" eventType="touchUpInside" id="lg1-RX-ZLh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="s9d-P1-l89" firstAttribute="height" secondItem="chp-U3-FHV" secondAttribute="height" multiplier="0.15" id="81C-J8-az0"/>
-                                    <constraint firstItem="s9d-P1-l89" firstAttribute="width" secondItem="chp-U3-FHV" secondAttribute="width" multiplier="0.5" id="b8W-vG-nzu"/>
                                     <constraint firstItem="s9d-P1-l89" firstAttribute="centerX" secondItem="chp-U3-FHV" secondAttribute="centerX" id="eaG-eY-gpr"/>
                                     <constraint firstItem="s9d-P1-l89" firstAttribute="centerY" secondItem="chp-U3-FHV" secondAttribute="centerY" id="y70-gQ-7fZ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WY-Yr-m0z">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WY-Yr-m0z" userLabel="TopView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="358.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pE-4C-yH6">
@@ -76,29 +81,70 @@
                                     <constraint firstItem="6pE-4C-yH6" firstAttribute="width" secondItem="6WY-Yr-m0z" secondAttribute="width" multiplier="0.5" id="hO8-io-p1n"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHl-mk-VNN">
+                                <rect key="frame" x="0.0" y="446.5" width="414" height="134.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MUQ-VC-Tak">
+                                        <rect key="frame" x="62" y="36" width="290" height="62.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-mI-uq4">
+                                                <rect key="frame" x="0.0" y="0.0" width="290" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Z2-2f-NTd">
+                                                <rect key="frame" x="0.0" y="28.5" width="290" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="MUQ-VC-Tak" firstAttribute="width" secondItem="dHl-mk-VNN" secondAttribute="width" multiplier="0.7" id="3SA-aQ-zxG"/>
+                                    <constraint firstItem="MUQ-VC-Tak" firstAttribute="centerY" secondItem="dHl-mk-VNN" secondAttribute="centerY" id="mOU-sg-CxY"/>
+                                    <constraint firstItem="MUQ-VC-Tak" firstAttribute="centerX" secondItem="dHl-mk-VNN" secondAttribute="centerX" id="r2z-qg-Kg7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zUe-Yn-KCI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="chp-U3-FHV" firstAttribute="top" secondItem="dHl-mk-VNN" secondAttribute="bottom" id="7df-vm-PCR"/>
                             <constraint firstItem="chp-U3-FHV" firstAttribute="leading" secondItem="zUe-Yn-KCI" secondAttribute="leading" id="AQC-4o-irD"/>
+                            <constraint firstItem="dHl-mk-VNN" firstAttribute="height" secondItem="Dtn-mp-ZL4" secondAttribute="height" multiplier="0.15" id="Ao0-R2-WwK"/>
+                            <constraint firstItem="zUe-Yn-KCI" firstAttribute="trailing" secondItem="dHl-mk-VNN" secondAttribute="trailing" id="E1z-h8-fwI"/>
                             <constraint firstItem="zUe-Yn-KCI" firstAttribute="trailing" secondItem="chp-U3-FHV" secondAttribute="trailing" id="J1D-la-QV6"/>
-                            <constraint firstItem="chp-U3-FHV" firstAttribute="top" secondItem="6WY-Yr-m0z" secondAttribute="bottom" id="NEW-Ks-myX"/>
+                            <constraint firstItem="chp-U3-FHV" firstAttribute="leading" secondItem="zUe-Yn-KCI" secondAttribute="leading" id="PVA-nH-xzN"/>
                             <constraint firstItem="6WY-Yr-m0z" firstAttribute="top" secondItem="zUe-Yn-KCI" secondAttribute="top" id="Sdd-Jm-PzR"/>
                             <constraint firstItem="6WY-Yr-m0z" firstAttribute="leading" secondItem="zUe-Yn-KCI" secondAttribute="leading" id="Si8-oj-doF"/>
+                            <constraint firstItem="dHl-mk-VNN" firstAttribute="leading" secondItem="zUe-Yn-KCI" secondAttribute="leading" id="dcW-xs-kZO"/>
                             <constraint firstItem="zUe-Yn-KCI" firstAttribute="bottom" secondItem="chp-U3-FHV" secondAttribute="bottom" id="hV3-lo-HIz"/>
+                            <constraint firstItem="chp-U3-FHV" firstAttribute="bottom" secondItem="zUe-Yn-KCI" secondAttribute="bottom" id="hdJ-pt-m9m"/>
                             <constraint firstItem="6WY-Yr-m0z" firstAttribute="height" secondItem="Dtn-mp-ZL4" secondAttribute="height" multiplier="0.4" id="kcq-GT-daJ"/>
+                            <constraint firstItem="chp-U3-FHV" firstAttribute="trailing" secondItem="zUe-Yn-KCI" secondAttribute="trailing" id="muq-LN-aV6"/>
                             <constraint firstItem="6WY-Yr-m0z" firstAttribute="centerX" secondItem="Dtn-mp-ZL4" secondAttribute="centerX" id="wOI-af-HEN"/>
+                            <constraint firstItem="dHl-mk-VNN" firstAttribute="top" secondItem="6WY-Yr-m0z" secondAttribute="bottom" id="wWh-MM-FiT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="r4k-vG-90Q"/>
+                    <navigationItem key="navigationItem" id="r4k-vG-90Q">
+                        <barButtonItem key="rightBarButtonItem" title="back" id="HJk-Ty-Fiz">
+                            <connections>
+                                <action selector="tappedBackButton:" destination="8u5-tW-CNZ" id="AYP-SJ-OZz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="changeButton" destination="s9d-P1-l89" id="ico-0b-zA4"/>
+                        <outlet property="changeButton" destination="s9d-P1-l89" id="nRT-0u-j2t"/>
+                        <outlet property="newUsernameTextField" destination="4Z2-2f-NTd" id="TWJ-3c-1KK"/>
                         <outlet property="profileImageButton" destination="6pE-4C-yH6" id="gQa-Od-sny"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhq-Xn-aee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023" y="169"/>
+            <point key="canvasLocation" x="1021.7391304347827" y="168.75"/>
         </scene>
     </scenes>
     <resources>

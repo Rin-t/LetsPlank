@@ -13,8 +13,8 @@
 		24696ECE25C53BB00005E1F8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24696ECD25C53BB00005E1F8 /* Profile.storyboard */; };
 		24696ED325C53BCA0005E1F8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24696ED225C53BCA0005E1F8 /* ProfileViewController.swift */; };
 		247D5D5125B484A000E45212 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D5D5025B484A000E45212 /* UIButtonExtension.swift */; };
-		24A1D51525C1A900001D5665 /* ChangeProfileImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A1D51425C1A900001D5665 /* ChangeProfileImage.storyboard */; };
-		24A1D52825C1AD11001D5665 /* ChangeProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1D52725C1AD11001D5665 /* ChangeProfileImageViewController.swift */; };
+		24A1D51525C1A900001D5665 /* ChangeProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A1D51425C1A900001D5665 /* ChangeProfile.storyboard */; };
+		24A1D52825C1AD11001D5665 /* ChangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1D52725C1AD11001D5665 /* ChangeProfileViewController.swift */; };
 		24A66E36259F732700AC4E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E35259F732700AC4E7B /* AppDelegate.swift */; };
 		24A66E38259F732700AC4E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E37259F732700AC4E7B /* SceneDelegate.swift */; };
 		24A66E3F259F732900AC4E7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24A66E3E259F732900AC4E7B /* Assets.xcassets */; };
@@ -70,8 +70,8 @@
 		24696ECD25C53BB00005E1F8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		24696ED225C53BCA0005E1F8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Menu/ProfileViewController.swift; sourceTree = "<group>"; };
 		247D5D5025B484A000E45212 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
-		24A1D51425C1A900001D5665 /* ChangeProfileImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfileImage.storyboard; sourceTree = "<group>"; };
-		24A1D52725C1AD11001D5665 /* ChangeProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileImageViewController.swift; sourceTree = "<group>"; };
+		24A1D51425C1A900001D5665 /* ChangeProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfile.storyboard; sourceTree = "<group>"; };
+		24A1D52725C1AD11001D5665 /* ChangeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewController.swift; sourceTree = "<group>"; };
 		24A66E32259F732700AC4E7B /* letsPlank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = letsPlank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A66E35259F732700AC4E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24A66E37259F732700AC4E7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				24AAAC6825A0A5AE00F804F6 /* Introduce.storyboard */,
-				24A1D51425C1A900001D5665 /* ChangeProfileImage.storyboard */,
+				24A1D51425C1A900001D5665 /* ChangeProfile.storyboard */,
 			);
 			path = MenuStoryboards;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 			children = (
 				24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */,
 				24AC124425A1844500A81872 /* MenuTableViewCell.swift */,
-				24A1D52725C1AD11001D5665 /* ChangeProfileImageViewController.swift */,
+				24A1D52725C1AD11001D5665 /* ChangeProfileViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -398,7 +398,7 @@
 				24A66E42259F732900AC4E7B /* LaunchScreen.storyboard in Resources */,
 				24A7873625AF35B90079FB54 /* SelectImage.storyboard in Resources */,
 				244B594A25A03851007A497A /* GoogleService-Info.plist in Resources */,
-				24A1D51525C1A900001D5665 /* ChangeProfileImage.storyboard in Resources */,
+				24A1D51525C1A900001D5665 /* ChangeProfile.storyboard in Resources */,
 				24CE631A25A31685006831F1 /* SignUp.storyboard in Resources */,
 				24A66E3F259F732900AC4E7B /* Assets.xcassets in Resources */,
 				24CE632825A75764006831F1 /* Login.storyboard in Resources */,
@@ -531,7 +531,7 @@
 			files = (
 				24A7872E25AF22630079FB54 /* Quotes.swift in Sources */,
 				24CE632D25A7577C006831F1 /* LoginViewController.swift in Sources */,
-				24A1D52825C1AD11001D5665 /* ChangeProfileImageViewController.swift in Sources */,
+				24A1D52825C1AD11001D5665 /* ChangeProfileViewController.swift in Sources */,
 				24C09AA925D4D8590053B72F /* UIImageExtension.swift in Sources */,
 				24AAAC6F25A0A66100F804F6 /* IntroduceViewController.swift in Sources */,
 				24377C1F25BEEA460072E844 /* UIViewControllerExtension.swift in Sources */,

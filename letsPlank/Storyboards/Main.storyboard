@@ -179,7 +179,7 @@
                                     <constraint firstAttribute="width" constant="160" id="8OG-WT-Amx"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWw-gh-1af">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWw-gh-1af" userLabel="TopView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="269"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7R-fN-yUq">
@@ -211,12 +211,16 @@
                                     <constraint firstItem="GYF-Mt-nGg" firstAttribute="leading" secondItem="O7R-fN-yUq" secondAttribute="trailing" constant="8" id="cxD-fY-5cH"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ld-1I-DC3">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ld-1I-DC3" userLabel="MiddleView">
                                 <rect key="frame" x="0.0" y="585" width="414" height="89.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V25-yg-ktE">
-                                        <rect key="frame" x="103.5" y="13" width="207" height="63"/>
+                                        <rect key="frame" x="107" y="14.5" width="200" height="60"/>
                                         <color key="backgroundColor" red="0.97254901960784312" green="0.69019607843137254" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="UdY-aC-oHj"/>
+                                            <constraint firstAttribute="width" constant="200" id="ve9-YG-5sa"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Just Do It!">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -226,12 +230,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="V25-yg-ktE" firstAttribute="centerX" secondItem="8ld-1I-DC3" secondAttribute="centerX" id="GKU-tt-c3L"/>
-                                    <constraint firstItem="V25-yg-ktE" firstAttribute="width" secondItem="8ld-1I-DC3" secondAttribute="width" multiplier="0.5" id="KRM-My-QdG"/>
                                     <constraint firstItem="V25-yg-ktE" firstAttribute="centerY" secondItem="8ld-1I-DC3" secondAttribute="centerY" id="k4I-D2-ymZ"/>
-                                    <constraint firstItem="V25-yg-ktE" firstAttribute="height" secondItem="8ld-1I-DC3" secondAttribute="height" multiplier="0.7" id="mQO-JD-fbB"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAe-76-44n">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAe-76-44n" userLabel="BottomView">
                                 <rect key="frame" x="0.0" y="674.5" width="414" height="89.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haven't done today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-df-SGA">

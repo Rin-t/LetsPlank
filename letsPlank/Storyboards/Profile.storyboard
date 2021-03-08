@@ -41,8 +41,8 @@
                                             <constraint firstAttribute="width" secondItem="BvL-Qb-xMR" secondAttribute="height" multiplier="1:1" id="3G8-zV-QEs"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQp-Vi-XQ4">
-                                        <rect key="frame" x="107.5" y="342" width="199" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQp-Vi-XQ4">
+                                        <rect key="frame" x="207" y="342" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -60,8 +60,11 @@
                                 <rect key="frame" x="0.0" y="638" width="414" height="224"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jx3-Ve-hTJ">
-                                        <rect key="frame" x="125.5" y="97" width="163" height="30"/>
-                                        <state key="normal" title="Change Your Profifle  →"/>
+                                        <rect key="frame" x="134.5" y="97" width="145" height="30"/>
+                                        <state key="normal" title="Change Your Profifle "/>
+                                        <connections>
+                                            <action selector="tappedChangeProfileButton:" destination="0Fy-vJ-Ddi" eventType="touchUpInside" id="hqL-1c-Uee"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,7 +95,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="aEn-gb-xZv"/>
                                                 </constraints>
                                                 <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
@@ -124,13 +127,7 @@
                             <constraint firstItem="JG1-7O-AxB" firstAttribute="leading" secondItem="vCN-J3-eM2" secondAttribute="leading" id="zeB-ZH-vLl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pQw-qo-qpg">
-                        <barButtonItem key="rightBarButtonItem" title="Buck" id="RQN-Ka-ZGH">
-                            <connections>
-                                <action selector="tappedBackButton:" destination="0Fy-vJ-Ddi" id="ZhM-6B-and"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="pQw-qo-qpg"/>
                     <connections>
                         <outlet property="profileImageView" destination="BvL-Qb-xMR" id="Vp7-eT-UDj"/>
                         <outlet property="userIdTextView" destination="7Tn-5h-mXG" id="zGG-sN-QYC"/>

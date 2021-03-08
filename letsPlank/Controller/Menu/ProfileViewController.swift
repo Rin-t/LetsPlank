@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Your Profile"
-        
+        tabBarController?.tabBar.isHidden = true
         setViews()
         
         
@@ -57,16 +57,11 @@ class ProfileViewController: UIViewController {
         
         
     }
-    
-    private func fetcheFirestoreData() -> Any {
-        return 0
+
+    @IBAction func tappedChangeProfileButton(_ sender: Any) {
+        presentModalFullScreen(storyboradName: "ChangeProfile")
     }
     
-    
-    
-    @IBAction func tappedBackButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     
 }
