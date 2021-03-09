@@ -57,7 +57,18 @@ class ChangeProfileViewController: UIViewController {
             }
             print("firestoreのデータの取得に成功")
             print(data?.data()!["username"])
-         //   data?.data()!["username"] = newUsername!
+            
+            let dateArray = [
+                "username": newUsername
+               ]
+            
+            Firestore.firestore().collection("users").document(userId).updateData(dateArray) {
+                err in
+                if let err = err {
+                    print("データのupdate失敗", err)
+                }
+                print("データのアップデート成功だ")
+            }
         }
     }
     

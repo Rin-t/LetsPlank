@@ -50,7 +50,7 @@
                                         <string key="content">あっ。このページを見てしまいましたか？開発者の自己紹介です。僕は日本という国のどこかで中学校の教員ってやつをやってます。「変わってるね」と言われるのが好きなちょっと変わったやつです。留学したり、自転車で日本を旅したり、結構自由に生きてます。まぁそんなやつです。ではみなさん、毎日プランクして、刃牙もびっくりなバッキバキ腹筋を手に入れましょう。僕も頑張ります。</string>
                                         <attributes>
                                             <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="15" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSFont" metaFont="system" size="15"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
