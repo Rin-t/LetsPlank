@@ -48,20 +48,24 @@ class ProfileViewController: UIViewController {
             profileImageView.layer.cornerRadius = view.frame.size.width / 4
             profileImageView.contentMode = .scaleAspectFill
         }
-        
-        
-
-        
-        
-        
-        
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! ChangeProfileViewController
+        nextVC.delegate = self
     }
 
     @IBAction func tappedChangeProfileButton(_ sender: Any) {
         presentModalFullScreen(storyboradName: "ChangeProfile")
     }
     
+}
+
+extension ProfileViewController: SendUserDataProtcol {
+    func sendData(newUsername: String) {
+        userNameLabel.text = newUsername
+        print("よばれた")
+    }
     
     
 }

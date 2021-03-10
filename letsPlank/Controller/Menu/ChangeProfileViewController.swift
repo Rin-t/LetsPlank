@@ -8,12 +8,17 @@
 import UIKit
 import Firebase
 
+protocol SendUserDataProtcol {
+    func sendData(newUsername: String)
+}
+
 class ChangeProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImageButton: UIButton!
     @IBOutlet weak var changeButton: UIButton!
     @IBOutlet weak var newUsernameTextField: UITextField!
     
+    var delegate: SendUserDataProtcol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +50,7 @@ class ChangeProfileViewController: UIViewController {
 
     @IBAction func tappedChangeButton(_ sender: Any) {
         
+        
         let newUsername: String? = newUsernameTextField.text
         let image = profileImageButton.imageView?.image
         let uploadImage = image?.jpegData(compressionQuality: 0.3) ?? nil
@@ -69,6 +75,10 @@ class ChangeProfileViewController: UIViewController {
                 }
                 print("データのアップデート成功だ")
             }
+            
+            self.delegate?.sendData(newUsername: newUsername!)
+            self.dismiss(animated: true, completion: nil)
+            
         }
     }
     
