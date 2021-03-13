@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-84" y="133"/>
         </scene>
-        <!--Change Profile View Controller-->
+        <!--Change User Image View Controller-->
         <scene sceneID="ejb-ng-wWM">
             <objects>
-                <viewController storyboardIdentifier="ChangeProfile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8u5-tW-CNZ" customClass="ChangeProfileViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeUserImage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8u5-tW-CNZ" customClass="ChangeUserImageViewController" customModule="letsPlank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dtn-mp-ZL4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhq-Xn-aee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1021.7391304347827" y="168.75"/>
+            <point key="canvasLocation" x="1020" y="133"/>
         </scene>
     </scenes>
     <resources>

@@ -26,7 +26,6 @@ class MenuViewController: UIViewController {
     ]
     
     private let cellId = "cellId"
-    private let presentStoryboradNames = ["ChangeProfileImage","Introduce"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

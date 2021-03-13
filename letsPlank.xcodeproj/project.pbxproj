@@ -13,8 +13,8 @@
 		24696ECE25C53BB00005E1F8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24696ECD25C53BB00005E1F8 /* Profile.storyboard */; };
 		24696ED325C53BCA0005E1F8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24696ED225C53BCA0005E1F8 /* ProfileViewController.swift */; };
 		247D5D5125B484A000E45212 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247D5D5025B484A000E45212 /* UIButtonExtension.swift */; };
-		24A1D51525C1A900001D5665 /* ChangeProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A1D51425C1A900001D5665 /* ChangeProfile.storyboard */; };
-		24A1D52825C1AD11001D5665 /* ChangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1D52725C1AD11001D5665 /* ChangeProfileViewController.swift */; };
+		24A1D51525C1A900001D5665 /* ChangeUserImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A1D51425C1A900001D5665 /* ChangeUserImage.storyboard */; };
+		24A1D52825C1AD11001D5665 /* ChangeUserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1D52725C1AD11001D5665 /* ChangeUserImage.swift */; };
 		24A66E36259F732700AC4E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E35259F732700AC4E7B /* AppDelegate.swift */; };
 		24A66E38259F732700AC4E7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A66E37259F732700AC4E7B /* SceneDelegate.swift */; };
 		24A66E3F259F732900AC4E7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24A66E3E259F732900AC4E7B /* Assets.xcassets */; };
@@ -36,6 +36,7 @@
 		24AAAC6F25A0A66100F804F6 /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */; };
 		24AC124525A1844500A81872 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC124425A1844500A81872 /* MenuTableViewCell.swift */; };
 		24B05BBA25DEA06000A6A186 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B05BB925DEA06000A6A186 /* RecordViewController.swift */; };
+		24B4EAEE25FC48FC00E68FDD /* ChangeUsername.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B4EAED25FC48FC00E68FDD /* ChangeUsername.storyboard */; };
 		24C09AA925D4D8590053B72F /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C09AA825D4D8590053B72F /* UIImageExtension.swift */; };
 		24CE631A25A31685006831F1 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CE631925A31685006831F1 /* SignUp.storyboard */; };
 		24CE632825A75764006831F1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CE632725A75764006831F1 /* Login.storyboard */; };
@@ -70,8 +71,8 @@
 		24696ECD25C53BB00005E1F8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		24696ED225C53BCA0005E1F8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Menu/ProfileViewController.swift; sourceTree = "<group>"; };
 		247D5D5025B484A000E45212 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
-		24A1D51425C1A900001D5665 /* ChangeProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfile.storyboard; sourceTree = "<group>"; };
-		24A1D52725C1AD11001D5665 /* ChangeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewController.swift; sourceTree = "<group>"; };
+		24A1D51425C1A900001D5665 /* ChangeUserImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeUserImage.storyboard; sourceTree = "<group>"; };
+		24A1D52725C1AD11001D5665 /* ChangeUserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserImage.swift; sourceTree = "<group>"; };
 		24A66E32259F732700AC4E7B /* letsPlank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = letsPlank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A66E35259F732700AC4E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24A66E37259F732700AC4E7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
 		24AC124425A1844500A81872 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		24B05BB925DEA06000A6A186 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		24B4EAED25FC48FC00E68FDD /* ChangeUsername.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeUsername.storyboard; sourceTree = "<group>"; };
 		24C09AA825D4D8590053B72F /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		24CE631925A31685006831F1 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		24CE632725A75764006831F1 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -245,7 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				24AAAC6825A0A5AE00F804F6 /* Introduce.storyboard */,
-				24A1D51425C1A900001D5665 /* ChangeProfile.storyboard */,
+				24A1D51425C1A900001D5665 /* ChangeUserImage.storyboard */,
+				24B4EAED25FC48FC00E68FDD /* ChangeUsername.storyboard */,
 			);
 			path = MenuStoryboards;
 			sourceTree = "<group>";
@@ -255,7 +258,7 @@
 			children = (
 				24AAAC6E25A0A66100F804F6 /* IntroduceViewController.swift */,
 				24AC124425A1844500A81872 /* MenuTableViewCell.swift */,
-				24A1D52725C1AD11001D5665 /* ChangeProfileViewController.swift */,
+				24A1D52725C1AD11001D5665 /* ChangeUserImage.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -393,12 +396,13 @@
 			files = (
 				24AAAC6925A0A5AE00F804F6 /* Introduce.storyboard in Resources */,
 				24696ECE25C53BB00005E1F8 /* Profile.storyboard in Resources */,
+				24B4EAEE25FC48FC00E68FDD /* ChangeUsername.storyboard in Resources */,
 				24A66E6C259F735B00AC4E7B /* Main.storyboard in Resources */,
 				24A66E8A259F73DD00AC4E7B /* SettingTimer.storyboard in Resources */,
 				24A66E42259F732900AC4E7B /* LaunchScreen.storyboard in Resources */,
 				24A7873625AF35B90079FB54 /* SelectImage.storyboard in Resources */,
 				244B594A25A03851007A497A /* GoogleService-Info.plist in Resources */,
-				24A1D51525C1A900001D5665 /* ChangeProfile.storyboard in Resources */,
+				24A1D51525C1A900001D5665 /* ChangeUserImage.storyboard in Resources */,
 				24CE631A25A31685006831F1 /* SignUp.storyboard in Resources */,
 				24A66E3F259F732900AC4E7B /* Assets.xcassets in Resources */,
 				24CE632825A75764006831F1 /* Login.storyboard in Resources */,
@@ -531,7 +535,7 @@
 			files = (
 				24A7872E25AF22630079FB54 /* Quotes.swift in Sources */,
 				24CE632D25A7577C006831F1 /* LoginViewController.swift in Sources */,
-				24A1D52825C1AD11001D5665 /* ChangeProfileViewController.swift in Sources */,
+				24A1D52825C1AD11001D5665 /* ChangeUserImage.swift in Sources */,
 				24C09AA925D4D8590053B72F /* UIImageExtension.swift in Sources */,
 				24AAAC6F25A0A66100F804F6 /* IntroduceViewController.swift in Sources */,
 				24377C1F25BEEA460072E844 /* UIViewControllerExtension.swift in Sources */,

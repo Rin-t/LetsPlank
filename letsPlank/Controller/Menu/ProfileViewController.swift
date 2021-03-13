@@ -16,15 +16,17 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak private var userNameLabel: UILabel!
     @IBOutlet weak private var userIdTextView: UITextView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Your Profile"
         tabBarController?.tabBar.isHidden = true
+        
+        
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setViews()
-        
-        
-        
     }
     
     private func setViews() {
@@ -50,22 +52,9 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextVC = segue.destination as! ChangeProfileViewController
-        nextVC.delegate = self
-    }
 
     @IBAction func tappedChangeProfileButton(_ sender: Any) {
-        presentModalFullScreen(storyboradName: "ChangeProfile")
+        presentModalFullScreen(storyboradName: "ChangeUserImage")
     }
-    
-}
-
-extension ProfileViewController: SendUserDataProtcol {
-    func sendData(newUsername: String) {
-        userNameLabel.text = newUsername
-        print("よばれた")
-    }
-    
     
 }

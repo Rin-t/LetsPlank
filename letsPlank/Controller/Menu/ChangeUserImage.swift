@@ -8,17 +8,12 @@
 import UIKit
 import Firebase
 
-protocol SendUserDataProtcol {
-    func sendData(newUsername: String)
-}
 
-class ChangeProfileViewController: UIViewController {
+class ChangeUserImageViewController: UIViewController {
     
-    @IBOutlet weak var profileImageButton: UIButton!
-    @IBOutlet weak var changeButton: UIButton!
-    @IBOutlet weak var newUsernameTextField: UITextField!
-    
-    var delegate: SendUserDataProtcol?
+    @IBOutlet weak private var profileImageButton: UIButton!
+    @IBOutlet weak private var changeButton: UIButton!
+    @IBOutlet weak private var newUsernameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +28,9 @@ class ChangeProfileViewController: UIViewController {
         let width = self.view.frame.size.width
         navigationItem.title = "Change plofile"
         
+        changeButton.isEnabled = false
+        changeButton.backgroundColor = .gray
+        
         profileImageButton.layer.cornerRadius = width / 4
         profileImageButton.layer.borderWidth = 1
         profileImageButton.layer.borderColor = UIColor.gray.cgColor
@@ -40,7 +38,7 @@ class ChangeProfileViewController: UIViewController {
         changeButton.layer.cornerRadius = width / 24
     }
     
-    @IBAction func tappedProfileImageButton(_ sender: Any) {
+    @IBAction private func tappedProfileImageButton(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
@@ -48,8 +46,7 @@ class ChangeProfileViewController: UIViewController {
     }
     
 
-    @IBAction func tappedChangeButton(_ sender: Any) {
-        
+    @IBAction private func tappedChangeButton(_ sender: Any) {
         
         let newUsername: String? = newUsernameTextField.text
         let image = profileImageButton.imageView?.image
@@ -59,10 +56,9 @@ class ChangeProfileViewController: UIViewController {
         
         Firestore.firestore().collection("users").document(userId).getDocument { (data, err) in
             if let err = err {
-                print("firestoreのデータの取得に失敗")
+                print("firestoreのデータの取得に失敗", err)
             }
             print("firestoreのデータの取得に成功")
-            print(data?.data()!["username"])
             
             let dateArray = [
                 "username": newUsername
@@ -75,8 +71,7 @@ class ChangeProfileViewController: UIViewController {
                 }
                 print("データのアップデート成功だ")
             }
-            
-            self.delegate?.sendData(newUsername: newUsername!)
+        
             self.dismiss(animated: true, completion: nil)
             
         }
@@ -90,7 +85,7 @@ class ChangeProfileViewController: UIViewController {
     
 }
 
-extension ChangeProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ChangeUserImageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let editImage = info[.editedImage] as? UIImage {
@@ -105,11 +100,12 @@ extension ChangeProfileViewController: UIImagePickerControllerDelegate, UINaviga
         profileImageButton.contentVerticalAlignment = .fill
         profileImageButton.clipsToBounds = true
         
+        
         dismiss(animated: true, completion: nil)
     }
 }
 
-extension ChangeProfileViewController: UITextFieldDelegate {
+extension ChangeUserImageViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
